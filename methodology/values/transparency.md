@@ -5,6 +5,9 @@ This is going to be global, bureau, and country office level indicator.
 This is indicator measures the completeness of the project data for each country office. So whether there is a project without a  description, a project without a implementing partner, without a ProDoc, and so on. 
 
 
+We will need to make some note that this is measuring project at the Quantum project number level not the unified project number level. 
+
+
 # Data
 
 

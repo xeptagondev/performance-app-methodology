@@ -14,6 +14,9 @@ description: This part of the SOP describes the required sections for each indic
 * **Data**: Outline the specific data points collected for this indicator. Include definitions, sources, and any data collection methods. Specify any criteria for data inclusion or exclusion. List and describe all columns for data tables.
 * **Data Export**: Describe the options available for exporting the data, including formats (e.g., CSV, Excel), tools or platforms used for export, and any necessary permissions or access requirements.
 * **Calculation of Scoring**: Explain in detail how the score for this indicator is calculated. Include formulas, algorithms, or methodologies used, and any normalization processes applied to standardize the data.
+    Global
+    Bureau
+    Country
 * **Traffic Light System**: Detail the thresholds for each traffic light category (Green, Yellow, Red) specific to this indicator. Explain what each colour represents in terms of performance levels.
 * **Limitations & Future Improvements**: Identify any limitations or challenges associated with this indicator, such as data quality issues, collection difficulties, or interpretative constraints. Discuss potential future improvements to enhance accuracy, relevance, or usability.
 * **Resources**: Provide a list of additional resources related to this indicator, such as links to relevant documents, guides, tools, or external websites. Include references to related methodologies, standards, or best practices.

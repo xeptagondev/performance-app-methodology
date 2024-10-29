@@ -52,7 +52,7 @@ This discount applies to the total value of the agreement and the tranches (i.e.
 
 **The Performance App will use the actual discounts to calculate the pipeline indicator.**
 
-The actuals will be updated at the start of each year in conjunction with the Unity team. 
+The actuals will be updated at the start of each year in conjunction with the Unity CRM team. 
 
 
 ## Organisational Objective
@@ -96,94 +96,94 @@ The columns from the Data Warehouse are the following:
 * **Created By**: The individual who created the opportunity record.
 * **Last Modified Date**: The date when the opportunity record was last modified.
 * **Last Modified By**: The individual who last modified the opportunity record.
-* **Id**
-* **IsDeleted**
-* **AccountId**
-* **RecordTypeId**
-* **IsPrivate**
-* **Name**
-* **StageName**
-* **Amount**
-* **Probability**
-* **ExpectedRevenue**
-* **TotalOpportunityQuantity**
-* **Type**
-* **LeadSource**
-* **IsClosed**
-* **IsWon**
-* **ForecastCategory**
-* **ForecastCategoryName**
-* **CampaignId**
-* **HasOpportunityLineItem**
-* **Pricebook2Id**
-* **OwnerId**
-* **CreatedById**
-* **LastModifiedById**
-* **SystemModstamp**
-* **LastActivityDate**
-* **FiscalQuarter**
-* **FiscalYear**
-* **Fiscal**
-* **ContactId**
-* **LastViewedDate**
-* **LastReferencedDate**
-* **ContractId**
-* **HasOpenActivity**
-* **HasOverdueTask**
-* **Account_Implementing_Partner__c**
-* **Account_Responsible_Party__c**
-* **CPD_Outcome_Primary__c**
-* **CPD_Output_Primary__c**
-* **Change_Opportunity_Type__c**
-* **Closed_Reason_NonFunding__c**
-* **Closed_Reason__c**
-* **Create_a_New_Opportunity__c**
-* **I_am_in_the_Owners_Initiative_Region__c**
-* **I_am_in_the_Owners_Region__c**
-* **Include_on_Funding_Pipeline__c**
-* **Managing_Department__c**
-* **Next_Opportunity_Review_Date__c**
-* **Opp_Name_Text__c**
-* **Opportunity_ID__c**
-* **Opportunity_Lead_Name__c**
-* **Partnership_Strategy__c**
-* **Project_ID__c**
-* **Project_Type__c**
-* **Targeted_Countries__c**
-* **Thematic_Area_Programmatic_Area__c**
-* **Thematic_TeamV2__c**
-* **UNDP_Signature_Solution__c**
-* **Opportunity_Development_Total_Cost__c**
-* **Target_Fund_Next_Year__c**
-* **Target_Funding_Future_Years__c**
-* **Total_Funding_This_Year__c**
-* **Total_Target_Funding__c**
-* **CPD_YR1__c**
-* **CPD_YR2__c**
-* **CPD_YR3__c**
-* **CPD_YR4__c**
-* **CPD_YR5__c**
-* **Contact_List_Rollup__c**
-* **Stage_Modified_Date__c**
-* **Expected_Agreement_Duration__c**
-* **Expected_Agreement_Start__c**
-* **Organization_Subtype__c**
-* **Exploratory_Type_Change_Date__c**
-* **Day_of_the_Month__c**
-* **Department_Name__c**
-* **Opportunity_Name__c**
-* **Ultimate_Parent_Organization__c**
-* **Ultimate_Parent_ID__c**
-* **Organisation_Subtype__c**
-* **Opp_Team_List__c**
-* **Target_Countries_List_255__c**
-* **Cloned_record__c**
-* **Add_Supporting_Thematic_Teams__c**
-* **Organisation_Source__c**
-* **W_INSERT_DT**
-* **W_CREATED_BY**
-* **W_UPDATE_DT**
-* **W_UPDATED_BY**
+* **Id**: Unique identifier for the opportunity record.
+* **IsDeleted**: Boolean flag indicating if the record has been deleted.
+* **AccountId**: Unique identifier linking to the associated account/organization.
+* **RecordTypeId**: Identifier for the type of opportunity record.
+* **IsPrivate**: Boolean flag indicating if the opportunity is private.
+* **Name**: Name of the opportunity.
+* **StageName**: Current stage name of the opportunity.
+* **Amount**: Financial amount associated with the opportunity.
+* **Probability**: Probability percentage of winning the opportunity.
+* **ExpectedRevenue**: Calculated expected revenue based on amount and probability.
+* **TotalOpportunityQuantity**: Total quantity associated with the opportunity.
+* **Type**: Type classification of the opportunity.
+* **LeadSource**: Source of the opportunity lead.
+* **IsClosed**: Boolean flag indicating if the opportunity is closed.
+* **IsWon**: Boolean flag indicating if the opportunity was won.
+* **ForecastCategory**: Category for forecasting purposes.
+* **ForecastCategoryName**: Name of the forecast category.
+* **CampaignId**: Identifier linking to associated campaign.
+* **HasOpportunityLineItem**: Boolean flag indicating if opportunity has line items.
+* **Pricebook2Id**: Identifier linking to associated pricebook.
+* **OwnerId**: Identifier of the opportunity owner.
+* **CreatedById**: Identifier of user who created the record.
+* **LastModifiedById**: Identifier of user who last modified the record.
+* **SystemModstamp**: System timestamp of last modification.
+* **LastActivityDate**: Date of last activity on the opportunity.
+* **FiscalQuarter**: Fiscal quarter of the opportunity.
+* **FiscalYear**: Fiscal year of the opportunity.
+* **Fiscal**: Fiscal period information.
+* **ContactId**: Identifier linking to associated contact.
+* **LastViewedDate**: Date the record was last viewed.
+* **LastReferencedDate**: Date the record was last referenced.
+* **ContractId**: Identifier linking to associated contract.
+* **HasOpenActivity**: Boolean flag indicating if there are open activities.
+* **HasOverdueTask**: Boolean flag indicating if there are overdue tasks.
+* **Account_Implementing_Partner__c**: Implementing partner account information.
+* **Account_Responsible_Party__c**: Responsible party account information.
+* **CPD_Outcome_Primary__c**: Primary Country Programme Document outcome.
+* **CPD_Output_Primary__c**: Primary Country Programme Document output.
+* **Change_Opportunity_Type__c**: Field tracking opportunity type changes.
+* **Closed_Reason_NonFunding__c**: Reason for closure for non-funding opportunities.
+* **Closed_Reason__c**: General reason for opportunity closure.
+* **Create_a_New_Opportunity__c**: Field related to new opportunity creation.
+* **I_am_in_the_Owners_Initiative_Region__c**: Boolean indicating regional ownership match.
+* **I_am_in_the_Owners_Region__c**: Boolean indicating regional ownership match.
+* **Include_on_Funding_Pipeline__c**: Boolean for inclusion in funding pipeline.
+* **Managing_Department__c**: Department managing the opportunity.
+* **Next_Opportunity_Review_Date__c**: Date of next scheduled review.
+* **Opp_Name_Text__c**: Text version of opportunity name.
+* **Opportunity_ID__c**: Custom opportunity identifier.
+* **Opportunity_Lead_Name__c**: Name of opportunity lead.
+* **Partnership_Strategy__c**: Strategy for partnership development.
+* **Project_ID__c**: Associated project identifier.
+* **Project_Type__c**: Type classification of project.
+* **Targeted_Countries__c**: Countries targeted by the opportunity.
+* **Thematic_Area_Programmatic_Area__c**: Thematic or programmatic area classification.
+* **Thematic_TeamV2__c**: Updated thematic team assignment.
+* **UNDP_Signature_Solution__c**: UNDP signature solution classification.
+* **Opportunity_Development_Total_Cost__c**: Total cost of opportunity development.
+* **Target_Fund_Next_Year__c**: Target funding for next year.
+* **Target_Funding_Future_Years__c**: Target funding for future years.
+* **Total_Funding_This_Year__c**: Total funding for current year.
+* **Total_Target_Funding__c**: Total target funding amount.
+* **CPD_YR1__c**: Country Programme Document Year 1 data.
+* **CPD_YR2__c**: Country Programme Document Year 2 data.
+* **CPD_YR3__c**: Country Programme Document Year 3 data.
+* **CPD_YR4__c**: Country Programme Document Year 4 data.
+* **CPD_YR5__c**: Country Programme Document Year 5 data.
+* **Contact_List_Rollup__c**: Rolled up list of contacts.
+* **Stage_Modified_Date__c**: Date of last stage modification.
+* **Expected_Agreement_Duration__c**: Expected duration of agreement.
+* **Expected_Agreement_Start__c**: Expected start date of agreement.
+* **Organization_Subtype__c**: Subtype classification of organization.
+* **Exploratory_Type_Change_Date__c**: Date of exploratory type change.
+* **Day_of_the_Month__c**: Day of month field.
+* **Department_Name__c**: Name of department.
+* **Opportunity_Name__c**: Custom opportunity name field.
+* **Ultimate_Parent_Organization__c**: Ultimate parent organization name.
+* **Ultimate_Parent_ID__c**: Identifier of ultimate parent organization.
+* **Organisation_Subtype__c**: Subtype of organization.
+* **Opp_Team_List__c**: List of team members.
+* **Target_Countries_List_255__c**: List of target countries (255 char limit).
+* **Cloned_record__c**: Boolean indicating if record is cloned.
+* **Add_Supporting_Thematic_Teams__c**: Field for additional thematic teams.
+* **Organisation_Source__c**: Source of organization data.
+* **W_INSERT_DT**: Warehouse insert date.
+* **W_CREATED_BY**: Warehouse record creator.
+* **W_UPDATE_DT**: Warehouse update date.
+* **W_UPDATED_BY**: Warehouse record updater.
 
 ## Data Export
 
@@ -201,20 +201,27 @@ This approach provides a comprehensive view of both the pipeline's capacity to m
 Pipeline Sizing is calculated as the average of three components:
 
 #### A) Active Pipeline Size (45%)
-- Measures the total discounted value of all pipeline opportunities against average annual delivery.
-- Target: 300% of annual delivery.
+
+This measure the total discounted value of all pipeline opportunities in Pipeline A, B and C and against 300% of the previous year's delivery. The ratio of 300% has been chosen due to the fact that the pipeline is the main source of replenishment of delivery for UNDP. 
+
+In essence, pipeline *is* future delivery, but opportunities typically take 1-2 years to be signed and another 1-2 years to be delivered. 
+
 
 #### B) Total value of resources mobilized (45%)
-- Calculates the total value of resources mobilized from signed opportunities YTD
-- resources mobilized / delivery from previous year
-- THis will have to be looked against the delivery trendline from previous year. 
-- Rate  = subindicator score 
+
+
+This component measures the total value of resources that have been mobilized from signed opportunities in the current year-to-date (YTD). The calculation takes the ratio of resources mobilized to the previous year's delivery amount. This ratio is then evaluated against the delivery trendline from the previous year to provide context for the current year's performance. The resulting rate directly determines the subindicator score.
+
+For example, if an office mobilized $10M in resources YTD and had $8M in delivery the previous year, their ratio would be 125%. This ratio would then be compared to their historical delivery trends to determine if they are on track to meet their resource mobilization targets. The final score reflects how well they are maintaining or growing their resource base relative to delivery needs.
 
 
 #### C) Average Project Size (10%) 
-- Compares the current average size of pipeline opportunities to the previous year's average
-- Baseline is to grow the median project size each year 
-- 100% positive score if its growing, negative score if its lower than last year average based on the ratio of this year to last year. 
+
+This component evaluates the growth in typical project size by comparing the median size of current pipeline opportunities to the previous year's median. We specifically use the median rather than the mean project size because the median is more resistant to being skewed by extremely large projects. This provides a more accurate representation of the "typical" project size that offices are pursuing, as a few very large projects could artificially inflate an average-based metric.
+
+The baseline expectation is for offices to grow their median project size year over year, which encourages a gradual shift toward larger, more strategic interventions while maintaining a diverse portfolio. This growth in project size often indicates increased donor confidence and improved operational capacity to manage larger initiatives.
+
+The scoring is straightforward: if the current year's median project size exceeds the previous year's median, the office receives a full 100% score for this component. If the median size has decreased, the score is calculated as the ratio of the current year's median to the previous year's median, expressed as a percentage. For example, if the median project size fell from $1M to $800K, the score would be 80%.
 
 
 ### Part 2: Pipeline Health (30%)
@@ -222,9 +229,9 @@ Pipeline Sizing is calculated as the average of three components:
 Pipeline Health is assessed through three components:
 
 #### A) Opportunity Age (40%)
-- Measures the average age of opportunities in the pipeline.
-- Older is worse. 
+The average age of opportunities in the pipeline is a critical metric in pipeline health. In CRM systems, opportunity age helps identify stagnation and potential issues in the sales or resource mobilization process. Opportunities that remain in the pipeline for extended periods often indicate either unrealistic prospects or insufficient follow-up, both of which can waste organizational resources and provide inaccurate forecasting data.
 
+For UNDP's pipeline management, we measure the average age of all opportunities, with newer opportunities receiving higher scores. This scoring approach reflects the understanding that healthy pipelines maintain a steady flow of opportunities moving through various stages. The scoring system is structured as follows:
 
 | Months       | Score   |
 |--------------|---------|
@@ -233,17 +240,33 @@ Pipeline Health is assessed through three components:
 | 18 to 24    | 50/100  |
 | Above 24     | 25/100  |
 
-If there are no opportunities in the pipeline, the score is 0/100. 
+Opportunities less than 12 months old receive a perfect score of 100/100, recognizing that most viable opportunities should progress to signing or closure within a year. Opportunities between 12-18 months receive 75/100, while those between 18-24 months score 50/100. Any opportunities remaining in the pipeline beyond 24 months receive only 25/100, signaling a need for review or removal. In cases where an operating unit has no opportunities in their pipeline, they receive a score of 0/100, reflecting the critical importance of maintaining an active opportunity pipeline.
 
 
 #### B) Opportunity Activity (40%)
-- Calculates the percentage of opportunities updated within a specified recent period.
-- % of opportunities updated in the last 3 months - % score of B
+Opportunity Activity measures how frequently pipeline opportunities are being reviewed and updated, which is a key indicator of active pipeline management. Regular updates demonstrate that opportunities are being actively monitored and pursued rather than sitting dormant in the system.
+
+The calculation is straightforward:
+- First, we identify all opportunities that have been updated within the last 3 months
+- Then, we calculate what percentage these recently updated opportunities represent of the total pipeline
+- This percentage directly translates to the score (e.g. if 75% of opportunities were updated in the last 3 months, the score is 75/100)
+
+For example, if an office has 20 total opportunities and 15 of them were updated in the last 3 months, their Opportunity Activity score would be 75/100.
+
+Updates include any modifications to the opportunity record, not just a change in the pipeline stage. For example:
+
+- Changes to expected value
+- Modifications to expected signing date
+- New notes or attachments
+- Status changes between pipeline stages
+
 
 #### C) Early Stage Capture Rate (20%)
-- Measures the percentage of signed opportunities that were initially created in Pipeline C + Initial: Exploratory Opportunity (this is merged to be called Pipeline C)
-- This could also be gamed by moving it to Pipeline C and then quickly moving it to Pipeline B, then pipeline A, then signed. 14 days is the threshold for this. 
-- Encourages early capture of opportunities to improve forecasting and cross-country collaboration.
+The Early Stage Capture Rate measures how effectively offices are identifying and tracking potential opportunities from their earliest stages. Specifically, it calculates the percentage of successfully signed opportunities that were initially created in Pipeline C (also known as "Initial: Exploratory Opportunity"). This metric is crucial for UNDP's organizational forecasting and resource planning.
+
+For example, if an office signs 10 projects in a year, and 7 of those projects were originally captured and tracked from Pipeline C stage, their Early Stage Capture Rate would be 70%. To prevent gaming of this metric, opportunities must remain in Pipeline C for at least 14 days before progressing through subsequent pipeline stages (Pipeline B, Pipeline A, and finally Signed). This minimum duration requirement ensures that opportunities are genuinely being identified and managed from their early stages, rather than being artificially pushed through the pipeline stages.
+
+Early identification and tracking of opportunities is vital for UNDP's organizational effectiveness. When opportunities are captured early, it enables better resource planning, more accurate financial forecasting, and increased potential for cross-country collaboration. Early tracking allows country offices to share information about emerging opportunities, potentially leading to multi-country initiatives or knowledge sharing that strengthens project design. Additionally, comprehensive early-stage pipeline data helps UNDP leadership make more informed decisions about resource allocation and strategic priorities across the organization.
 
  
 

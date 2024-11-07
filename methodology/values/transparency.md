@@ -10,29 +10,52 @@ We will need to make some note that this is measuring project at the Quantum pro
 
 # Data
 
+The Transaprency dashboard measures the completeness of the project and task data for each country office. 
+
+The project-level and task-leveldata measured is: 
+
+- Projects with short title
+- Projects without description
+- Project with short description
+- Projects without IP
+- Projects without Prodoc
+- Projects without type
+- Wrong project structure
+- Task with short title
+- Tasks without descriptions
+- Tasks with short description
+- Tasks without gender marker
+- Tasks without indicators
+- Tasks without 2023 actuals (note that this is not used in the Performance App)
+- Tasks not linked to CPDs
+- Tasks without location
+- Tasks without SDG
+- Tasks without OECD Sector
 
 
 ## Calculation of Scoring
 
+### Global Scoring
 
-- For Global: % of green projects = the % score. 
-- For Country Offices: The % of green 
+This is divided into two parts:
 
+1. % of projects fully compliant with transparency requirements
+2. % of tasks fully compliant with transparency requirements
 
-We could do a project (50%) and task (50%) split.
+Each worth 50% of the total score. 
 
-So for each unit, we count the number of projects that have no project missing stuff vs missing and the ratio is the score.
+### Country Office Scoring
 
-One option for task:
-Then do the same thing for the project that are missing tasks and not missing tasks and the ratio is the score.
+This is the same as the global scoring but only for the country office. 
 
-Second option for task:
+1. % of projects fully compliant with transparency requirements
+2. % of tasks fully compliant with transparency requirements
 
-Just sum up all the tasks, and see which are compliant and which are not. The ratio is the score at the coutry lvel. 
+Each worth 50% of the total score. 
 
-Then we take a weighted average of the two.
+### Task Scoring
 
-
+For tasks, we will do a simple count of the number of tasks that are fully compliant vs not fully compliant. And the ratio is the score.
 
 
 ## Traffic Light System
@@ -43,6 +66,10 @@ Then we take a weighted average of the two.
 | Yellow        | 50-79   |
 | Red           | <50   |
 
+
+## Resources
+
+- [UNDP Transparency Dashboard](https://app.powerbi.com/groups/me/reports/13f61f77-445a-498e-a655-97a2e2e85656/ReportSection961f155d2418234cdc09?experience=power-bi) (Note that this is not public)
 
 
 

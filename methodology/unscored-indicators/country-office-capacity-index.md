@@ -34,9 +34,11 @@ The Indicators available within each of the key areas for Country Offices are:
 
 Each of the indicators is scored and then weighed up to be for the key area and then the five key areas are averaged out to get a score out of a hundred. 
 
-* High Capacity: 80+
-* Medium-High Capacity: 65 to <80
-* Medium-Low Capacity: 50 to <65
-* Low Capacity: <50
+| Capacity Level | Score Range |
+|---------------|-------------|
+| High Capacity | 80+ |
+| Medium-High Capacity | 65 to <80 |
+| Medium-Low Capacity | 50 to <65 |
+| Low Capacity | <50 |
 
 

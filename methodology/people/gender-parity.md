@@ -1,6 +1,6 @@
 # Gender Parity
 
-<table data-header-hidden><thead><tr><th width="289"></th><th></th></tr></thead><tbody><tr><td>Data Owner</td><td>Siddharth Pawar (<a href="mailto:siddharth.pawar@undp.org">siddharth.pawar@undp.org</a>), OHR</td></tr><tr><td>Availability in Data Warehouse</td><td>Available</td></tr><tr><td>Data Refresh Rate</td><td>Daily</td></tr><tr><td>Accountability Weighted Scoring</td><td></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="289"></th><th></th></tr></thead><tbody><tr><td>Data Owner</td><td>Siddharth Pawar (<a href="mailto:siddharth.pawar@undp.org">siddharth.pawar@undp.org</a>), OHR</td></tr><tr><td>Availability in Data Warehouse</td><td>Available</td></tr><tr><td>Data Refresh Rate</td><td>Daily</td></tr><tr><td>People Weighted Scoring</td><td></td></tr></tbody></table>
 
 ## Introduction
 

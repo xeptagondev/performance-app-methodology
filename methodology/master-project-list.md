@@ -12,7 +12,7 @@ For instance, this enables the Performance App to show the list of projects that
 
 <figure><img src="../.gitbook/assets/Project list linked to CPD.png" alt=""><figcaption><p>Example: List of projects linked to Outcome 1</p></figcaption></figure>
 
-## Available Data&#x20;
+## Available Data
 
 To create a reliable master project list, UNDP leverages multiple datasets that contain project-related information:
 

@@ -44,6 +44,10 @@ This is divided into two parts:
 
 Each worth 50% of the total score. 
 
+### Bureau Scoring
+
+For the bureaus, we follow the same approach as the global scoring but only for the bureaus. So this is not the average score of each of the country offices within the bureua, but rather the % of projects and tasks that are fully compliant with transparency requirements across all the country offices within the bureau. 
+
 ### Country Office Scoring
 
 This is the same as the global scoring but only for the country office. 

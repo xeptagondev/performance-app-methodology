@@ -1,59 +1,42 @@
 # Country Office Capacity Index
 
-Identifying Country Offices (COs) struggling with capacity challenges allows leaders to prioritize which offices need additional support. This is particularly crucial for low-capacity offices implementing high-risk projects and portfolios. The CO Capacity Index was developed for the Performance App as part of an initiative to identify high-risk projects within the organization. It combines performance across five indicators in the app: % achievement of IRRF targets, delivery, last CO audit rating, Integrated Financial Dashboard (IFD) rating, and vacancy rate. Each CO is classified as low, medium-low, medium-high, or high capacity based on its performance in these five indicators. This index will be tested during the pilot rollout of the Performance App and adjusted over time to meet the organization’s needs.
+Identifying Country Offices (COs) struggling with capacity challenges allows leaders to prioritize which offices need additional support. This is particularly crucial for low-capacity offices implementing high-risk projects and portfolios. The CO Capacity Index was developed for the Performance App as part of an initiative to identify high-risk projects within the organization. It combines performance across the five key areas of the Performance App: 
 
-The Capacity Index score is based on the following metrics:
+1. Impact
+2. Accountability
+3. Efficiency
+4. Values
+5. People
 
-1. OAI Rating
-2. IFD Rating
-3. Delivery Rate
-4. Vacancy Rate
-5. IRRF
+Each CO is classified as low, medium-low, medium-high, or high capacity based on its performance in these five key areas. 
 
-Each metric is scored up to 20 points, which are then averaged to produce a final score out of 20, representing the official CO Capacity Index score.
+The Indicators available within each of the key areas for Country Offices are:
 
-**OAI Rating:**
-
-* Fully Satisfactory = 20
-* Satisfactory / Some Improvements Needed = 15
-* Partially Satisfactory / Major Improvements Needed = 10
-* Unsatisfactory = 0
-
-**IFD Rating:**
-
-* Acclaim = 20
-* Satisfactory = 17
-* Concern = 8
-* Critical = 0
-
-**Delivery:**
-
-* Met or Exceeded Target = 20
-* Above 95% of Target = 15
-* Above 85% of Target = 10
-* Below 85% of Target = 5
-
-**Engagement Rate:**
-
-* Above 80 Engagement Score = 20
-* Between 75 to 79 Engagement Score = 17
-* Between 70 to 74 Engagement Score = 15
-* Between 60 to 69 Engagement Score = 12
-* Below 60 Engagement Score = 8
+| Key Area | Indicator | Weight |
+|------|-----------|--------|
+| Impact | IRRF | 50% |
+| Impact | CPD | 50% |
+| Accountability | Performance Audit | 30% |
+| Accountability | IFD | 40% |
+| Accountability | PQA | 30% |
+| Efficiency | Delivery | 30% |
+| Efficiency | Contributions | 40% |
+| Efficiency | Institutional Resources | 30% |
+| Values | Greening Moonshot | 50% |
+| Values | SESP | 50% |
+| People | Turnover Rate | 30% |
+| People | Gender Parity | 40% |
+| People | Engagement Rate | 30% |
 
 
-**IRRF:**
-
-* Met or Exceeded Target = 20
-* Above 95% = 17
-* Between 85% to 95% = 12
-* Below 85% = 8
 
 **Total Calculations:**
 
-* High Capacity: 16+
-* Medium-High Capacity: 13 to <16
-* Medium-Low Capacity: 11 to <13
-* Low Capacity: <11
+Each of the indicators is scored and then weighed up to be for the key area and then the five key areas are averaged out to get a score out of a hundred. 
 
-The final score is normalized to 100.
+* High Capacity: 80+
+* Medium-High Capacity: 65 to <80
+* Medium-Low Capacity: 50 to <65
+* Low Capacity: <50
+
+

@@ -10,6 +10,7 @@ description: These are all the updates made to the Performance App for each mont
 * Implemented Bureau page scoring
 * Enabled dynamic audit recommendation data retrieval from the data cube
 * Updated [Country Office Capacity Index methodology](methodology/unscored-indicators/country-office-capacity-index.md) to take into account all available indicators
+• Updated CPD 2024 data
 
 ### January
 * Updated [IRRF](methodology/impact/irrf.md) methodology

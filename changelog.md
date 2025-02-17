@@ -4,14 +4,60 @@ description: These are all the updates made to the Performance App for each mont
 
 # Changelog
 
-## SESP
+## 2025
+
+### February
+* Implemented Bureau page scoring
+* Enabled dynamic audit recommendation data retrieval from the data cube
+* Updated [Country Office Capacity Index methodology](methodology/unscored-indicators/country-office-capacity-index.md) to take into account all available indicators
+
+### January
+* Updated [IRRF](methodology/impact/irrf.md) methodology
+* Updated RPD financial data
+* Updated Gender Seal and DFP designs for the Bureau
+* Updated 2025 data
+
+## 2024
+
+### December
+* Developed initial [Pipeline Indicator](methodology/efficiency/pipeline.md)
+* Implemented Bureau Key Area pages
+* Replaced country lookup file with Master Unit List file
+* Implemented RPD indicator
+
+### November
+* Developed Bureau home page
+* Improved mobile responsiveness
+* Implemented Composite Audit Indicator
+* Developed Project Audit Recommendations
+
+### October
+* Updated [CPD](methodology/impact/cpd.md) data from Quantum+
+* Updated [SESP](methodology/values/sesp.md) and [PQA](methodology/accountability/project-quality-assurance.md) based on revised [Master Project List](methodology/master-project-list.md) methodology
+* Updated RR/DRR information
+* Added delivery bar chart with Core/Non-core filter to [Delivery Indicator](methodology/efficiency/delivery.md)
+
+### September
+* Redesigned database to reduce loading time
+* Performed other performance optimizations
+* Updated [Master Project List](methodology/master-project-list.md) methodology
+
+### August
+* Added feedback form
+* Updated [Engagement Index](methodology/people/engagement-index.md) methodology
+* Updated [ICPE](methodology/impact/icpe-scores.md) methodology
+
+### July
+* Added Spanish and French language support using Google Translate
+* Updated [Transparency Index](methodology/values/transparency-index.md) scoring
+* Removed SharePoint list for static text (moved back to code)
+* Updated high-risk projects tracking
 
 ### June
-
-* Moved from file-based data handling to a database.
+* Moved from file-based data handling to a database
 * 50+ smaller changes based on usability audit
-* Started tracking Long Outstanding Audit Recommendation (for [Country Office Audit Indicator)](methodology/accountability/country-office-performance-audits.md)
-* Added scoring to [CPD Indicator ](methodology/impact/cpd.md)
+* Started tracking Long Outstanding Audit Recommendation for [Country Office Audit Indicator](methodology/accountability/country-office-performance-audits.md)
+* Added scoring to [CPD Indicator](methodology/impact/cpd.md)
 * Added live RR/DRR list from OHR
 
 ### May

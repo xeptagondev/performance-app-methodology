@@ -36,9 +36,9 @@ Each of the indicators is scored and then weighed up to be for the key area and 
 
 | Capacity Level | Score Range |
 |---------------|-------------|
-| High Capacity | 80+ |
-| Medium-High Capacity | 65 to <80 |
-| Medium-Low Capacity | 50 to <65 |
-| Low Capacity | <50 |
+| Strong | 80+ |
+| Satisfactory | 65 to <80 |
+| At Risk | 50 to <65 |
+| Concern | <50 |
 
 

@@ -1,10 +1,10 @@
 # Greening Moonshot
 
-<table data-header-hidden><thead><tr><th width="289"></th><th></th></tr></thead><tbody><tr><td>Data Owner</td><td>Anne FernqVist (<a href="mailto:anne.fernqvist@undp.org">anne.fernqvist@undp.org</a>)</td></tr><tr><td>Availability in Data Warehouse</td><td>Available</td></tr><tr><td>Data Refresh Rate</td><td>Daily</td></tr><tr><td>Accountability Weighted Scoring</td><td>30%</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="289"></th><th></th></tr></thead><tbody><tr><td>Data Owner</td><td>Anne Fernqvist (<a href="mailto:anne.fernqvist@undp.org">anne.fernqvist@undp.org</a>)</td></tr><tr><td>Availability in Data Warehouse</td><td>Available</td></tr><tr><td>Data Refresh Rate</td><td>Daily</td></tr><tr><td>Accountability Weighted Scoring</td><td>30%</td></tr></tbody></table>
 
 ## Introduction
 
-[The UNDP Environmental Management Tool (EMT)](https://app.powerbi.com/groups/me/reports/a7ff2749-e24a-4bb8-bb7a-e0147fd7f8df/ReportSection?ctid=b3e5db5e-2944-4837-99f5-7488ace54319\&experience=power-bi) methodology follows international standards like the GHG (GreenHoues Gas) Protocol to measure UNDP's carbon footprint across facilities, vehicles, and travel. The assessment scope includes emissions from activities paid for and controlled by UNDP like office utilities, vehicle fuels, staff travel, etc. It excludes project activities by external entities.UNDP facilities data covers main offices, and other offices are extrapolated based on the number of personnel. Shared offices are prorated based on UNDP's share.
+[The UNDP Environmental Management Tool (EMT)](https://app.powerbi.com/groups/me/reports/a7ff2749-e24a-4bb8-bb7a-e0147fd7f8df/ReportSection?ctid=b3e5db5e-2944-4837-99f5-7488ace54319\&experience=power-bi) methodology follows international standards like the GHG (Greenhouse Gas) Protocol to measure UNDP's carbon footprint across facilities, vehicles, and travel. The assessment scope includes emissions from activities paid for and controlled by UNDP like office utilities, vehicle fuels, staff travel, etc. It excludes project activities by external entities.UNDP facilities data covers main offices, and other offices are extrapolated based on the number of personnel. Shared offices are prorated based on UNDP's share.
 
 The main categories of emissions are:
 

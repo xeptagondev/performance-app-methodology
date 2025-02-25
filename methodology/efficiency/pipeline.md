@@ -202,7 +202,7 @@ Pipeline Sizing is calculated as the average of three components:
 
 #### A) Active Pipeline Size (45%)
 
-This measure the total discounted value of all pipeline opportunities in Pipeline A, B and C and against 300% of the previous year's delivery. The ratio of 300% has been chosen due to the fact that the pipeline is the main source of replenishment of delivery for UNDP. 
+This measure the total discounted value of all pipeline opportunities in Pipeline A, B and C and against 200% of the previous year's delivery. The ratio of 200% has been chosen due to the fact that the pipeline is the main source of replenishment of delivery for UNDP. 
 
 In essence, pipeline *is* future delivery, but opportunities typically take 1-2 years to be signed and another 1-2 years to be delivered. 
 

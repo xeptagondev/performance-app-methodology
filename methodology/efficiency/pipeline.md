@@ -50,9 +50,8 @@ Each pipeline stage has a discount as shown in this table:
 
 This discount applies to the total value of the agreement and the tranches (i.e. payments that will be made from donors to UNDP each year if the agreement is signed) when calculating the potential future cash flows arising from the opportunity. Based on a historical analysis of close rates, we also have "actual" discounts for each pipeline stage that offer a more realistic picture of the likely amount of resources available to UNDP based on the current snapshot of the health of the pipeline. In the future, the policy discounts should be updated to the actual discounts as they become more accurate over time.
 
-**The Performance App will use the actual discounts to calculate the pipeline indicator.**
+**The Performance App will use the policy discounts to calculate the pipeline indicator.**
 
-The actuals will be updated at the start of each year in conjunction with the Unity CRM team. 
 
 
 ## Organisational Objective

@@ -13,16 +13,18 @@ options or ineffective communication channels among employees and management, re
 
 2. **External Turnover:**, involves individuals leaving UNDP entirely to pursue opportunities elsewhere. While this type of turnover can result from a range of factors – such as better compensation packages offered by competing companies or dissatisfaction with organizational policies and culture – it serves as a vital metric for assessing overall employee engagement, satisfaction, and the effectiveness of the company's retention strategies.
 
-The Performance App, and the OHR dashboards on which it is based, measures both types of turnover, agreegated. 
+The Performance App, and the OHR dashboards on which it is based, measures both types of turnover, aggregated. 
 
-While it is natural for any organization to experience some degree of turnover, there is an optimal level that balances employee retention and fresh perspectives.  The recommended benchmark standard for effective performance is set at 15%, which signifies that UNDP should maintain annual turnover within this range, allowing room for healthy fluctuations while ensuring stability and continuity of operations. 
+While it is natural for any organization to experience some degree of turnover, there is an optimal level that balances employee retention and fresh perspectives. The recommended benchmark standard for effective performance is set at 15%, which signifies that UNDP should maintain annual turnover within this range, allowing room for healthy fluctuations while ensuring stability and continuity of operations. 
 
-Because of the programmatic nature of UNDP's work, a higher turnover than global average is expected as staff and consultants join and leave the organization as programmes start and finish. 
+Because of the programmatic nature of UNDP's work, a higher turnover than global average is expected as staff and consultants join and leave the organization as programmes start and finish. However, it's important to note that this turnover indicator specifically measures staff turnover only - it does not include Service Contractors, Individual Contractors, or other types of contracts. This focus on staff contracts provides a more accurate picture of core organizational stability.
+
+The roles that are included in the Turnover reports are specifically:
+- International Professional Staff (IP)
+- National Professional Staff (NO)
+- General Service Staff (GS)
 
 The goal of managing turnover, therefore, is not to minimize it to zero but rather maintain its level within a healthy benchmark range.
-
-The roles that are included in the Turnover reports are international and national staff contracts. 
-
 
 ## Organisational Objective
 

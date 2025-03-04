@@ -77,15 +77,15 @@ Some project types are exempt from SESP. Here is the full list of project types 
 | Project Type | Eligible / Exempt |
 | ------------ | ----------------- |
 | DEVEF        | Exempt            |
-| DEVT         | Exempt            |
+| DEVT         | Eligible            |
 | ENGMT        | Eligible          |
-| FCORE        | Exempt            |
-| FNONC        | Exempt            |
-| FPART        | Exempt            |
+| FCORE        | Eligible            |
+| FNONC        | Eligible            |
+| FPART        | Eligible            |
 | GLO          | Eligible          |
 | INT          | Exempt            |
 | MGMT         | Exempt            |
-| MSA          | Exempt            |
+| MSA          | Eligible            |
 | PROJM        | Exempt            |
 | RAF          | Eligible          |
 | RAP          | Eligible          |
@@ -99,6 +99,8 @@ Some project types are exempt from SESP. Here is the full list of project types 
 | UNC          | Exempt            |
 | UNV          | Exempt            |
 | CNT          | Eligible          |
+
+
 
 ### Project Statuses
 

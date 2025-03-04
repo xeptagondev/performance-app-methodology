@@ -30,6 +30,36 @@ Downloading the data from the UNDP Data Warehouse, provides a CSV file with the 
 4. **Pending**
 5. **Ongoing**
 
+### Project Types
+
+Some project types are exempt from PQA. Here is the full list of project types in the Data Warehouse and whether they are eligible or exempt from PQA. 
+
+| Project Type | Eligible / Exempt |
+| ------------ | ----------------- |
+| DEVEF        | Exempt            |
+| DEVT         | Exempt            |
+| ENGMT        | Exempt          |
+| FCORE        | Exempt            |
+| FNONC        | Exempt            |
+| FPART        | Exempt            |
+| GLO          | Eligible          |
+| INT          | Exempt            |
+| MGMT         | Exempt            |
+| MSA          | Exempt            |
+| PROJM        | Exempt            |
+| RAF          | Eligible          |
+| RAP          | Eligible          |
+| RAS          | Eligible          |
+| REC          | Eligible          |
+| RLA          | Eligible          |
+| RMCOR        | Exempt            |
+| RMFLC        | Exempt            |
+| RMPLC        | Exempt            |
+| SSC          | Eligible          |
+| UNC          | Exempt            |
+| UNV          | Exempt            |
+| CNT          | Eligible          |
+
 ## Calculation Methodology
 
 1. **Filtering by Bureau**: Initially, we select projects that are part of specific bureaus, namely "RBA," "RBAP," "RBAS," "RBLAC," "CB," "BPPS," and "RBEC."

@@ -45,6 +45,7 @@
   * [Turnover Rate](methodology/people/turnover-rate.md)
   * [Vacancy Rate](methodology/people/vacancy-rate.md)
   * [Gender Parity](methodology/people/gender-parity.md)
+  * [Well-Being Index](methodology/people/well-being-index.md)
   * [Engagement Index](methodology/people/engagement-index.md)
 
 ## SOP

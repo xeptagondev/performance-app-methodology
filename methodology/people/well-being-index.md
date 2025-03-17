@@ -60,6 +60,3 @@ This system allows for quick identification of areas that are performing well (g
 
 - [UNDP Well-being Service Offer](https://undp.sharepoint.com/teams/OHR-Portal/SitePages/Staff-Wellbeing/Service-Offer.aspx) - The UNDP Well-being Team offers a suite of services aligned with the UN System Workplace Mental Health and Well-being Strategy, designed to enhance mental health and well-being for all UNDP personnel. These services are informed by best practices in workplace mental health and aim to foster resilience in both personal and professional life.
 - **Well-being Team Contact**: <a href="mailto:oshw.focalpoint@undp.org">oshw.focalpoint@undp.org</a> - For accessing confidential counselling services, crisis intervention, referral services, workshops, and team mental health support.
-- UNDP Well-being Framework
-- Engagement Survey Resources
-- UN System Workplace Mental Health and Well-being Strategy

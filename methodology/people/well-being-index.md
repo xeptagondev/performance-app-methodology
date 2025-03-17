@@ -12,7 +12,6 @@
 
 The Well-Being Index is a critical measure of employee wellness and satisfaction within UNDP. It provides insights into how employees perceive their overall well-being in the workplace, which directly impacts productivity, engagement, and retention. The index is composed of five key components: Care, Belonging, Workload, Recognition, and Respect, each representing essential aspects of workplace well-being.
 
-The Well-Being Index serves as one of the four key indicators in the People pillar, accounting for 30% of the overall People pillar score, alongside Engagement (30%), Gender Parity (20%), and Turnover (20%).
 
 ## Organisational Objective
 

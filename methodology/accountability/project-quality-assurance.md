@@ -34,31 +34,31 @@ Downloading the data from the UNDP Data Warehouse, provides a CSV file with the 
 
 Some project types are exempt from PQA. Here is the full list of project types in the Data Warehouse and whether they are eligible or exempt from PQA. 
 
-| Project Type | Eligible / Exempt |
-| ------------ | ----------------- |
-| DEVEF        | Exempt            |
-| DEVT         | Exempt            |
-| ENGMT        | Exempt          |
-| FCORE        | Exempt            |
-| FNONC        | Exempt            |
-| FPART        | Exempt            |
-| GLO          | Eligible          |
-| INT          | Exempt            |
-| MGMT         | Exempt            |
-| MSA          | Exempt            |
-| PROJM        | Exempt            |
-| RAF          | Eligible          |
-| RAP          | Eligible          |
-| RAS          | Eligible          |
-| REC          | Eligible          |
-| RLA          | Eligible          |
-| RMCOR        | Exempt            |
-| RMFLC        | Exempt            |
-| RMPLC        | Exempt            |
-| SSC          | Eligible          |
-| UNC          | Exempt            |
-| UNV          | Exempt            |
-| CNT          | Eligible          |
+| Code  | Atlas Project Type                   | Current Project Type               | Eligibility |
+|-------|--------------------------------------|-------------------------------------|-------------------|
+| CNT   | Country Development Project          | Development Project                 | Eligible          |
+| DEVEF | Development Effectiveness            | Development Effectiveness Project   | Exempt            |
+| DEVT  | Development Project Proposal         | Project Initiation Plan             | Exempt            |
+| ENGMT | Engagement Facility                  | Engagement Facility                 | Exempt            |
+| FCORE | Fully Funded by Core Resources       | Development Project                 | Eligible          |
+| FNONC | Fully Funded by Single Donor         | Development Project                 | Eligible          |
+| FPART | Partially Funded (Multi Donor)       | Development Project                 | Eligible          |
+| GLO   | Global Project                       | Development Project                 | Eligible          |
+| INT   | Initiation Plan                      | Project Initiation Plan             | Exempt            |
+| MGMT  | Management Project                   | Management Project                  | Exempt            |
+| MSA   | Management Service Agreement         | Development Services Project        | Exempt            |
+| PROJM | Program Management                   | Program Management Project          | Exempt            |
+| RAF   | Regional Project Africa              | Development Project                 | Eligible          |
+| RAP   | Regional Project Asia Pacific        | Development Project                 | Eligible          |
+| RAS   | Regional Project Arab States         | Development Project                 | Eligible          |
+| REC   | Regional Project Europe & CIS        | Development Project                 | Eligible          |
+| RLA   | Regional Project LAC                 | Development Project                 | Eligible          |
+| RMCOR | Core Regular                         | Development Project                 | Exempt            |
+| RMFLC | Fully Funded by Local Cost           | Development Project                 | Exempt            |
+| RMPLC | Partially Funded by Local Cost       | Development Project                 | Exempt            |
+| SSC   | Multi Country Project/SSC Proj       | Development Project                 | Eligible          |
+| UNC   | UN Coordination                      | Management Project                  | Exempt            |
+| UNV   | United Nations Volunteers            | Management Project                  | Exempt            |
 
 ## Calculation Methodology
 

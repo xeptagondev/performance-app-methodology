@@ -74,7 +74,7 @@ Because in the SESP dataset a project appears as a row in each year it is active
 
 Projects are categorized as Eligible or Exempt from SESP requirements based on their type:
 
-| Code  | Atlas Project Type                   | Current Project Type               | Eligible / Exempt |
+| Code  | Atlas Project Type                   | Current Project Type               | Eligibility |
 |-------|--------------------------------------|-------------------------------------|-------------------|
 | CNT   | Country Development Project          | Development Project                 | Eligible          |
 | CNT   | Country Projects (AWP)               | Development Project                 | Eligible          |

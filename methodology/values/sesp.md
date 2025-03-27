@@ -72,35 +72,37 @@ Because in the SESP dataset a project appears as a row in each year it is active
 
 ### Project Types
 
-Some project types are exempt from SESP. Here is the full list of project types in the Data Warehouse and whether they are eligible or exempt from SESP. 
+Some project types are exempt from SESP. Eligibility is determined by the `isSESP_Required` flag where:
+- 1 = Eligible (requires SESP)
+- 0 = Exempt (does not require SESP)
 
-| Project Type | Eligible / Exempt |
-| ------------ | ----------------- |
-| DEVEF        | Exempt            |
-| DEVT         | Eligible            |
-| ENGMT        | Eligible          |
-| FCORE        | Eligible            |
-| FNONC        | Eligible            |
-| FPART        | Eligible            |
-| GLO          | Eligible          |
-| INT          | Exempt            |
-| MGMT         | Exempt            |
-| MSA          | Eligible            |
-| PROJM        | Exempt            |
-| RAF          | Eligible          |
-| RAP          | Eligible          |
-| RAS          | Eligible          |
-| REC          | Eligible          |
-| RLA          | Eligible          |
-| RMCOR        | Exempt            |
-| RMFLC        | Exempt            |
-| RMPLC        | Exempt            |
-| SSC          | Eligible          |
-| UNC          | Exempt            |
-| UNV          | Exempt            |
-| CNT          | Eligible          |
-
-
+| ProjectType                                | Code  | Atlas Project Type                   | Current Project Type               | isSESP_Required |
+|--------------------------------------------|-------|--------------------------------------|-------------------------------------|-----------------|
+| CNT - Country Development Project          | CNT   | Country Development Project          | Development Project                 | 1               |
+| CNT - Country Projects (AWP)               | CNT   | Country Projects (AWP)               | Development Project                 | 1               |
+| DEVEF - Development Effectiveness          | DEVEF | Development Effectiveness            | Development Effectiveness Project   | 0               |
+| DEVT - Development Project Proposal        | DEVT  | Development Project Proposal         | Project Initiation Plan             | 1               |
+| DSERV - Development Service                | DSERV | Development Service                  | Development Services Project        | 1               |
+| ENGMT - Engagement Facility                | ENGMT | Engagement Facility                  | Engagement Facility                 | 1               |
+| ENGMT - Engagement Project                 | ENGMT | Engagement Project                   | Engagement Facility                 | 1               |
+| FCORE - Fully Funded by Core Resources     | FCORE | Fully Funded by Core Resources       | Development Project                 | 1               |
+| FNONC - Fully Funded by Single Donor       | FNONC | Fully Funded by Single Donor         | Development Project                 | 1               |
+| FPART - Partially Funded (Multi Donor)     | FPART | Partially Funded (Multi Donor)       | Development Project                 | 1               |
+| GLO - Global Project                       | GLO   | Global Project                       | Development Project                 | 1               |
+| INT - Initiation Plan                      | INT   | Initiation Plan                      | Project Initiation Plan             | 1               |
+| MGMT - Instit Effect/Mngmt Project         | MGMT  | Instit Effect/Mngmt Project          | Institutional Effectiveness Project | 0               |
+| MGMT - Management Project                  | MGMT  | Management Project                   | Management Project                  | 0               |
+| MSA - Memo for Provision of Services       | MSA   | Memo for Provision of Services       | Development Services Project        | 1               |
+| MSA - Management Service Agreement         | MSA   | Management Service Agreement         | Development Services Project        | 1               |
+| RAF - Regional Project Africa              | RAF   | Regional Project Africa              | Development Project                 | 1               |
+| RAP - Regional Project Asia Pacific        | RAP   | Regional Project Asia Pacific        | Development Project                 | 1               |
+| RAS - Regional Project Arab States         | RAS   | Regional Project Arab States         | Development Project                 | 1               |
+| REC - Regional Project Europe & CIS        | REC   | Regional Project Europe & CIS        | Development Project                 | 1               |
+| RLA - Regional Project LAC                 | RLA   | Regional Project LAC                 | Development Project                 | 1               |
+| SSC - Multi-Country Project/SSC Proj       | SSC   | Multi Country Project/SSC Proj       | Development Project                 | 1               |
+| SSC - South-South Cooperation              | SSC   | Multi Country Project/SSC Proj       | Development Project                 | 1               |
+| UNC - UN Coordination                      | UNC   | UN Coordination                      | Management Project                  | 0               |
+| UNV - United Nations Volunteers            | UNV   | United Nations Volunteers            | Management Project                  | 0               |
 
 ### Project Statuses
 
@@ -136,7 +138,7 @@ This has not yet been defined.
 
 ### Scoring data
 
--- **Business Unit**: The name of the country office or business unit
+- **Business Unit**: The name of the country office or business unit
 - **3 letter ISO Code**: The ISO code of the country, if applicable.
 - **Bureau**: The Bureau of the Country Office, if applicable.
 - **Ongoing Projects**: The number of ongoing projects within the business unit

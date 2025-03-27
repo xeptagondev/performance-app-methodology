@@ -114,7 +114,7 @@ The statuses are:
 * Submit for Operational Close 
 * Submitted for Financial close
 
-The only project status that we consider is `On Going` for the purpouses of calculating the % of SESP completion for UNDP as a whole or any business unit within UNDP. 
+The only project status that we consider is `On Going` for the purpouse of calculating the % of SESP completion for UNDP as a whole or any business unit within UNDP. 
 
 ### SESP Statuses
 
@@ -164,7 +164,7 @@ Once we have done this, we can calculate the completion rate using the following
 Number of Projects with Completed SESP / Number of Total Projects with Completed + Pending SESP **= Completion Rate.**
 
 {% hint style="info" %}
-This calculation counnts the `Pending` status as "incomplete'.
+This calculation counts the `Pending` status as "incomplete'.
 {% endhint %}
 
 The Completion Rate (i.e. 75%) is then the score for this indicator. 

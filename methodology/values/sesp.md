@@ -74,33 +74,33 @@ Because in the SESP dataset a project appears as a row in each year it is active
 
 Projects are categorized as Eligible or Exempt from SESP requirements based on their type:
 
-| ProjectType                                | Code  | Atlas Project Type                   | Current Project Type               | Eligible / Exempt |
-|--------------------------------------------|-------|--------------------------------------|-------------------------------------|-------------------|
-| CNT - Country Development Project          | CNT   | Country Development Project          | Development Project                 | Eligible          |
-| CNT - Country Projects (AWP)               | CNT   | Country Projects (AWP)               | Development Project                 | Eligible          |
-| DEVEF - Development Effectiveness          | DEVEF | Development Effectiveness            | Development Effectiveness Project   | Exempt            |
-| DEVT - Development Project Proposal        | DEVT  | Development Project Proposal         | Project Initiation Plan             | Eligible          |
-| DSERV - Development Service                | DSERV | Development Service                  | Development Services Project        | Eligible          |
-| ENGMT - Engagement Facility                | ENGMT | Engagement Facility                  | Engagement Facility                 | Eligible          |
-| ENGMT - Engagement Project                 | ENGMT | Engagement Project                   | Engagement Facility                 | Eligible          |
-| FCORE - Fully Funded by Core Resources     | FCORE | Fully Funded by Core Resources       | Development Project                 | Eligible          |
-| FNONC - Fully Funded by Single Donor       | FNONC | Fully Funded by Single Donor         | Development Project                 | Eligible          |
-| FPART - Partially Funded (Multi Donor)     | FPART | Partially Funded (Multi Donor)       | Development Project                 | Eligible          |
-| GLO - Global Project                       | GLO   | Global Project                       | Development Project                 | Eligible          |
-| INT - Initiation Plan                      | INT   | Initiation Plan                      | Project Initiation Plan             | Eligible          |
-| MGMT - Instit Effect/Mngmt Project         | MGMT  | Instit Effect/Mngmt Project          | Institutional Effectiveness Project | Exempt            |
-| MGMT - Management Project                  | MGMT  | Management Project                   | Management Project                  | Exempt            |
-| MSA - Memo for Provision of Services       | MSA   | Memo for Provision of Services       | Development Services Project        | Eligible          |
-| MSA - Management Service Agreement         | MSA   | Management Service Agreement         | Development Services Project        | Eligible          |
-| RAF - Regional Project Africa              | RAF   | Regional Project Africa              | Development Project                 | Eligible          |
-| RAP - Regional Project Asia Pacific        | RAP   | Regional Project Asia Pacific        | Development Project                 | Eligible          |
-| RAS - Regional Project Arab States         | RAS   | Regional Project Arab States         | Development Project                 | Eligible          |
-| REC - Regional Project Europe & CIS        | REC   | Regional Project Europe & CIS        | Development Project                 | Eligible          |
-| RLA - Regional Project LAC                 | RLA   | Regional Project LAC                 | Development Project                 | Eligible          |
-| SSC - Multi-Country Project/SSC Proj       | SSC   | Multi Country Project/SSC Proj       | Development Project                 | Eligible          |
-| SSC - South-South Cooperation              | SSC   | Multi Country Project/SSC Proj       | Development Project                 | Eligible          |
-| UNC - UN Coordination                      | UNC   | UN Coordination                      | Management Project                  | Exempt            |
-| UNV - United Nations Volunteers            | UNV   | United Nations Volunteers            | Management Project                  | Exempt            |
+| Code  | Atlas Project Type                   | Current Project Type               | Eligible / Exempt |
+|-------|--------------------------------------|-------------------------------------|-------------------|
+| CNT   | Country Development Project          | Development Project                 | Eligible          |
+| CNT   | Country Projects (AWP)               | Development Project                 | Eligible          |
+| DEVEF | Development Effectiveness            | Development Effectiveness Project   | Exempt            |
+| DEVT  | Development Project Proposal         | Project Initiation Plan             | Eligible          |
+| DSERV | Development Service                  | Development Services Project        | Eligible          |
+| ENGMT | Engagement Facility                  | Engagement Facility                 | Eligible          |
+| ENGMT | Engagement Project                   | Engagement Facility                 | Eligible          |
+| FCORE | Fully Funded by Core Resources       | Development Project                 | Eligible          |
+| FNONC | Fully Funded by Single Donor         | Development Project                 | Eligible          |
+| FPART | Partially Funded (Multi Donor)       | Development Project                 | Eligible          |
+| GLO   | Global Project                       | Development Project                 | Eligible          |
+| INT   | Initiation Plan                      | Project Initiation Plan             | Eligible          |
+| MGMT  | Instit Effect/Mngmt Project          | Institutional Effectiveness Project | Exempt            |
+| MGMT  | Management Project                   | Management Project                  | Exempt            |
+| MSA   | Memo for Provision of Services       | Development Services Project        | Eligible          |
+| MSA   | Management Service Agreement         | Development Services Project        | Eligible          |
+| RAF   | Regional Project Africa              | Development Project                 | Eligible          |
+| RAP   | Regional Project Asia Pacific        | Development Project                 | Eligible          |
+| RAS   | Regional Project Arab States         | Development Project                 | Eligible          |
+| REC   | Regional Project Europe & CIS        | Development Project                 | Eligible          |
+| RLA   | Regional Project LAC                 | Development Project                 | Eligible          |
+| SSC   | Multi Country Project/SSC Proj       | Development Project                 | Eligible          |
+| SSC   | Multi Country Project/SSC Proj       | Development Project                 | Eligible          |
+| UNC   | UN Coordination                      | Management Project                  | Exempt            |
+| UNV   | United Nations Volunteers            | Management Project                  | Exempt            |
 
 ### Project Statuses
 

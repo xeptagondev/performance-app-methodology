@@ -1,6 +1,6 @@
 # Project Quality Assurance
 
-| Data Owner                      | Alberto Lizzi ([alberto.lizzi@undp.org](mailto:alberto.lizzi@undp.org)) |
+| Data Owner                      | Holly Mergler (holly.mergler@undp.org) HQ/BPPS |
 | ------------------------------- | ----------------------------------------------------------------------- |
 | Availability in Data Warehouse  | Available                                                               |
 | Data Refresh Rate               | Daily                                                                   |

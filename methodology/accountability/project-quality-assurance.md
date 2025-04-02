@@ -12,7 +12,7 @@ Downloading the data from the UNDP Data Warehouse, provides a CSV file with the 
 
 * **OperatingUnit**: Identifies the operational unit associated with the project, indicating the specific geographic or organizational division.
 * **Bureau**: Specifies the bureau within the organization that oversees the project, representing a higher-level administrative grouping.
-* **isActive**: A binary indicator (1 for active, 0 for inactive) showing whether the project is currently active.
+* **isActive**: A binary indicator (1 for active, 0 for inactive) showing whether the project is active in the year. 
 * **Year**: The year associated with the project's data entry, indicating when the project was either initiated or recorded in the system.
 * **isQA\_Eligible**: A binary flag (1 for yes, 0 for no) denoting whether the project is eligible for Quality Assurance (QA) processes.
 * **isQA\_Required**: Another binary flag (1 for yes, 0 for no) indicating whether the project requires QA based on specific criteria or standards.
@@ -21,6 +21,16 @@ Downloading the data from the UNDP Data Warehouse, provides a CSV file with the 
 * **SESP\_Status**: Reflects the current status of the SESP process for the project, with possible values like "Not Monitored," "Pending," or "Completed."
 * **ProjectNum\_Unified**: A unique identifier for each project, allowing for consistent tracking and referencing across different records or databases.
 * **ApprovedDate**: The date and time when the project received approval, formatted as a timestamp, indicating when the project was officially sanctioned.
+
+There will be a new column called "Project Current Status" that can be used to filter the projects that are active as of today:
+
+Will be from these:
+
+* Financially Closed
+* On Going
+* Operationally Closed
+* Submit for Operational Close 
+* Submitted for Financial close
 
 ## PQA Statuses
 
@@ -66,10 +76,14 @@ Some project types are exempt from PQA. Here is the full list of project types i
 2. **Further Filtering for QA Required and Active Projects**: Among the projects filtered by bureau, we apply additional criteria to focus on those that:
    * Are marked as requiring QA (`isQA_Required` == 1), indicating that they must undergo Quality Assurance processes based on predefined standards or conditions.
    * Are marked as eligible for QA (`isQA_Eligible` == 1), indicating that they must undergo Quality Assurance processes based on predefined standards or conditions.
-   * Are currently active (`isActive` == 1), meaning the project is ongoing or has not been concluded or cancelled.
+   * Are currently active (`Project Status` == "Ongoing"), meaning the project is ongoing or has not been concluded or cancelled. // this has been edited.
 3. **Excluding Projects Based on QA Status**: From the filtered set, we further exclude projects with an QA status of `Exepted`, `Not Required` . This exclusion ensures we focus on projects genuinely engaged with the QA process beyond mere administrative categorization, emphasizing those under evaluation or awaiting completion.
 4. **Identifying Unique Projects**: After applying these filters, we count the number of unique projects by their `ProjectNum_Unified` identifier. This final step provides the total count of distinct projects meeting all the specified criteria.
 5. **Define Complete and Incomplete:**
    1. Complete: We considered a PQA as "Complete" if the QA Status is `Complete`and ApprovedDate within the last two years as of today's date.
    2. Incomplete: The sum of `Pending` and `Ongoing` QA statuses as "Incomplete + any projects with `Complete` status that is older than two years as of today's date.
 6. **Calculating QA Completion Rate:** To calculate the completion rate, we need to determine the total number of projects and the proportion of completed projects. The completion rate is usually expressed as a percentage and can be calculated using the following formula: Completion Rate (%) = (Number of Complete Projects / Total Number of Projects) \* 100
+
+## Resources
+
+- [PQA Policy](https://popp.undp.org/policy-page/quality-standards-programming)

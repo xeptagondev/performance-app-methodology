@@ -90,8 +90,8 @@ Projects are categorized as Eligible or Exempt from SESP requirements based on t
 | INT   | Initiation Plan                      | Project Initiation Plan             | Eligible          |
 | MGMT  | Instit Effect/Mngmt Project          | Institutional Effectiveness Project | Exempt            |
 | MGMT  | Management Project                   | Management Project                  | Exempt            |
-| MSA   | Memo for Provision of Services       | Development Services Project        | Eligible          |
-| MSA   | Management Service Agreement         | Development Services Project        | Eligible          |
+| MSA   | Memo for Provision of Services       | Development Services Project        | Exempt          |
+| MSA   | Management Service Agreement         | Development Services Project        | Exempt          |
 | RAF   | Regional Project Africa              | Development Project                 | Eligible          |
 | RAP   | Regional Project Asia Pacific        | Development Project                 | Eligible          |
 | RAS   | Regional Project Arab States         | Development Project                 | Eligible          |

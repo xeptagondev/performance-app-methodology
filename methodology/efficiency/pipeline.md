@@ -197,26 +197,22 @@ This approach provides a comprehensive view of both the pipeline's capacity to m
 
 ### Part 1: Pipeline Sizing (70%)
 
-Pipeline Sizing is calculated as the average of three components:
+Pipeline Sizing is calculated as a weighted sum of three components:
 
-#### A) Active Pipeline Size (45%)
-
-This measure the total discounted value of all pipeline opportunities in Pipeline A, B and C and against 200% of the previous year's delivery. The ratio of 200% has been chosen due to the fact that the pipeline is the main source of replenishment of delivery for UNDP. 
+#### A) Active Pipeline Size (65%)
+This measures the total discounted value of all pipeline opportunities in Pipeline A, B and C against 200% of the previous year's delivery. The ratio of 200% has been chosen due to the fact that the pipeline is the main source of replenishment of delivery for UNDP. 
 
 In essence, pipeline *is* future delivery, but opportunities typically take 1-2 years to be signed and another 1-2 years to be delivered. 
 
 
-#### B) Total value of resources mobilized (45%)
-
-
+#### B) Total Value of Signed Agreements (25%)
 This component measures the total value of resources that have been mobilized from signed opportunities in the current year-to-date (YTD). The calculation takes the ratio of resources mobilized to the previous year's delivery amount. This ratio is then evaluated against the delivery trendline from the previous year to provide context for the current year's performance. The resulting rate directly determines the subindicator score.
 
 For example, if an office mobilized $10M in resources YTD and had $8M in delivery the previous year, their ratio would be 125%. This ratio would then be compared to their historical delivery trends to determine if they are on track to meet their resource mobilization targets. The final score reflects how well they are maintaining or growing their resource base relative to delivery needs.
 
 
-#### C) Average Project Size (10%) 
-
-This component evaluates the growth in typical project size by comparing the median size of current pipeline opportunities to the previous year's median. We specifically use the median rather than the mean project size because the median is more resistant to being skewed by extremely large projects. This provides a more accurate representation of the "typical" project size that offices are pursuing, as a few very large projects could artificially inflate an average-based metric.
+#### C) Median Opportunity Size (10%)
+This component evaluates the growth in typical opportunity size by comparing the median size of current pipeline opportunities to the previous year's median. We specifically use the median rather than the mean project size because the median is more resistant to being skewed by extremely large projects. This provides a more accurate representation of the "typical" project size that offices are pursuing, as a few very large projects could artificially inflate an average-based metric.
 
 The baseline expectation is for offices to grow their median project size year over year, which encourages a gradual shift toward larger, more strategic interventions while maintaining a diverse portfolio. This growth in project size often indicates increased donor confidence and improved operational capacity to manage larger initiatives.
 
@@ -272,9 +268,9 @@ Early identification and tracking of opportunities is vital for UNDP's organizat
 ### **Overall Calculation**
 
 * **Part 1: Pipeline Sizing (70%)**
-  * **A:** Active Pipeline Size (45%)
-  * **B:** Total Value of Resources Mobilized (45%)
-  * **C:** Average Project Size (10%)
+  * **A:** Active Pipeline Size (65%)
+  * **B:** Total Value of Signed Agreements (25%)
+  * **C:** Median Opportunity Size (10%)
 
 * **Part 2: Pipeline Health (30%)**
   * **A:** Opportunity Age (40%)

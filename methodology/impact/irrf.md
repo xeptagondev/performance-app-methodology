@@ -64,8 +64,8 @@ Data export requirements to be defined.
 4. **Remove Rows with Missing Percentage Values:** Exclude rows where the percentage change could not be calculated or was set to None.
 5. **Exclude Rows from 'Global' Region:** Remove rows where the region is listed as "Global".
 6. **Group Data by Country and Calculate Mean Percentage:** Aggregate the refined dataset by country and calculate the average of the calculated percentage changes for each country.
-7. **Group Data by Region and Calculate Mean Percentage:** Aggregate the project-level data by bureau/region and calculate the average of the calculated percentage changes for each bureau/region using the underlying project-level data.
-8. **Calculate a Global Average Percentage:** Compute the overall average of the calculated percentage changes across all project-level data rows, providing a single metric to represent the overall trend or change captured in the dataset. To avoid the [aggregation trap](irrf.md#introduction), this global average is calculated directly from the project-level data, not from aggregated data.
+7. **Group Data by Region and Calculate Mean Percentage:** Aggregate the country-level data by bureau/region and calculate the average of the calculated percentage changes for each bureau/region using the underlying country-level data.
+8. **Calculate a Global Average Percentage:** Compute the overall average of the calculated percentage changes across all country-level data rows, providing a single metric to represent the overall trend or change captured in the dataset. To avoid the [aggregation trap](irrf.md#introduction), this global average is calculated directly from the country-level data, not from aggregated data.
 
 ## **Traffic Light System**
 

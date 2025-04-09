@@ -45,19 +45,26 @@ The scoring information:
 - **Traffic Light Score**: Green, yellow, or red. 
 
 
-## Calculation of Scoring
+## Calculation of Scoring (Global and Bureau Level)
 
 This indicator is scored according to two metrics
 
 1. % women in the UNDP workforce overall
-2. % of women in leadership makes up the other half (USG + ASG + D2 + D1 + P5 + NOE + NOD)&#x20;
+2. % of women in leadership makes up the other half (USG + ASG + D2 + D1 + P5 + NOE + NOD)
 
 For % of women in UNDP’s workforce, 50% = 100; every percentage point above/below reduces the score by 1.5 pts. So, if UNDP has 45% women in the workforce, it would contribute 42.5 points to the final score.  This is only for Women, not the other way around.  
 
-
-The same method can be used for the percentage of women in leadership. So, if UNDP has 35% women in leadership, it would contribute 22.5 points to the total score (making the total score 70 in this example). If the final score has a decimal, it is rounded up. This requires the actual number of people, not the aggregate percentage because there are different numbers of people in each role. &#x20;
+The same method can be used for the percentage of women in leadership. So, if UNDP has 35% women in leadership, it would contribute 22.5 points to the total score (making the total score 70 in this example). If the final score has a decimal, it is rounded up. This requires the actual number of people, not the aggregate percentage because there are different numbers of people in each role. 
 
 Each one is worth 50 points, and then sum both to get a score out of 100 points.
+
+## Calculation of Scoring (Country Office Level)
+
+For the country office level instead of scoring both the percentage of management in the workforce overall and also the percentage of women in leadership we will focus just on the UNDP workforce as this unfairly penalises small offices where the ratio of management to staff is higher and in general the number of managers is too low to be statistically significant.
+
+
+So for the country office level we will only score the percentage of women in the UNDP workforce overall. The scoring is the save as above. For example, if a country office has 45% women in the workforce, it would contribute 42.5 points to the final score.  This is only for Women, not the other way around.  
+
 
 ## Traffic Light System
 
@@ -67,7 +74,7 @@ Each one is worth 50 points, and then sum both to get a score out of 100 points.
 | Yellow        | 70+   |
 | Red           | <70   |
 
-## Limitations and Future Improvements&#x20;
+## Limitations and Future Improvements
 
 Different countries have different levels of workforce participation for each gender, and this indicator takes a global view and aims at a maximum 40/60 split either way to be considered "green". This may be more difficult in certain contexts and environments compared to others, and we do not yet account for this. 
 

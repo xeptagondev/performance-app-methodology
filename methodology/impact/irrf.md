@@ -17,14 +17,14 @@ The Performance App only measures the performance of Tier 2b because these are t
 
 Tier 2b includes 22 Results (i.e. Outputs) across UNDP's signature solutions and enablers, directly reflecting UNDP's work. Assessing results against IRRF targets provides a crucial means for UNDP to account for its contributions toward [Agenda 2030.](https://www.undp.org/sustainable-development-goals)
 
-The output indicators span UNDP's six signature solutions:
+The outputs span UNDP's six signature solutions:
 
-1. Poverty and Inequality (4 indicators)
-2. Governance (4 indicators)
-3. Resilience (4 indicators)
-4. Environment (2 indicators)
-5. Energy (2 indicators)
-6. Gender Equality (3 indicators).
+1. Poverty and Inequality (4 outputs)
+2. Governance (4 outputs)
+3. Resilience (4 outputs)
+4. Environment (2 outputs)
+5. Energy (2 outputs)
+6. Gender Equality (3 outputs).
 
 There are also 3 Enablers, with one output each:
 

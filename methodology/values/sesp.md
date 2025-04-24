@@ -173,8 +173,8 @@ The Completion Rate (i.e. 75%) is then the score for this indicator.
 
 | Traffic Light | Score |
 | ------------- | ----- |
-| Green         | 100   |
-| Yellow        | 80+   |
+| Green         | 90-100   |
+| Yellow        | 80-89   |
 | Red           | <80   |
 
 ## Resources

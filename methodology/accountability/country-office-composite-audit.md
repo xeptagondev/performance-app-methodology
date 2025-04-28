@@ -44,8 +44,8 @@ For Regional Bureau aggregation, we take an average of all the scoring, and the 
 Let's start with some definitions:
 
 * **DIM/DEX —** Direct Implementation Modality, this is where UNDP is the implementor.
-* **NIM —** National Implementation Modality, this is where the Government is the implementor.&#x20;
-* **NGO/Other —** Non-Governmental Organization, IFIs (International Financial Institutions) or another UN Agency.&#x20;
+* **NIM —** National Implementation Modality, this is where the Government is the implementor.
+* **NGO/Other —** Non-Governmental Organization, IFIs (International Financial Institutions) or another UN Agency.
 
 These can be further broken down as
 
@@ -60,12 +60,12 @@ These can be further broken down as
 
 The Harmonized Approach to Cash Transfers (HACT) is a framework designed to streamline and enhance the management of cash transfers within development programs. It emphasizes the assessment of the technical, managerial, administrative, and financial capacities of implementing partners before engagement. These capacity assessments are crucial as they determine the overall risk level associated with each partner and help identify the most suitable cash transfer modality for them.
 
-HACT offers three distinct cash transfer modalities.&#x20;
+HACT offers three distinct cash transfer modalities.
 
 
 
-1. The first is Direct Cash Transfers, where the United Nations Development Programme (UNDP) advances cash funds to the implementing partner (IP), who then reports back on their expenses.&#x20;
-2. The second modality is Direct Payments, in which UNDP makes payments directly to vendors on behalf of the IP.&#x20;
+1. The first is Direct Cash Transfers, where the United Nations Development Programme (UNDP) advances cash funds to the implementing partner (IP), who then reports back on their expenses.
+2. The second modality is Direct Payments, in which UNDP makes payments directly to vendors on behalf of the IP.
 3. The third option is Reimbursement, where UNDP reimburses the IP after they have made their disbursements. Each modality is chosen based on the results of the capacity assessment, ensuring that the method aligns with the partner’s ability to manage funds effectively.
 
 In addition to capacity assessments, HACT requires various assurance activities tailored to the partner's risk level. These activities include micro-assessments to evaluate the financial management capacity of the partner, spot checks to verify the accuracy of their financial records, and audits to review their financial records and internal controls. These assurance activities are integral to maintaining transparency and accountability in the management of cash transfers, ensuring that funds are used appropriately and effectively.
@@ -75,13 +75,13 @@ In addition to capacity assessments, HACT requires various assurance activities 
 
 All project audits will have one to three Qualified/Unqualified audit opinions:
 
-1. **CDR (Combined Delivery Report):** All project audits will have this. Auditors do not review 100% of financial statements, and they look for financial misstatements.&#x20;
+1. **CDR (Combined Delivery Report):** All project audits will have this. Auditors do not review 100% of financial statements, and they look for financial misstatements.
 2. **Assets:** Evaluates the value and condition of physical assets.
 3. **Cash on hand:** Assesses the actual cash available with the implementing partner at the time of the audit.
 
-In the Performance App, we only consider point 1, the financial statement from the CDR (Combined Delivery Report , due to the potential duplication across the three categories. &#x20;
+In the Performance App, we only consider point 1, the financial statement from the CDR (Combined Delivery Report , due to the potential duplication across the three categories. 
 
-Some project audits will _also_ have a audit rating as well, this is displayed in the Performance App but does not affect the scoring of this indicator.&#x20;
+Some project audits will _also_ have a audit rating as well, this is displayed in the Performance App but does not affect the scoring of this indicator.
 
 {% hint style="info" %}
 **On Audit Opinions**
@@ -115,16 +115,16 @@ Other types of opinions that can be issued, but are less common, are:
 #### Calculation of Scoring
 
 {% hint style="info" %}
-We get this from the "Reports" tab in Cards: OAIHACT Audits - R3000-Net Financial Misstatement for HACT Audits, and then the Non-HACT project audits will be from the export of the regular audit section in CARDS.&#x20;
+We get this from the "Reports" tab in Cards: OAIHACT Audits - R3000-Net Financial Misstatement for HACT Audits, and then the Non-HACT project audits will be from the export of the regular audit section in CARDS.
 {% endhint %}
 
 {% hint style="danger" %}
-For HACT Audits, we will use the previous FY (Financial Year) reports for this only. This data set is updated once per year, around June. For Non-HACT Audits, these are closer to real time as the audit are published.&#x20;
+For HACT Audits, we will use the previous FY (Financial Year) reports for this only. This data set is updated once per year, around June. For Non-HACT Audits, these are closer to real time as the audit are published.
 {% endhint %}
 
 Sum of all $ amount of Qualified Reports = "**Total Financial Misstatement |Absolute Value|"** in the above report
 
-Confirmed that **Audited Expenditure** is the _Total_ audited expenditure for that project, inclusive of financial misstatement.&#x20;
+Confirmed that **Audited Expenditure** is the _Total_ audited expenditure for that project, inclusive of financial misstatement.
 
 $TotalReports = **"Audited Expenditure"** in the above report
 
@@ -134,7 +134,7 @@ We need to confirm with OAI if Audited Expenditure is indeed the Total Amount, o
 
 The OAI Datasets includes a % calculation called **"% NFM CY to Audited"**
 
-So for this part of the indicator, we get the weighted average.&#x20;
+So for this part of the indicator, we get the weighted average.
 
 So it **SUM of Total Financial Misstatement / Sum of Audited Expenditure**
 
@@ -152,7 +152,7 @@ This is calculated from the Audit Issue date fro any Outstanding Audit Recommend
 | 1               | 60     |
 | 1+              | 30     |
 
-We take the Audit Issue date and then calculate as of today. We count anything with "Yes" in the below table as Open, and then calculate the age etc..&#x20;
+We take the Audit Issue date and then calculate as of today. We count anything with "Yes" in the below table as Open, and then calculate the age etc..
 
 {% hint style="info" %}
 Add here that we only consider outstanding recommendations that are **not** older than 37 months

@@ -17,15 +17,15 @@ For instance, this enables the Performance App to show the list of projects that
 To create a reliable master project list, UNDP leverages multiple datasets that contain project-related information:
 
 * **IATI\_FINANCIALS data:** This is the IATI Project List,  a list of projects used for external reporting on the [Transparency Portal.](https://open.undp.org)
-* **UNDP\_CPD\_SP data:** The CPD (Country Programming Document) Project lists the projects for which the COs have matched them to the CPD outcomes.&#x20;
-* **UNDP\_PROJECTS data:** This is the master dataset of all UNDP projects and includes budget data for each project, broken down by CPD outcome.&#x20;
-* **QA & SESP data:** A list of projects that require QA (Quality Assurance) or SESP (Social and Environmental Screening Procedure).&#x20;
+* **UNDP\_CPD\_SP data:** The CPD (Country Programming Document) Project lists the projects for which the COs have matched them to the CPD outcomes.
+* **UNDP\_PROJECTS data:** This is the master dataset of all UNDP projects and includes budget data for each project, broken down by CPD outcome.
+* **QA & SESP data:** A list of projects that require QA (Quality Assurance) or SESP (Social and Environmental Screening Procedure).
 
 {% hint style="info" %}
-Note that UNDP\_CPD\_SP and IATI\_FINANCIALS do not list all the projects but are used to enrich the data within UNDP\_PROJECTS.&#x20;
+Note that UNDP\_CPD\_SP and IATI\_FINANCIALS do not list all the projects but are used to enrich the data within UNDP\_PROJECTS.
 {% endhint %}
 
-&#x20; The IATI data can be taken from the UNDP Data Warehouse with the following query:
+ The IATI data can be taken from the UNDP Data Warehouse with the following query:
 
 ```plsql
 select
@@ -58,7 +58,7 @@ group by a.hq_co,
     end
 ```
 
-&#x20;
+
 
 <details>
 
@@ -163,39 +163,39 @@ group by a.hq_co,
 
 </details>
 
-&#x20;&#x20;
+
 
 ## Calculation
 
 To get a list of projects with budgets for each project and by CPD outcome.
 
 1. **Comparison of Project IDs in 3 datasets:**  Extract unique project IDs in 3 datasets. The aim is to find the total number of unique projects in each dataset and ensure that all projects within UNDP\_CPD\_SP and IATI\_FINANCIALS can be found within UNDP\_PROJECTS
-2. **Checking UNDP\_CPD\_SP Dataset:** Retrieve unique combinations of 'PROJECT\_ID', 'CPD\_OUTCOME', and 'TASK\_ID': In UNDP\_CPD\_SP, select the columns 'PROJECT\_ID', 'CPD\_OUTCOME', and 'TASK\_ID' for analysis. Then, drop duplicate rows based on unique combinations of 'PROJECT\_ID', 'CPD\_OUTCOME', and 'TASK\_ID' and retain the first occurrence of each unique combination. Analyze the count of unique combinations of 'PROJECT\_ID', 'CPD\_OUTCOME', and 'TASK\_ID' . The aim is to verify the dataset UNDP\_CPD\_SP contains only unique combinations of PROJECT\_ID and CPD\_OUTCOME and TASK\_ID. Also, to verify the count of such unique combinations equal to number of rows of UNDP\_CPD\_SP dataset.&#x20;
+2. **Checking UNDP\_CPD\_SP Dataset:** Retrieve unique combinations of 'PROJECT\_ID', 'CPD\_OUTCOME', and 'TASK\_ID': In UNDP\_CPD\_SP, select the columns 'PROJECT\_ID', 'CPD\_OUTCOME', and 'TASK\_ID' for analysis. Then, drop duplicate rows based on unique combinations of 'PROJECT\_ID', 'CPD\_OUTCOME', and 'TASK\_ID' and retain the first occurrence of each unique combination. Analyze the count of unique combinations of 'PROJECT\_ID', 'CPD\_OUTCOME', and 'TASK\_ID' . The aim is to verify the dataset UNDP\_CPD\_SP contains only unique combinations of PROJECT\_ID and CPD\_OUTCOME and TASK\_ID. Also, to verify the count of such unique combinations equal to number of rows of UNDP\_CPD\_SP dataset.
 3. **Check Missing Values:** Check in all 3 datasets whether there is any row with missing values for the columns 'PROJECT\_ID', 'PROJECT\_NUMBER', 'hq\_co', 'bureau', 'rollup\_ou', 'rollup\_ou\_description'.
-4. Display number of task ids with a budget value in IATI\_FINANCIALS data.&#x20;
+4. Display number of task ids with a budget value in IATI\_FINANCIALS data.
 5. **Merge Datasets:** Utilize the common columns \['hq\_co', 'bureau', 'rollup\_ou', 'rollup\_ou\_description', 'PROJECT\_ID', 'PROJECT\_NUMBER'] to merge UNDP\_PROJECTS with UNDP\_CPD\_SP. Perform a left join to retain all records from UNDP\_PROJECTS while incorporating matching records from UNDP\_CPD\_SP. Later, utilize the same common columns to merge the previously merged dataframe with IATI\_FINANCIALS. Again, perform a left join to retain all records from the previously merged dataframe while incorporating matching records from IATI\_FINANCIALS.
-6. **Specify columns to retain only the desired columns:**  Define a list of columns to be retained in the final dataframe based on project-related information and identifiers. After this, extract the selected columns from the merged dataframe to create the final Dataframe. Use the selected column list to filter the merged dataframe and retain only the desired columns.&#x20;
-7. **Checking all the rows with budget captured in merged data:** Count the number of unique 'TASK\_ID' values corresponding to rows with budget information. This is performed to provide insight into the completeness of budget data captured within the merged Dataframe. Also, we can verify previously displayed value regarding the number of task ids with a budget value in IATI\_FINANCIALS data is same.&#x20;
-8. **Count unique projects:** Count and display the number of unique combinations of 'PROJECT\_ID' and 'CPD\_OUTCOME' in the merged dataframe.&#x20;
-9. **Aggregation of Budget Data:** A single project ID can have multiple CPD outcomes. Initially, the code defines an aggregation function to calculate the sum of the 'budget' column for each group defined by 'PROJECT\_ID' and 'CPD\_OUTCOME'. This step aggregates budget data across different outcomes for each project.  To ensure that all unique 'PROJECT\_ID' values are retained, a dataframe is created containing all unique 'PROJECT\_ID's from the original dataset. The aggregated budget data is merged with the dataframe containing all unique 'PROJECT\_ID' values. This step is important to ensure that even projects with no budgetary allocations or outcomes are included in the final analysis.&#x20;
+6. **Specify columns to retain only the desired columns:**  Define a list of columns to be retained in the final dataframe based on project-related information and identifiers. After this, extract the selected columns from the merged dataframe to create the final Dataframe. Use the selected column list to filter the merged dataframe and retain only the desired columns.
+7. **Checking all the rows with budget captured in merged data:** Count the number of unique 'TASK\_ID' values corresponding to rows with budget information. This is performed to provide insight into the completeness of budget data captured within the merged Dataframe. Also, we can verify previously displayed value regarding the number of task ids with a budget value in IATI\_FINANCIALS data is same.
+8. **Count unique projects:** Count and display the number of unique combinations of 'PROJECT\_ID' and 'CPD\_OUTCOME' in the merged dataframe.
+9. **Aggregation of Budget Data:** A single project ID can have multiple CPD outcomes. Initially, the code defines an aggregation function to calculate the sum of the 'budget' column for each group defined by 'PROJECT\_ID' and 'CPD\_OUTCOME'. This step aggregates budget data across different outcomes for each project.  To ensure that all unique 'PROJECT\_ID' values are retained, a dataframe is created containing all unique 'PROJECT\_ID's from the original dataset. The aggregated budget data is merged with the dataframe containing all unique 'PROJECT\_ID' values. This step is important to ensure that even projects with no budgetary allocations or outcomes are included in the final analysis.
 
-&#x20;
 
-## Project status&#x20;
 
-Print the counts of unique project IDs for each project status to show the distribution of projects across different statuses.&#x20;
+## Project status
 
-The statuses are:&#x20;
+Print the counts of unique project IDs for each project status to show the distribution of projects across different statuses.
 
-* Financially Closed&#x20;
-* On Going&#x20;
-* Operationally Closed&#x20;
-* Submit for Operational Close &#x20;
-* Submitted for Financial close&#x20;
+The statuses are:
 
-## 10. Filter data by specified project statuses:&#x20;
+* Financially Closed
+* On Going
+* Operationally Closed
+* Submit for Operational Close 
+* Submitted for Financial close
 
-Select rows from the dataframe where the 'PROJECT\_STATUS' column matches the specified status values: 'On Going', 'Operationally Closed', and 'Submit for Operational Close'.&#x20;
+## 10. Filter data by specified project statuses:
+
+Select rows from the dataframe where the 'PROJECT\_STATUS' column matches the specified status values: 'On Going', 'Operationally Closed', and 'Submit for Operational Close'.
 
 
 
@@ -209,4 +209,4 @@ The items below were taken from previous SESP Methodology and must be included h
 
 **Identifying Unique Projects**: After applying these filters, we count the number of unique projects by their `ProjectNum_Unified` identifier. This final step provides the total count of distinct projects meeting all the specified criteria.
 
-&#x20;
+

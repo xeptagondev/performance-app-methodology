@@ -65,8 +65,6 @@ Table names in UNDP Data Warehouse: [SF_UNITY].[Opportunity]
 
 The columns from the Data Warehouse are the following:
 
-[This is to be cleaned up and then confirmed with John]
-
 * **Department**: The organizational unit or office within UNDP.
 * **Opportunity Record Type**: The type of opportunity, such as funding, non-funding, exploratory. 
 * **Opportunity Name**: The name or title of the opportunity.
@@ -286,12 +284,22 @@ Early identification and tracking of opportunities is vital for UNDP's organizat
 
 ## Traffic Light System
 
-
 | Traffic Light | Score |
 | ------------- | ----- |
 | Green         | 80+   |
 | Yellow        | 60+   |
 | Red           | <60   |
+
+## Subsection Scoring Thresholds
+
+| Subsection                                      | Red      | Orange    | Green    |
+|-------------------------------------------------|----------|-----------|----------|
+| Active Pipeline Size                            | 0–59     | 60–79     | 80–100   |
+| Total Value of Signed Agreements                | 0–95     | 96–99     | 100      |
+| Median Opportunity Size                         | 0–59     | 60–79     | 80–100   |
+| Average Opportunity Age                         | 0–59     | 60–79     | 80–100   |
+| Opportunities with activity in last 3 months    | 0–59     | 60–79     | 80–100   |
+| Early Stage Capture Rate                        | 0–59     | 60–79     | 80–100   |
 
 
 

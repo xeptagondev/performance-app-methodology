@@ -4,7 +4,7 @@
 
 ## Introduction
 
-[The UNDP Environmental Management Tool (EMT)](https://app.powerbi.com/groups/me/reports/a7ff2749-e24a-4bb8-bb7a-e0147fd7f8df/ReportSection?ctid=b3e5db5e-2944-4837-99f5-7488ace54319\&experience=power-bi) methodology follows international standards like the GHG (Greenhouse Gas) Protocol to measure UNDP's carbon footprint across facilities, vehicles, and travel. The assessment scope includes emissions from activities paid for and controlled by UNDP like office utilities, vehicle fuels, staff travel, etc. It excludes project activities by external entities.UNDP facilities data covers main offices, and other offices are extrapolated based on the number of personnel. Shared offices are prorated based on UNDP's share.
+[The UNDP Environmental Management Tool (EMT)](https://undpspowa03.azurewebsites.net/EMT/Pages/welcome?SPHostUrl=https%3a%2f%2fundp.sharepoint.com%2fteams%2fEMT&code=1.AQwAXtvls0QpN0iZ9XSIrOVDGZ4L1m_NfkFHs38MqnsFLB0MAM8MAA.AgABBAIAAABVrSpeuWamRam2jAF1XRQEAwDs_wUA9P9-N5xzDWXUEDkmSu_LDveIUPZkTqCUOn8JRlVmsr7HEnYCmcJIFcY-l7JjFfQA0i57P26qpCIjunz7Gj4K-SnaqpvDsYJVXcTwuh3gpRPOnkA33ygyPbZwGk64PGTp11P3MDtnJtZM1TLxTSvIoiMnAPMko_5oIBeUEFQr6TTIpiMA-QD2hM9Ao5LjOHKIWdvJXMVnZ3OTJcuuYmJ4NH9ZALza6ixPaXWn7h-36xmePHp7riiXTK0h5VSfAf-dzQEH7fGmyxI7miyAFbrJT19zP7rWIOR6Z2rtoVJaH5B5K51NX8FLCrch739dkp-_N81VOGMayrLq3CJ--HCsRQSqv18VJRnr5uwmx2o_WgS31iKp_O8lhMqk2_NakZhbZXpy2pStcF-0lEmDW-PkTTCo6ef6Io1ZA7sQR8yYivtEREcJRyJf1aBOmxuRS2jlPuxkhaUDk2yzem81b3F-e8pt8R1-yRcS2MSybOI1BGW13wp0woLLsw-mB82z6Dz94Gt1Ftp1PyN9TrdB4HQ7-buHn0sh0zdri1IKWCFfmBZYwtleAc8Rbh-I7CjdTWjiJDzIOH8vmPMw7tby6OiIAc2k-D9aVzWPsoJE_ywKRuQRsnOl4H82M1CMZrThr6CI1NtZOD7Y-viVGkdp_jDdeDtR96Ya7STSlpiTHiFM7iPKcTMWKj6gPYr9lRgzIAN5cHx-1a00rvNeTMojlNXL-odI9SuI369hW1lBr6ZXh7fK4q7LjfvS9JW0iiTSGB0DdvhOQNceLqPYqyk2_XiRtYTDgg&session_state=003f5ad9-a463-fd2a-9022-05785f3f80ed) methodology follows international standards like the GHG (Greenhouse Gas) Protocol to measure UNDP's carbon footprint across facilities, vehicles, and travel. The assessment scope includes emissions from activities paid for and controlled by UNDP like office utilities, vehicle fuels, staff travel, etc. It excludes project activities by external entities.UNDP facilities data covers main offices, and other offices are extrapolated based on the number of personnel. Shared offices are prorated based on UNDP's share.
 
 The main categories of emissions are:
 
@@ -15,9 +15,10 @@ The main categories of emissions are:
 * Heating
 * Public transport
 
-You can read the full methodology for EMT here:
+[You can read the full methodology for EMT here.](https://undp.sharepoint.com/sites/sustainable-undp/greening-operations/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2Fsustainable-undp%2Fgreening-operations%2FShared%20Documents%2FEMT%2FEMT%20methodology%2Epdf&parent=%2Fsites%2Fsustainable-undp%2Fgreening-operations%2FShared%20Documents%2FEMT)
 
-{% file src="../../.gitbook/assets/EMT methodology.pdf" %}
+While the data is available in the UNDP Data Warehouse, the data is taken from the EMT Dashboard (i.e. PowerBI) because there are custom business rules applied on top of the raw data, and we do not want to have to update the Performance App each time the business rules change. Therefore, the EMT Dashboard hold the master business rules for the Greening Moonshot reporting.
+
 
 ## Organisational Objective
 
@@ -46,7 +47,6 @@ The data export contains the following columns:
 8. **office\_unit**: This column lists the unit or division within the office.
 9. **property\_address**: This column provides the address of the office facility.
 
-While the data is available in the UNDP Data Warehouse, the data is taken from the EMT Dashboard (i.e. PowerBI) because there are custom business rules applied on top of the raw data, and we do not want to have to update the Performance App each time the business rules change. Therefore, the EMT Dashboard hold the master business rules for the Greening Moonshot reporting.
 
 ## Data Export
 

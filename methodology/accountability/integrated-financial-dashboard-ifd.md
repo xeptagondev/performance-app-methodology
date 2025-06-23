@@ -1,11 +1,5 @@
 # Integrated Financial Dashboard (IFD)
 
-
-
-<table data-header-hidden><thead><tr><th width="289"></th><th></th></tr></thead><tbody><tr><td>Data Owner</td><td>Amat Kebbeh (<a href="mailto:amat.o.kebbeh@undp.org">amat.o.kebbeh@undp.org</a>), BMS OFRM</td></tr><tr><td>Availability in Data Warehouse</td><td>Available</td></tr><tr><td>Data Refresh Rate</td><td>Quarterly</td></tr><tr><td>Accountability Weighted Scoring</td><td>40%</td></tr></tbody></table>
-
-
-
 ## Introduction
 
 UNDP introduced the IFD in July 2020 to provide an integrated view of financial management performance for Country Offices. It replaces previous separate dashboards for finance, IPSAS, assets, etc.

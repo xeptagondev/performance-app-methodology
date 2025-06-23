@@ -1,7 +1,5 @@
 # Gender Parity
 
-<table data-header-hidden><thead><tr><th width="289"></th><th></th></tr></thead><tbody><tr><td>Data Owner</td><td>Siddharth Pawar (<a href="mailto:siddharth.pawar@undp.org">siddharth.pawar@undp.org</a>), OHR</td></tr><tr><td>Availability in Data Warehouse</td><td>Available</td></tr><tr><td>Data Refresh Rate</td><td>Daily</td></tr><tr><td>People Weighted Scoring</td><td></td></tr></tbody></table>
-
 ## Introduction
 
 The gender parity indicator focuses on the split between men and women across the different roles available at UNDP, with a specific focus on leadership positions. This is in alignment with SDG 5 "Gender Equality" 

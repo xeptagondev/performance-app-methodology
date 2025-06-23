@@ -1,7 +1,5 @@
 # Vacancy Rate
 
-<table data-header-hidden><thead><tr><th width="289"></th><th></th></tr></thead><tbody><tr><td>Data Owner</td><td>Siddharth Pawar (<a href="mailto:siddharth.pawar@undp.org">siddharth.pawar@undp.org</a>), OHR</td></tr><tr><td>Availability in Data Warehouse</td><td>Available</td></tr><tr><td>Data Refresh Rate</td><td>Daily</td></tr><tr><td>Accountability Weighted Scoring</td><td></td></tr></tbody></table>
-
 ## Introduction
 
 Vacancy Rate is the % of unoccupied positions within an organization over a specific period. This metric plays a significant role in analyzing workforce management, operational efficiency, and overall organizational performance. Vacancy rates are crucial as they provide insights into staff retention practices, recruitment success, job satisfaction levels among existing employees, and the ability of UNDP to maintain optimal productivity while adapting to changing demands.

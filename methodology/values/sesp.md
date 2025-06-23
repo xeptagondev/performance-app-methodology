@@ -1,7 +1,5 @@
 # SESP
 
-<table data-header-hidden><thead><tr><th width="288"></th><th></th></tr></thead><tbody><tr><td>Data Owner</td><td>Holly Mergler (<a href="mailto:holly.mergler@undp.org">holly.mergler@undp.org</a>) HQ/BPPS</td></tr><tr><td>Availability in Data Warehouse</td><td>Available</td></tr><tr><td>Data Refresh Rate</td><td>Daily</td></tr><tr><td>Values Weighted Scoring</td><td>40%</td></tr></tbody></table>
-
 ## Introduction
 
 Screening and categorization of projects are key requirements of the [Social and Environmental Standards (SES)](https://www.undp.org/content/undp/en/home/librarypage/operations1/undp-social-and-environmental-standards).

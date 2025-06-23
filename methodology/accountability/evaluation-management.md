@@ -1,11 +1,5 @@
 # Evaluation Management
 
-| Data Owner                      | Anish Pradhan   |
-| ------------------------------- | --------------- |
-| Availability in Data Warehouse  | Partial         |
-| Data Refresh Rate               | Daily           |
-| Accountability Weighted Scoring | Not Yet Defined |
-
 ## Introduction&#x20;
 
 This indicator takes information from the ERC (Evaluation Resource Center) to measure the performance in managing evaluation, including the timely conduct of evaluations, the completion and implementation of management responses, and the quality of decentralised evaluations.&#x20;

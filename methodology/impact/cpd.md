@@ -1,7 +1,5 @@
 # CPD
 
-<table data-header-hidden><thead><tr><th width="277"></th><th></th></tr></thead><tbody><tr><td>Data Owner</td><td>Jessica Murray &#x3C;jessica.murray@undp.org>, CPU</td></tr><tr><td>Availability in Data Warehouse</td><td>Available</td></tr><tr><td>Data Refresh Rate</td><td>Daily</td></tr><tr><td>Impact Weighted Scoring</td><td>Not Yet Defined</td></tr></tbody></table>
-
 ## Introduction
 
 Every CO (Country Office) has a CPD (Country Programming Document), the official agreement between the UNDP and the host country.

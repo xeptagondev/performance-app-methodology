@@ -1,9 +1,5 @@
 # Delivery
 
-<table data-header-hidden><thead><tr><th width="289"></th><th></th></tr></thead><tbody><tr><td>Data Owner</td><td>Saira Bilal (<a href="mailto:saira.bilal@undp.org">saira.bilal@undp.org</a>), BMS OFRM</td></tr><tr><td>Availability in Data Warehouse</td><td>Available</td></tr><tr><td>Data Refresh Rate</td><td>Daily</td></tr><tr><td>Efficiency Weighted Scoring</td><td>30%</td></tr></tbody></table>
-
-
-
 ## Introduction
 
 Delivery is the disbursement of funds towards project/programme activities. More specifically, the sum of POs (Purchase Orders) and disbursements related to programmes for the current period.&#x20;

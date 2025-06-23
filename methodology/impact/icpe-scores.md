@@ -1,7 +1,5 @@
 # ICPE Scores
 
-<table data-header-hidden><thead><tr><th width="290"></th><th></th></tr></thead><tbody><tr><td>Data Owner</td><td>Isabelle Mercier &#x3C;<a href="mailto:isabelle.mercier@undp.org">isabelle.mercier@undp.org</a>>, IEO</td></tr><tr><td>Availability in Data Warehouse</td><td>Available</td></tr><tr><td>Data Refresh Rate</td><td>Daily</td></tr><tr><td>Impact Weighted Scoring</td><td>5%</td></tr></tbody></table>
-
 ## Introduction
 
 ICPE stands for Independent Country Programme Evaluation. This is the five-year evaluation of a country office’s results. It looks at five categories:

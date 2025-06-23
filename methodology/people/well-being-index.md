@@ -1,8 +1,5 @@
 # Well-Being Index
 
-<table data-header-hidden><thead><tr><th width="289"></th><th></th></tr></thead><tbody><tr><td>Data Owner</td><td> M Teresa Lago Lao (<a href="mailto:maria.teresa.lago.lao@undp.org">maria.teresa.lago.lao@undp.org</a>), UNDP Well-being Team under OHR/PPU</td></tr><tr><td>Availability in Data Warehouse</td><td>Not Available</td></tr><tr><td>Data Refresh Rate</td><td>Updated when there is a new engagement survey</td></tr><tr><td>People Weighted Scoring</td><td>30% of People pillar</td></tr></tbody></table>
-
-
 {% hint style="info" %}
 **DRAFT INDICATOR:** This indicator is currently in draft status. The suggested reweighting of the People area indicators are: Engagement (30%), Well-being (30%), Gender Parity (20%), Turnover (20%).
 {% endhint %}

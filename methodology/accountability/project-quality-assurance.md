@@ -1,11 +1,5 @@
 # Project Quality Assurance
 
-| Data Owner                      | Holly Mergler (holly.mergler@undp.org) HQ/BPPS |
-| ------------------------------- | ----------------------------------------------------------------------- |
-| Availability in Data Warehouse  | Available                                                               |
-| Data Refresh Rate               | Daily                                                                   |
-| Accountability Weighted Scoring | 30%                                                                     |
-
 For historical reasons, the SESP and PQA Data are stored together.
 
 Downloading the data from the UNDP Data Warehouse, provides a CSV file with the following columns:

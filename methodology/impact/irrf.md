@@ -1,7 +1,5 @@
 # IRRF
 
-<table data-header-hidden><thead><tr><th width="280"></th><th></th></tr></thead><tbody><tr><td>Data Owner</td><td>Xiaodong Cai &#x3C;xiaodong.cai@undp.org></td></tr><tr><td>Availability in Data Warehouse</td><td>Not Available</td></tr><tr><td>Data Refresh Rate</td><td>Once Per Year</td></tr><tr><td>Impact Weighted Scoring</td><td>90%</td></tr></tbody></table>
-
 ## Introduction
 
 The UNDP Integrated Results and Resources Framework (IRRF) sets out the development results, indicators, and targets that UNDP aims to contribute to from 2022 to 2025 in alignment with the new Strategic Plan. In other words, the IRRF measures our organisation's results.

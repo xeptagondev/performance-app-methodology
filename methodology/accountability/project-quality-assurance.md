@@ -15,16 +15,12 @@ Downloading the data from the UNDP Data Warehouse, provides a CSV file with the 
 * **SESP\_Status**: Reflects the current status of the SESP process for the project, with possible values like "Not Monitored," "Pending," or "Completed."
 * **ProjectNum\_Unified**: A unique identifier for each project, allowing for consistent tracking and referencing across different records or databases.
 * **ApprovedDate**: The date and time when the project received approval, formatted as a timestamp, indicating when the project was officially sanctioned.
-
-There will be a new column called "Project Current Status" that can be used to filter the projects that are active as of today:
-
-Will be from these:
-
-* Financially Closed
-* On Going
-* Operationally Closed
-* Submit for Operational Close 
-* Submitted for Financial close
+* **Project Current Status**: Indicates the current status of the project, used to determine whether a project is active as of today. Possible values include:
+  * Financially Closed
+  * On Going
+  * Operationally Closed
+  * Submit for Operational Close
+  * Submitted for Financial close
 
 ## Definition of "Closed"
 
@@ -38,8 +34,8 @@ Note: if Project Status goes back to “On Going” for more than 90 days, earli
 1. **Exempted**
 2. **Completed**
 3. **Not Required**
-4. **Pending**
-5. **Ongoing**
+4. **Not Started**
+5. **In Progress**
 
 ### Project Types
 
@@ -78,15 +74,20 @@ Some project types are exempt from PQA. Here is the full list of project types i
 1. **Filtering by Bureau**: Initially, we select projects that are part of specific bureaus, namely "RBA," "RBAP," "RBAS," "RBLAC," "CB," "BPPS," and "RBEC."
 2. **Further Filtering for QA Required and Project Status**: Among the projects filtered by bureau, we apply additional criteria to focus on those that:
    * Are marked as requiring QA (`isQA_Required` == 1), indicating that they must undergo Quality Assurance processes based on predefined standards or conditions.
-   * Are currently active (`Project Status` == "Ongoing") 
+   * Are currently active (`Project Status` == "Ongoing") OR
    * Has been closed within the last two years (to the day) based on the definition of "Closed".
 3. **Excluding Projects Based on QA Status**: From the filtered set, we further exclude projects with an QA status of `Exepted`, `Not Required` . This exclusion ensures we focus on projects genuinely engaged with the QA process beyond mere administrative categorization, emphasizing those under evaluation or awaiting completion.
 4. **Identifying Unique Projects**: After applying these filters, we count the number of unique projects by their `ProjectNum_Unified` identifier. This final step provides the total count of distinct projects meeting all the specified criteria.
 5. **Define Complete and Incomplete:**
    1. Complete: We considered a PQA as "Complete" if the QA Status is `Complete`and ApprovedDate within the last two years as of today's date.
-   2. Incomplete: The sum of `Pending` and `Ongoing` QA statuses as "Incomplete + any projects with `Complete` status that is older than two years as of today's date.
-6. **Calculating QA Completion Rate:** To calculate the completion rate, we need to determine the total number of projects and the proportion of completed projects. The completion rate is  expressed as a percentage and can be calculated using the following formula: Completion Rate (%) = (Total distinct count of PQA Complete Projects) / (Total distinct count of Ongoing Project + Closed Project within 2 Years)* 100
+   2. Incomplete: The sum of `Not Started` and `In Progress` QA statuses + any projects with `Complete` PQA status that is older than two years as of today's date.
+6. **Calculating QA Completion Rate:** To calculate the completion rate, we need to determine the total number of projects and the proportion of completed projects. The completion rate is  expressed as a percentage and can be calculated using the following formula: 
 
+Completion Rate (%) = (Total distinct count of PQA Compliant Projects) / (Total distinct count of Ongoing Projects + Closed Project within 2 Years)* 100
+
+To simplify:
+
+Completion rate (%) = (Total Completed PQA / isQA_Required=1)*100
 
 
 ## Resources

@@ -26,6 +26,13 @@ Will be from these:
 * Submit for Operational Close 
 * Submitted for Financial close
 
+## Definition of "Closed"
+
+A project is defined as "Closed" based on the earliest change of project status to “Operationally Closed”, “Submitted for Financial close” or “Financially Closed”. 
+
+Note: if Project Status goes back to “On Going” for more than 90 days, earliest closure is ignored, and we consider this project "Ongoing". 
+
+
 ## PQA Statuses
 
 1. **Exempted**
@@ -43,6 +50,7 @@ Some project types are exempt from PQA. Here is the full list of project types i
 | CNT   | Country Development Project          | Development Project                 | Eligible          |
 | DEVEF | Development Effectiveness            | Development Effectiveness Project   | Exempt            |
 | DEVT  | Development Project Proposal         | Project Initiation Plan             | Exempt            |
+| DSERV | Development Service                  | Development Services Project        | Exempt            |
 | ENGMT | Engagement Facility                  | Engagement Facility                 | Exempt            |
 | FCORE | Fully Funded by Core Resources       | Development Project                 | Eligible          |
 | FNONC | Fully Funded by Single Donor         | Development Project                 | Eligible          |
@@ -64,19 +72,22 @@ Some project types are exempt from PQA. Here is the full list of project types i
 | UNC   | UN Coordination                      | Management Project                  | Exempt            |
 | UNV   | United Nations Volunteers            | Management Project                  | Exempt            |
 
+
 ## Calculation Methodology
 
 1. **Filtering by Bureau**: Initially, we select projects that are part of specific bureaus, namely "RBA," "RBAP," "RBAS," "RBLAC," "CB," "BPPS," and "RBEC."
-2. **Further Filtering for QA Required and Active Projects**: Among the projects filtered by bureau, we apply additional criteria to focus on those that:
+2. **Further Filtering for QA Required and Project Status**: Among the projects filtered by bureau, we apply additional criteria to focus on those that:
    * Are marked as requiring QA (`isQA_Required` == 1), indicating that they must undergo Quality Assurance processes based on predefined standards or conditions.
-   * Are marked as eligible for QA (`isQA_Eligible` == 1), indicating that they must undergo Quality Assurance processes based on predefined standards or conditions.
-   * Are currently active (`Project Status` == "Ongoing"), meaning the project is ongoing or has not been concluded or cancelled. // this has been edited.
+   * Are currently active (`Project Status` == "Ongoing") 
+   * Has been closed within the last two years (to the day) based on the definition of "Closed".
 3. **Excluding Projects Based on QA Status**: From the filtered set, we further exclude projects with an QA status of `Exepted`, `Not Required` . This exclusion ensures we focus on projects genuinely engaged with the QA process beyond mere administrative categorization, emphasizing those under evaluation or awaiting completion.
 4. **Identifying Unique Projects**: After applying these filters, we count the number of unique projects by their `ProjectNum_Unified` identifier. This final step provides the total count of distinct projects meeting all the specified criteria.
 5. **Define Complete and Incomplete:**
    1. Complete: We considered a PQA as "Complete" if the QA Status is `Complete`and ApprovedDate within the last two years as of today's date.
    2. Incomplete: The sum of `Pending` and `Ongoing` QA statuses as "Incomplete + any projects with `Complete` status that is older than two years as of today's date.
-6. **Calculating QA Completion Rate:** To calculate the completion rate, we need to determine the total number of projects and the proportion of completed projects. The completion rate is usually expressed as a percentage and can be calculated using the following formula: Completion Rate (%) = (Number of Complete Projects / Total Number of Projects) \* 100
+6. **Calculating QA Completion Rate:** To calculate the completion rate, we need to determine the total number of projects and the proportion of completed projects. The completion rate is  expressed as a percentage and can be calculated using the following formula: Completion Rate (%) = (Total distinct count of PQA Complete Projects) / (Total distinct count of Ongoing Project + Closed Project within 2 Years)* 100
+
+
 
 ## Resources
 

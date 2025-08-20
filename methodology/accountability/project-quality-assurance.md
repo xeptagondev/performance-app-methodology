@@ -85,10 +85,6 @@ Some project types are exempt from PQA. Here is the full list of project types i
 
 5. **Calculating QA Completion Rate:** To calculate the completion rate, we need to determine the total number of projects and the proportion of completed projects. The completion rate is  expressed as a percentage and can be calculated using the following formula: 
 
-6. **Additional considerations:**
-The dashboard will include a list of Project “Due Soon” for which QA is due within 6 months and “Next QA Due Date”.
-
-
 Completion Rate (%) = (Total distinct count of PQA Compliant Projects) / (Total distinct count of Ongoing Projects + Closed Project within 2 Years)* 100
 
 To simplify:

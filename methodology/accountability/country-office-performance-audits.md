@@ -40,7 +40,7 @@ The recommendations are flagged according to the following traffic-light methodo
 
 ## Organisational Objective
 
-The organisational objective is the best audit performance possible, with no unsatisfactory audits and maximising entirely satisfactory audits. Additionally, the fastest and comprehensive implementation of the audit recommendations.&#x20;
+The organisational objective is the best audit performance possible, with no unsatisfactory audits and maximising entirely satisfactory audits. Additionally, the fastest and comprehensive implementation of the audit recommendations.
 
 ## Data
 

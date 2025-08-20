@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Sexual Harassment & Sexual Exploitation and Abuse Survey
+The SH (Sexual Harassment) & SEA (Sexual Exploitation and Abuse) indicator 
 
 ## Data
 
@@ -12,8 +12,20 @@ Sexual Harassment & Sexual Exploitation and Abuse Survey
 
 ## Calculation of Scoring
 
+| Component                                 | Weight  | Notes                                             |
+|--------------------------------------------|---------|---------------------------------------------------|
+| Inclusion survey                          | 60%     | Comfort speaking up: 40%, Confidence action: 20%   |
+| Mandatory training                        | 30%     |                                                   |
+| SH & SEA Plan                             | 10%     |                                                   |
+
+
+
 ## Traffic Light System
 
-## Limitations and Future Improvements&#x20;
+| Traffic Light | Score |
+| ------------- | ----- |
+| Green         | >85   |
+| Yellow        | >70  |
+| Red           | <70   |
 
-## Useful Links
+

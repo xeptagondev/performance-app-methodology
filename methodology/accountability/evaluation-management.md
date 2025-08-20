@@ -1,25 +1,23 @@
 # Evaluation Management
 
-## Introduction&#x20;
+## Introduction
 
-This indicator takes information from the ERC (Evaluation Resource Center) to measure the performance in managing evaluation, including the timely conduct of evaluations, the completion and implementation of management responses, and the quality of decentralised evaluations.&#x20;
+This indicator takes information from the ERC (Evaluation Resource Center) to measure the performance in managing evaluation, including the timely conduct of evaluations, the completion and implementation of management responses, and the quality of decentralised evaluations.
 
-This is both a Global, Regional, and Country Office level indicator.&#x20;
+This is both a Global, Regional, and Country Office level indicator.
 
 ## Organisational Objective
 
 The organisational objective can be broken down into three parts:
 
 1. 100% of  planned evaluations were completed on time.
-2. 100% of completed evaluations have management responses with no overdue key actions.&#x20;
-3. 100% of evaluations are of acceptable quality.&#x20;
+2. 100% of completed evaluations have management responses with no overdue key actions.
+3. 100% of evaluations are of acceptable quality.
 
 ## Notes
 
-
-
 * We exclude UNV, UNCDF, UNOSSC
-*
+
 
 
 
@@ -40,14 +38,14 @@ This focuses on the punctuality and scheduling discipline of the evaluation proc
 * Non-Overdue Evaluations / Total Evaluations = **% of On-Time Evaluations**
 
 {% hint style="info" %}
-Speak with Evaluation team on this, as what is "Completed" precisely?&#x20;
+Speak with Evaluation team on this, as what is "Completed" precisely?
 {% endhint %}
 
 **Example below:**
 
 So this is a snapshot of Global, so in this case, it would be 2113/2176
 
-The reason it is 2113, is because there are 2176 total evaluation, and 63 overdue, so that gives us 2113 non-overdue planned evaluation, which is \~97%&#x20;
+The reason it is 2113, is because there are 2176 total evaluation, and 63 overdue, so that gives us 2113 non-overdue planned evaluation, which is \~97%
 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-07-10 at 13.42.58@2x.png" alt=""><figcaption></figcaption></figure>
 
@@ -58,7 +56,7 @@ The reason it is 2113, is because there are 2176 total evaluation, and 63 overdu
 * **Team Onboard:** Consultants have been hired
 * **Completed:** Evaluation has been completed
 
-An evaluation can only have one status at a time.&#x20;
+An evaluation can only have one status at a time.
 
 Potential change to % overdue calculation
 
@@ -77,7 +75,7 @@ The formula used is:
 * 1 - (Number of Evaluations Overdue by More Than 6 Weeks / Total Completed Evaluations in the Programme Period) = **Percentage of Evaluations with a Management Response**
 
 {% hint style="info" %}
-**Clarification note:** This part of the scoring methodology is intended to highlight evaluations with overdue management response so that corrective action can be taken. Once a management response is submitted, even if overdue, it is no longer counted as overdue.&#x20;
+**Clarification note:** This part of the scoring methodology is intended to highlight evaluations with overdue management response so that corrective action can be taken. Once a management response is submitted, even if overdue, it is no longer counted as overdue.
 {% endhint %}
 
 Example from ERC Dashboard:
@@ -104,7 +102,7 @@ Within Part 2B, the following two metrics each contribute 50% by averaging their
 {% endhint %}
 
 {% hint style="danger" %}
-**Important Note 2:** "Total Actions" include ALL key actions, including overdue, completed, and not yet due.&#x20;
+**Important Note 2:** "Total Actions" include ALL key actions, including overdue, completed, and not yet due.
 {% endhint %}
 
 **Example for part 1 of 2B:**
@@ -113,7 +111,7 @@ Within Part 2B, the following two metrics each contribute 50% by averaging their
 
 **Total =** Total in the screenshot above from ERC
 
-**Percentage of Actions Not Overdue =** 100-Overdue % in Screenshot Above &#x20;
+**Percentage of Actions Not Overdue =** 100-Overdue % in Screenshot Above 
 
 {% hint style="danger" %}
 Further discussions are required here about cut-off dates, and including and not including "No Longer Applicable" — this can be ignored.
@@ -134,16 +132,16 @@ This needs to be confirmed with IEO.
 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-07-10 at 13.59.58@2x.png" alt=""><figcaption></figcaption></figure>
 
-In this case, Long Overdue % would be 1 divided by Open Actions (Overdue+Not Initiated + Initiated)&#x20;
+In this case, Long Overdue % would be 1 divided by Open Actions (Overdue+Not Initiated + Initiated)
 
-note: It may also be interesting to note how many recommendations have no key actions.&#x20;
+note: It may also be interesting to note how many recommendations have no key actions.
 
-### **Part 3: Evaluation Quality (40% Weight)**&#x20;
+### **Part 3: Evaluation Quality (40% Weight)**
 
-This section determines the overall quality of evaluations based on a comprehensive scoring system. Evaluation quality is critical, reflecting the evaluation's depth, accuracy, and usefulness.&#x20;
+This section determines the overall quality of evaluations based on a comprehensive scoring system. Evaluation quality is critical, reflecting the evaluation's depth, accuracy, and usefulness.
 
 {% hint style="info" %}
-The quality rating is _**not**_ the quality of the project, it is the quality of _**how**_ the evaluation was conducted.&#x20;
+The quality rating is _**not**_ the quality of the project, it is the quality of _**how**_ the evaluation was conducted.
 {% endhint %}
 
 Six distinct scores are possible, each reflecting a specific level of evaluation quality. These scores are predetermined and assigned based on established criteria that evaluate various aspects of the evaluation process and its outcomes.
@@ -179,7 +177,7 @@ The final quality score is derived by calculating the assigned scores' straight 
   * Part 2 contributes 30%.
   * Part 3 contributes 40%.
 
-The formula for the final score calculation is:&#x20;
+The formula for the final score calculation is:
 
 * **Final Score = (Part 1 × 0.3) + (Part 2 × 0.3) + (Part 3 × 0.4)**.
 

@@ -72,22 +72,24 @@ Some project types are exempt from PQA. Here is the full list of project types i
 ## Calculation Methodology
 
 1. **Filtering by Bureau**: Initially, we select projects that are part of specific bureaus, namely "RBA," "RBAP," "RBAS," "RBLAC," "CB," "BPPS," and "RBEC."
-2. **Further Filtering for QA Required and Project Status**: Among the projects filtered by bureau, we apply additional criteria to focus on those that:
-   * Are marked as requiring QA (`isQA_Required` == 1), indicating that they must undergo Quality Assurance processes based on predefined standards or conditions.
+2. **Further Filtering for QA Eligible and Project Status**: Among the projects filtered by bureau, we apply additional criteria to focus on those that:
+   * Are marked as requiring QA (`isQA_Eligible` == 1), indicating that they must undergo Quality Assurance processes based on predefined standards or conditions.
    * Are currently active (`Project Status` == "Ongoing") OR
    * Has been closed within the last two years (to the day) based on the definition of "Closed".
-3. **Excluding Projects Based on QA Status**: From the filtered set, we further exclude projects with an QA status of `Exepted`, `Not Required` . This exclusion ensures we focus on projects genuinely engaged with the QA process beyond mere administrative categorization, emphasizing those under evaluation or awaiting completion.
-4. **Identifying Unique Projects**: After applying these filters, we count the number of unique projects by their `ProjectNum_Unified` identifier. This final step provides the total count of distinct projects meeting all the specified criteria.
-5. **Define Complete and Incomplete:**
-   1. Complete: We considered a PQA as "Complete" if the QA Status is `Complete`and ApprovedDate within the last two years as of today's date.
-   2. Incomplete: The sum of `Not Started` and `In Progress` QA statuses + any projects with `Complete` PQA status that is older than two years as of today's date.
-6. **Calculating QA Completion Rate:** To calculate the completion rate, we need to determine the total number of projects and the proportion of completed projects. The completion rate is  expressed as a percentage and can be calculated using the following formula: 
+3. **Identifying Unique Projects**: After applying these filters, we count the number of unique projects by their `ProjectNum_Unified` identifier. This final step provides the total count of distinct projects meeting all the specified criteria.
+4. **Define Complete and Incomplete:**
+   A project is considered compliant if it met any of the following:
+      * We considered a PQA as "Complete" if the QA Status is `Complete`and ApprovedDate within the last two years as of today's date. OR
+      * The project status is “Operationally Completed” or “Financially Completed” and QA Status is `Complete`. OR
+      * The project was exempted
+
+5. **Calculating QA Completion Rate:** To calculate the completion rate, we need to determine the total number of projects and the proportion of completed projects. The completion rate is  expressed as a percentage and can be calculated using the following formula: 
 
 Completion Rate (%) = (Total distinct count of PQA Compliant Projects) / (Total distinct count of Ongoing Projects + Closed Project within 2 Years)* 100
 
 To simplify:
 
-Completion rate (%) = (Total Completed PQA / isQA_Required=1)*100
+Completion rate (%) = (Total Completed PQA / Total Considered Projects)*100
 
 
 ## Resources

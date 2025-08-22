@@ -10,7 +10,7 @@ To achieve gender parity  (approximately equal number of women and men) at all o
 
 ## Data
 
-The data for Gender Parity is stored in the UNDP Data Warehouse. However, OHR (Office of Human Resources) has added a lot of custom business rules to this data to reach the final results, and so this dataset is pulled directly from the their PowerBI Dashboards (link?) instead. This ensures that the Performnace App always has the latest business rules automatically, instead of having to rely on manual updates to the business rules each tiem they change. 
+The data for Gender Parity is stored in the UNDP Data Warehouse. However, OHR (Office of Human Resources) has added a lot of custom business rules to this data to reach the final results, and so this dataset is pulled directly from the their PowerBI Dashboards instead. This ensures that the Performnace App always has the latest business rules automatically, instead of having to rely on manual updates to the business rules each tiem they change. 
 
 **All the data taken is already agreegated, so there is no possibility of leaking PII (Personal Identifiable Information).**
 
@@ -32,7 +32,7 @@ The data export contains the following columns for the raw data
 
 The scoring information:
 
-- - **Country Office**: The name of the country office.
+- **Country Office**: The name of the country office.
 - **3 letter ISO Code**: The ISO code of the country.
 - **Bureau**: The Bureau of the Country Office.
 - **% women in the UNDP workforce overall**: The percentage of women in the overall UNDP workforce.

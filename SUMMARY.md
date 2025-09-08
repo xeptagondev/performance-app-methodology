@@ -42,6 +42,7 @@
   * [Transparency](methodology/values/transparency.md)
   * [SH & SEA](methodology/values/sh-and-sea.md)
 * [People](methodology/people/README.md)
+  * [People Engagement Index](methodology/people/engagement-index.md)
   * [Turnover Rate](methodology/people/turnover-rate.md)
   * [Vacancy Rate](methodology/people/vacancy-rate.md)
   * [Gender Parity](methodology/people/gender-parity.md)

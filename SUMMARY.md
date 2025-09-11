@@ -32,6 +32,7 @@
 * [Efficiency](methodology/efficiency/README.md)
   * [Delivery](methodology/efficiency/delivery.md)
   * [Contributions](methodology/efficiency/contributions.md)
+  * [Financial Sustainability](methodology/efficiency/financial-sustainability.md)
   * [Institutional Resources](methodology/efficiency/institutional-resources.md)
   * [Pipeline](methodology/efficiency/pipeline.md)
   * [Procurement](methodology/efficiency/procurement.md)

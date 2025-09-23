@@ -32,6 +32,6 @@ So the cutoff points for green is 55 days (15% above 48 days), and for red is 62
 
 ## Open Questions
 
-- Is the procuremtn reset or cumulatively
+- Is the procurement reset or cumulativive per stage
 - How is the global average calculated
-- Why does it say N/A when filtering by Country Office
+- Why does it say N/A when filtering by Country Office -- does each CO have their own expected stage. There is that discussion (i.e. AFG) around crisis countries and if it is more difficult to do procurement. 

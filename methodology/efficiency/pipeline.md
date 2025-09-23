@@ -1,9 +1,5 @@
 # Pipeline
 
-{% hint style="info" %}
-This is a draft proposal for a new indicator.
-{% endhint %}
-
 ## Introduction
 
 The pipeline indicator measures the health of the number and value of all the potential agreements. This is perhaps the most critical indicator for financial sustainability at UNDP because it dictates the future resources available for mobilization in projects, programmes, and portfolios for years to come. 

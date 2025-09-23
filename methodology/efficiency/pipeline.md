@@ -252,7 +252,7 @@ Updates include any modifications to the opportunity record, not just a change i
 - Status changes between pipeline stages
 
 
-#### C) Early Stage Capture Rate (30%)
+#### C) Early Stage Capture Rate (40%)
 The Early Stage Capture Rate measures how effectively offices are identifying and tracking potential opportunities from their earliest stages. Specifically, it calculates the percentage of successfully signed opportunities that were initially created in Pipeline C (also known as "Initial: Exploratory Opportunity"). This metric is crucial for UNDP's organizational forecasting and resource planning.
 
 For example, if an office signs 10 projects in a year, and 7 of those projects were originally captured and tracked from Pipeline C stage, their Early Stage Capture Rate would be 70%. To prevent gaming of this metric, opportunities must remain in Pipeline C for at least 14 days before progressing through subsequent pipeline stages (Pipeline B, Pipeline A, and finally Signed). This minimum duration requirement ensures that opportunities are genuinely being identified and managed from their early stages, rather than being artificially pushed through the pipeline stages.
@@ -271,7 +271,7 @@ Early identification and tracking of opportunities is vital for UNDP's organizat
 * **Part 2: Pipeline Health (30%)**
   * **A:** Opportunity Age (30%)
   * **B:** Opportunity Activity (30%)
-  * **C:** Early Stage Capture Rate (30%)
+  * **C:** Early Stage Capture Rate (40%)
 
 * **Final Score Calculation:** The final score combines these parts, weighted accordingly:
   * Part 1 contributes 70%.

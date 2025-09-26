@@ -1,9 +1,5 @@
 # Pipeline
 
-{% hint style="info" %}
-This is a draft proposal for a new indicator.
-{% endhint %}
-
 ## Introduction
 
 The pipeline indicator measures the health of the number and value of all the potential agreements. This is perhaps the most critical indicator for financial sustainability at UNDP because it dictates the future resources available for mobilization in projects, programmes, and portfolios for years to come. 
@@ -219,7 +215,7 @@ The scoring is straightforward: if the current year's median project size exceed
 
 Pipeline Health is assessed through three components:
 
-#### A) Opportunity Age (40%)
+#### A) Opportunity Age (30%)
 The average age of opportunities in the pipeline is a critical metric in pipeline health. In CRM systems, opportunity age helps identify stagnation and potential issues in the sales or resource mobilization process. Opportunities that remain in the pipeline for extended periods often indicate either unrealistic prospects or insufficient follow-up, both of which can waste organizational resources and provide inaccurate forecasting data.
 
 For UNDP's pipeline management, we measure the average age of all opportunities, with newer opportunities receiving higher scores. This scoring approach reflects the understanding that healthy pipelines maintain a steady flow of opportunities moving through various stages. The scoring system is structured as follows:
@@ -234,7 +230,7 @@ For UNDP's pipeline management, we measure the average age of all opportunities,
 Opportunities less than 12 months old receive a perfect score of 100/100, recognizing that most viable opportunities should progress to signing or closure within a year. Opportunities between 12-18 months receive 75/100, while those between 18-24 months score 50/100. Any opportunities remaining in the pipeline beyond 24 months receive only 25/100, signaling a need for review or removal. In cases where an operating unit has no opportunities in their pipeline, they receive a score of 0/100, reflecting the critical importance of maintaining an active opportunity pipeline.
 
 
-#### B) Opportunity Activity (40%)
+#### B) Opportunity Activity (30%)
 Opportunity Activity measures how frequently pipeline opportunities are being reviewed and updated, which is a key indicator of active pipeline management. Regular updates demonstrate that opportunities are being actively monitored and pursued rather than sitting dormant in the system.
 
 The calculation is straightforward:
@@ -252,7 +248,7 @@ Updates include any modifications to the opportunity record, not just a change i
 - Status changes between pipeline stages
 
 
-#### C) Early Stage Capture Rate (20%)
+#### C) Early Stage Capture Rate (40%)
 The Early Stage Capture Rate measures how effectively offices are identifying and tracking potential opportunities from their earliest stages. Specifically, it calculates the percentage of successfully signed opportunities that were initially created in Pipeline C (also known as "Initial: Exploratory Opportunity"). This metric is crucial for UNDP's organizational forecasting and resource planning.
 
 For example, if an office signs 10 projects in a year, and 7 of those projects were originally captured and tracked from Pipeline C stage, their Early Stage Capture Rate would be 70%. To prevent gaming of this metric, opportunities must remain in Pipeline C for at least 14 days before progressing through subsequent pipeline stages (Pipeline B, Pipeline A, and finally Signed). This minimum duration requirement ensures that opportunities are genuinely being identified and managed from their early stages, rather than being artificially pushed through the pipeline stages.
@@ -269,9 +265,9 @@ Early identification and tracking of opportunities is vital for UNDP's organizat
   * **C:** Median Opportunity Size (10%)
 
 * **Part 2: Pipeline Health (30%)**
-  * **A:** Opportunity Age (40%)
-  * **B:** Opportunity Activity (40%)
-  * **C:** Early Stage Capture Rate (20%)
+  * **A:** Opportunity Age (30%)
+  * **B:** Opportunity Activity (30%)
+  * **C:** Early Stage Capture Rate (40%)
 
 * **Final Score Calculation:** The final score combines these parts, weighted accordingly:
   * Part 1 contributes 70%.

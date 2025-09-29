@@ -1,10 +1,24 @@
 # Individual Projects
 
 
+## Data Sources 
+Table names in UNDP Data Warehouse: 
+| Table name      | Fields                                                                 |
+|-----------------|------------------------------------------------------------------------|
+| `[UNDP_IATI].[UNDP_PROJECTS]`   | Closed status, Project ID, Modality, Project Title, Implementing Partner, Description, Project Manager Name, Project Manager Email |
+|  `[UNDP_IATI].[UNDP_MARKERS]`    | Project Markers                                                       |
+|  `[UNDP_IATI].[IATI_FINANCIALS]` | Funding Partners                                                      |
+| `[SF_UNITY].[Opportunity]` | Funded Amount |
+| `[PPM_Ext].[XXPROJ_GMS_PROJECT_DETAILS]` | GMS Rate |
+| `[UNDP_IATI].[UNDP_INDICATORS]` | Result Based Work plan Data |
+
+
+
+
 ## Overview
 
-- Closed status: Open, Operationally Closed, Financial Closed. 
-**Project ID:**  01001220
+- **Closed status:** Open, Operationally Closed, Financial Closed. 
+- **Project ID:**  01001220
 - **Modality:**  NIM (National Implementation Modality), DIM (Direct Implementation Modality). 
 - **Project Title:**  The title of the project.
 - **Project Markers:**  Innovation, Partners, Digital, HOWS, OECD, Climate, Human Rights, WHOS, Gender, Sustaining Peace.
@@ -12,14 +26,27 @@
 - **Responsible Party:**  This is where you have an implement agent that is not UNDP and not the implementing partner. 
 - **Description:**  A description of the project. 
 - **Project Manager Photo**: The photo of the project manager pulled from IDM
-- **Project Manager Name:** The name of the project manager (is alwasy UNDP, regardless of the implementing partner as we place a responsible UNDP person)
-- **Project Manager Email:** 
+- **Project Manager Name:** The name of the project manager (is always UNDP, regardless of the implementing partner as we place a responsible UNDP person)
+- **Project Manager Email:** UNDP email of the project manger.
 
 **Funding Partners**  
 |        | Name                                   | Amount   |
 |--------|----------------------------------------|----------|
 | ![DFAT](image) | Australian DFAT                        | $3.15M   |
 | ![UNDP](image) | UNITED NATIONS DEVELOPMENT PROGRAMME   | $-0.04K  |
+
+
+## Funding Details 
+- **Total Budget** - The sum of expense up to current year and budget of current year
+- **Funded** – Funded amount by signed agreements
+- **Unfunded** - ( Total budget - Funded )
+- **Contribution Received** - Amount of Tranches received 
+- **Contribution Pending** - ( Sum of Signed Agreements for the project - Contributions )
+- **Total Delivery** – Sum of the monetary amount of delivery (2018- Current year)
+- **Total Current year Budget** - Current year budget amount
+- **Total Current Year Delivery** - Current year delivery monetary amount
+- **GMS Rate** - GMS rate 
+
 
 
 ## Project Library
@@ -51,9 +78,25 @@
 
 ## Results Based Workplan
 
+- **Task Number** -  Output 1,2...
+- **Task Name** - Name of the task
+- **Total Budget**  -  Total budget allocated for the task
+- **Activities** - List of indicators and their completion details
+- **Indicator Code** - 1.1, 1.2 ,...
+- **Indicator description** - Small description about the activity
+- **Completion Details** - The actual result value over the target value
+- **Result** - The average of the completions of activities under the task
+- **Delivery** - Total expenditure of the task over budget 
+
 ## Funding Profile
 
 ### Overview 
+
+### Funding Partners
+
+- **Allocated** - Total budget calculated same as previously
+- **Paid** -  Total expenditure
+- **Remaining** - ( Total budget - Total expenditure )
 
 ### Payment Tranches
 

@@ -138,7 +138,7 @@ grouped_gms_details = gms_details_df.groupby('PROJECT_NUMBER').agg(
 
 ### Activity Data
 
-- Load the data from  `[UNDP_IATI].[IATI_FINANCIALS]` , `[UNDP_IATI].[UNDP_INDICATORS]` and `atlas_fin_donors_20250806.xlsx` .
+- Load the data from  `[UNDP_IATI].[IATI_FINANCIALS]` and `[UNDP_IATI].[UNDP_INDICATORS]`.
 - Then do the same filtering for  `[UNDP_IATI].[IATI_FINANCIALS]` and apply the budget calculation .
 - Group the indicator data by `PROJECT_NUMBER, TASK_NUMBER, and INDICATOR_ID`, and calculate the average target and result values for each activity.
 ```

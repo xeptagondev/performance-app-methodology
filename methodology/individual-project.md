@@ -1,10 +1,177 @@
 # Individual Projects
 
 
+## Data Sources 
+Table names in UNDP Data Warehouse: 
+| Table name      | Fields                                                                 |
+|-----------------|------------------------------------------------------------------------|
+| `[UNDP_IATI].[UNDP_PROJECTS]`   | Closed status, Project ID, Modality, Project Title, Implementing Partner, Description, Project Manager Name, Project Manager Email |
+|  `[UNDP_IATI].[UNDP_MARKERS]`    | Project Markers                                                       |
+|  `[UNDP_IATI].[IATI_FINANCIALS]` | Funding Partners                                                      |
+| `[SF_UNITY].[Opportunity]` | Funded Amount |
+| `[PPM_Ext].[XXPROJ_GMS_PROJECT_DETAILS]` | GMS Rate |
+| `[UNDP_IATI].[UNDP_INDICATORS]` | Result Based Workplan Data |
+
+
+The same datasets from `[UNDP_IATI].[UNDP_PROJECTS]` and `[UNDP_IATI].[IATI_FINANCIALS]` that are used to calculate the Master Project List are also applied here.
+
+### Columns Used For Generating Aggregated Data Files
+<details>
+
+<summary>Columns in IATI_FINANCIALS data</summary>
+
+* **PROJECT\_NUMBER:** Number assigned to the project.
+* **TASK\_ID:** Identifier for the task.
+* **TASK\_NUMBER:** Number assigned to the task.
+* **FUND\_CATEGORY:** Category that the funding falls into.
+* **DONOR:** Code representing the donor.
+* **DONOR\_DESCR:** Full name of the donor.
+* **fiscal\_year:** Fiscal year range (2023 to 2031).
+* **Budget:** Project budget amount in USD.
+* **Expenditure:** Total amount of money expended (includes negative numbers).
+
+</details>
+<details>
+
+<summary>Columns in UNDP_PROJECTS data </summary>
+
+* **PROJECT\_NUMBER:** Number assigned to the project.
+* **PROJECT\_NAME:** Name of the project.
+* **PROJECT\_DESCRIPTION:** Description of the project.
+* **START\_DATE:** Start date of the project.
+* **CLOSED\_DATE:** Date when the project was closed.
+* **PROJECT\_TYPE:** Type of project.
+* **PROJECT\_STATUS:** Status of the project.
+* **PROJECT\_MANAGER:** Project manager's name.
+* **PROJECT\_MANAGER\_EMAIL:** Email address of the project manager.
+* **IMPLEMENTING\_PARTNER:** Implementing partner code.
+* **IMPLEMENTING\_PARTNER\_DESCRIPTION:** Description of the implementing partner.
+* **IMPLEMENTATION\_MODALITY:** Implementation modality code.
+
+</details>
+<details>
+
+<summary>Columns in UNDP_MARKERS data</summary>
+
+* **PROJECT_NUMBER** - Number assigned to the project.
+* **marker_type** - HOWS, WHOS, OECD, Partners, Gender, Digital, Sustaining Peace, Climate, Humanitarian, SSC, COVID, Joint Programme, Innovation, Human Rights
+
+</details>
+<details>
+<summary>Columns in SF_UNITY.Opportunity  data</summary>
+
+* **Project_ID__c,** - Identifier for the project.
+* **StageName** - The stage of the opportunity - Agreement Signed / Engagement Achieved, Agreement Signed (100%), A-Hard Pipeline (90%), B-Soft Pipe Line (50-70%), C- Ideas (30%), C- Ideas (10%) - (**Here we consider only Agreement Signed**).
+* **Total_Target_Funding__c** - Target of the funding expected from the opportunity. 
+
+</details>
+<details>
+<summary>Columns in XXPROJ_GMS_PROJECT_DETAILS data</summary>
+
+* **PROJECT_NUMBER** - Number assigned to the project.
+* **GMS_RATE** - GMS rate
+
+</details>
+<details>
+<summary>Columns in UNDP_INDICATORS data</summary>
+
+* **PROJECT_NUMBER** - Number assigned to the project.
+* **TASK_NUMBER** - Output number ( Output 1, Output 2, ...)
+* **TASK_NAME** - Name of the output
+* **INDICATOR_ID** - Identifier of the activities under the output
+* **INDICATOR_CODE** - Numeric code of the activity ( 1.1 , 1.2, ..)
+* **INDICATOR_DESCRIPTION** - Description of the activity
+* **VALUE_TYPE** - Value type as Number, Percentage, Text, Rating, Boolean
+* **TARGET_VALUE** - Target value of the activity
+* **ACTUAL_VALUE** - Result value of the activity
+
+</details>
+
+### Other Data Sources 
+
+- **DataCube** - Delivery and Contribution data.
+- **atlas_fin_donors_20250806.xlsx** - Old financial data (2012 - 2022).
+
+
+## Data Aggregation 
+
+Using the above sources, two separate dta files will be created as `Project Data` and `Activity Data`.
+
+### Project Data File
+
+- Load the data from  `[UNDP_IATI].[IATI_FINANCIALS]` ,  `[UNDP_IATI].[UNDP_PROJECTS]`  , `[UNDP_IATI].[UNDP_MARKERS]` , `[PPM_Ext].[XXPROJ_GMS_PROJECT_DETAILS]` and `atlas_fin_donors_20250806.xlsx` .
+-  From  `[UNDP_IATI].[IATI_FINANCIALS]` we consider only the recodes were `FUND_CATEGORY` is `PROGRAMME`.
+
+```
+# Filter financials for PROGRAMME category
+financials_df = financials_df[financials_df['FUND_CATEGORY'] == 'PROGRAMME']
+```
+- When calculating the budget, we apply a customized logic: if the fiscal year is greater than or equal to the current year, we use 'Budget'; otherwise, we use 'Expenditure'.
+```
+def calculate_budget(row):
+   # If fiscal_year is greater than or equal to the current year, use 'Budget', otherwise use 'Expenditure'
+   if row['fiscal_year'] >= current_year:
+      return row['Budget']
+   else:
+      return row['Expenditure']
+```
+- Project markers data will be taken as a list of unique values per `PROJECT_NUMBER`.
+```
+# Merge markers data
+grouped_markers = markers_df.groupby(['PROJECT_NUMBER']).agg(
+   markers =('marker_type', lambda x: ', '.join(x.unique()))
+).reset_index()
+```
+- GMS rate is calculate as the average of ono-zero values for a `PROJECT_NUMBER`.
+```
+# Group GMS details by PROJECT_NUMBER and calculate the mean GMS_RATE, ignoring zeros
+def mean_ignore_zeros(series):
+   non_zero = series[series != 0]
+   return non_zero.mean() if not non_zero.empty else 0
+
+grouped_gms_details = gms_details_df.groupby('PROJECT_NUMBER').agg(
+   gms_details=('GMS_RATE', mean_ignore_zeros)
+).reset_index()
+```
+
+- Then all the data will be `LEFT` join to the filtered `IATI_FINANCIALS` data on `PROJECT_NUMBER`.
+
+### Activity Data
+
+- Load the data from  `[UNDP_IATI].[IATI_FINANCIALS]` and `[UNDP_IATI].[UNDP_INDICATORS]`.
+- Then do the same filtering for  `[UNDP_IATI].[IATI_FINANCIALS]` and apply the budget calculation .
+- Group the indicator data by `PROJECT_NUMBER, TASK_NUMBER, and INDICATOR_ID`, and calculate the average target and result values for each activity.
+```
+# Use groupby with aggregation dictionary for performance
+grouped_indicator = indicator_df.groupby(['PROJECT_NUMBER', 'TASK_NUMBER', 'INDICATOR_ID'], sort=False).agg({
+   'TASK_NAME': 'first',
+   'PROJECT_NUMBER': 'first',
+   'TASK_NUMBER': 'first',
+   'INDICATOR_DESCRIPTION': 'first',
+   'TARGET_VALUE': 'mean',
+   'ACTUAL_VALUE': 'mean',
+   'INDICATOR_CODE': 'first'
+}).reset_index()
+```
+- Calculate the completion percentage for each activity as `Actual / Target`, ensuring the result is constrained between 0% and 100%.
+- To further reduce file size and simplify calculations, group the data by `PROJECT_NUMBER` and `TASK_NUMBER`. The task-level completion percentage should be calculated as the mean of the activity-level completion percentages.
+- Then, the financial data will be left-joined with this dataset.
+
+
+### Opportunity Data for Funded Amount
+- To calculate the funded amount per project, take the sum of `Total_Target_Funding__c` for records where StageName begins with _"Agreement Signed"_.
+```
+funded_amount = project_data.loc[project_data['StageName'].str.startswith('Agreement Signed'), 'Total_Target_Funding__c'].sum()
+
+```
+
+
+
+
 ## Overview
 
-- Closed status: Open, Operationally Closed, Financial Closed. 
-**Project ID:**  01001220
+- **Closed status:** Open, Operationally Closed, Financial Closed. 
+- **Project ID:**  Number assigned to the project (01001220)
 - **Modality:**  NIM (National Implementation Modality), DIM (Direct Implementation Modality). 
 - **Project Title:**  The title of the project.
 - **Project Markers:**  Innovation, Partners, Digital, HOWS, OECD, Climate, Human Rights, WHOS, Gender, Sustaining Peace.
@@ -12,14 +179,27 @@
 - **Responsible Party:**  This is where you have an implement agent that is not UNDP and not the implementing partner. 
 - **Description:**  A description of the project. 
 - **Project Manager Photo**: The photo of the project manager pulled from IDM
-- **Project Manager Name:** The name of the project manager (is alwasy UNDP, regardless of the implementing partner as we place a responsible UNDP person)
-- **Project Manager Email:** 
+- **Project Manager Name:** The name of the project manager (is always UNDP, regardless of the implementing partner as we place a responsible UNDP person)
+- **Project Manager Email:** UNDP email of the project manger.
 
 **Funding Partners**  
 |        | Name                                   | Amount   |
 |--------|----------------------------------------|----------|
 | ![DFAT](image) | Australian DFAT                        | $3.15M   |
 | ![UNDP](image) | UNITED NATIONS DEVELOPMENT PROGRAMME   | $-0.04K  |
+
+
+## Funding Details 
+- **Total Budget** - The sum of expense up to current year and budget of current year
+- **Funded** – Funded amount by signed agreements
+- **Unfunded** - ( Total budget - Funded )
+- **Contribution Received** - Amount of Tranches received 
+- **Contribution Pending** - ( Sum of Signed Agreements for the project - Contributions )
+- **Total Delivery** – Sum of the monetary amount of delivery (2018- Current year)
+- **Total Current year Budget** - Current year budget amount
+- **Total Current Year Delivery** - Current year delivery monetary amount
+- **GMS Rate** - GMS rate 
+
 
 
 ## Project Library
@@ -51,9 +231,25 @@
 
 ## Results Based Workplan
 
+- **Task Number** -  Output 1,2...
+- **Task Name** - Name of the task
+- **Total Budget**  -  Total budget allocated for the task
+- **Activities** - List of indicators and their completion details
+- **Indicator Code** - 1.1, 1.2 ,...
+- **Indicator description** - Small description about the activity
+- **Completion Details** - The actual result value over the target value
+- **Result** - The average of the completions of activities under the task
+- **Delivery** - Total expenditure of the task over budget 
+
 ## Funding Profile
 
 ### Overview 
+
+### Funding Partners
+
+- **Allocated** - Total budget calculated same as previously
+- **Paid** -  Total expenditure
+- **Remaining** - ( Total budget - Total expenditure )
 
 ### Payment Tranches
 

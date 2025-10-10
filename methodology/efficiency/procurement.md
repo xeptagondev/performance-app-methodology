@@ -149,3 +149,4 @@ This calculation method ensures that procurement speed (Part 3) has the greatest
 - check that days is calendar days
 - check that we have targets for RFPs and RFQs
 - How do we make sure that we are only captugin what the CO or Bureau is responsible for and not shared services (i.e. GSSC)
+- For Part 3: how long do we look back? Last 12 months? Last 24 months?

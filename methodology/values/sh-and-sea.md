@@ -24,8 +24,8 @@ The SH (Sexual Harassment) & SEA (Sexual Exploitation and Abuse) indicator
 
 | Traffic Light | Score |
 | ------------- | ----- |
-| Green         | >85   |
-| Yellow        | >70  |
+| Green         | ≥80   |
+| Yellow        | ≥70   |
 | Red           | <70   |
 
 

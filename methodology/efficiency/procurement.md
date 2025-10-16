@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Procurement efficiency is critical to UNDP's ability to deliver timely development results. This indicator measures the speed and planning quality of the procurement process, specifically tracking the time from evaluation through to contract award and approval (Stages 3-5 of the procurement cycle).
+Procurement efficiency is critical to UNDP's ability to deliver timely development results. This indicator measures the speed and planning quality of the procurement process, specifically tracking the time from evaluation through to pre-solicitation through to contract creation (Stages 1-4 of the procurement cycle).
 
 Effective procurement management ensures that:
 - Projects can begin implementation without unnecessary delays
@@ -19,7 +19,7 @@ The organizational objective for procurement can be broken down into three parts
 
 1. **Planning:** All purchase orders (POs) should have an associated procurement plan.
 2. **Timeliness:** Contracts should not be overdue.
-3. **Speed:** The procurement process (Stages 3-5: Evaluation, Oversight, Award, Approval) should take no longer than **48 calendar days**.
+3. **Speed:** The procurement process (Stages 1-4: Pre-solicitation, Solicitation, Evaluation & Oversight, Contract Creation) should take no longer than the expected number of calendar days.
 
 The 48-day target applies specifically to the evaluation and award phases of procurement, ensuring that UNDP can rapidly mobilize resources while maintaining proper oversight and quality control. 
 
@@ -29,7 +29,6 @@ The 48-day target applies specifically to the evaluation and award phases of pro
 
 To get data columns export for this indicator.
 
-- Not all countries have target date for timing yet.
 
 
 ## Calculation of Scoring
@@ -58,7 +57,7 @@ Simple Y/N and %.
 
 **Scoring Rate:** For every 1% over expected days, **0.75 points** are deducted from Part 3 score (which is worth 70 points total).
 
-This applies to **Stage 3 to Stage 5** of the procurement process: Evaluation, Oversight, Award, Approval.
+This applies to **Stage 1 to Stage 4** of the procurement process: Pre-solicitation, Solicitation, Evaluation & Oversight, Contract Creation.
 
 #### Example Calculation
 
@@ -142,11 +141,3 @@ This calculation method ensures that procurement speed (Part 3) has the greatest
 | Yellow        | 70-89 | 
 | Red           | <70   | 
 
-
-## Open Questions
-
-- How is the global average calculated and goal calculated? Awaiting on Roland.
-- check that days is calendar days
-- check that we have targets for RFPs and RFQs
-- How do we make sure that we are only captugin what the CO or Bureau is responsible for and not shared services (i.e. GSSC)
-- For Part 3: how long do we look back? Last 12 months? Last 24 months?

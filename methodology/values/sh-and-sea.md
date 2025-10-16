@@ -18,7 +18,21 @@ The SH (Sexual Harassment) & SEA (Sexual Exploitation and Abuse) indicator
 | Mandatory training                        | 30%     |                                                   |
 | SH & SEA Plan                             | 10%     |                                                   |
 
+Color coding for subindicators:
 
+Inclusion survey:
+- Green: ≥80
+- Yellow: ≥70
+- Red: <70
+
+Mandatory training:
+- Green: ≥95
+- Yellow: >90
+- Red: <90
+
+SH & SEA Plan:
+- Green: Done
+- Red: Not Done
 
 ## Traffic Light System
 

@@ -95,12 +95,12 @@ The same datasets from `[UNDP_IATI].[UNDP_PROJECTS]` and `[UNDP_IATI].[IATI_FINA
 
 ## Data Aggregation 
 
-Using the above sources, two separate dta files will be created as `Project Data` and `Activity Data`.
+Using the above sources, two separate data files will be created as `Project Data` and `Activity Data`.
 
 ### Project Data File
 
 - Load the data from  `[UNDP_IATI].[IATI_FINANCIALS]` ,  `[UNDP_IATI].[UNDP_PROJECTS]`  , `[UNDP_IATI].[UNDP_MARKERS]` , `[PPM_Ext].[XXPROJ_GMS_PROJECT_DETAILS]` and `atlas_fin_donors_20250806.xlsx` .
--  From  `[UNDP_IATI].[IATI_FINANCIALS]` we consider only the recodes were `FUND_CATEGORY` is `PROGRAMME`.
+-  From  `[UNDP_IATI].[IATI_FINANCIALS]` we consider only the records where `FUND_CATEGORY` is `PROGRAMME`.
 
 ```
 # Filter financials for PROGRAMME category
@@ -122,7 +122,7 @@ grouped_markers = markers_df.groupby(['PROJECT_NUMBER']).agg(
    markers =('marker_type', lambda x: ', '.join(x.unique()))
 ).reset_index()
 ```
-- GMS rate is calculate as the average of ono-zero values for a `PROJECT_NUMBER`.
+- GMS rate is calculated as the average of ono-zero values for a `PROJECT_NUMBER`.
 ```
 # Group GMS details by PROJECT_NUMBER and calculate the mean GMS_RATE, ignoring zeros
 def mean_ignore_zeros(series):
@@ -134,7 +134,7 @@ grouped_gms_details = gms_details_df.groupby('PROJECT_NUMBER').agg(
 ).reset_index()
 ```
 
-- Then all the data will be `LEFT` join to the filtered `IATI_FINANCIALS` data on `PROJECT_NUMBER`.
+- Then all the data will be `LEFT` joined to the filtered `IATI_FINANCIALS` data on `PROJECT_NUMBER`.
 
 ### Activity Data
 
@@ -210,12 +210,12 @@ funded_amount = project_data.loc[project_data['StageName'].str.startswith('Agree
 
 
 
-- **PQA**:  Simple check if it done or not based on PQA database in the last two calendar years based on today's date. 
-- **SESP**: Simple check if it done or not based on SESP database.
+- **PQA**:  Simple check if it has been done or not based on PQA database in the last two calendar years based on today's date. 
+- **SESP**: Simple check if it has been done or not based on SESP database.
 - **Delivery**: Is delivery lagging behind based on linear analysis vs project timeline. Using the global linear average. 
 - **Contributions**: If any payment tranches are overdue we can put an alert on that. Open question: how to handle multiple tranches that are overdue. 
-- **Project Document not uploaded**: If we cannot find a documented categorized as a project document in the project document library, we will flag this here.
-- **Missing Project Board Meeting Minutes**: If we cannot find a project board meeting minutes in the project documentlibrary, we will flag this here. (This has a dependency on ITM)
+- **Project Document not uploaded**: If we cannot find a document categorized as a project document in the project document library, we will flag this here.
+- **Missing Project Board Meeting Minutes**: If we cannot find a project board meeting minutes in the project document library, we will flag this here. (This has a dependency on ITM)
 - **Missing Results**: If there are missing results for any output for previous years, we will flag this here.
 - **Evaluation**: If there are overdue management actions, we will flag this here.
 - **SECU Case**: If there is an open SECU case, we will flag this here,  link to the registry page. 

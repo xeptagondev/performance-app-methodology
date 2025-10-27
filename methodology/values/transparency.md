@@ -64,11 +64,22 @@ For tasks, we will do a simple count of the number of tasks that are fully compl
 
 ## Traffic Light System
 
+For Global and Bureau level, where we agreegate all the data across all the projects: 
+
 | Traffic Light | Score |
 | ------------- | ----- |
-| Green         | 80+  |
-| Yellow        | 50-79   |
-| Red           | <50   |
+| Green         | 95+  |
+| Yellow        | <94   |
+| Red           | <80   |
+
+
+For Country Office:
+
+| Traffic Light | Score |
+| ------------- | ----- |
+| Green         | 100  |
+| Yellow        | <99   |
+| Red           | <80   |
 
 
 ## Resources

@@ -207,24 +207,24 @@ funded_amount = project_data.loc[project_data['StageName'].str.startswith('Agree
 
 
 ## Project Alerts
+Each alert card uses a traffic light color system to indicate status.
 
-
-
-- **PQA**:  Simple check if it has been done or not based on PQA database in the last two calendar years based on today's date. 
-- **SESP**: Simple check if it has been done or not based on SESP database.
-- **Delivery**: Is delivery lagging behind based on linear analysis vs project timeline. Using the global linear average. 
-- **Contributions**: If any payment tranches are overdue we can put an alert on that. Open question: how to handle multiple tranches that are overdue. 
-- **Project Document not uploaded**: If we cannot find a document categorized as a project document in the project document library, we will flag this here.
-- **Missing Project Board Meeting Minutes**: If we cannot find a project board meeting minutes in the project document library, we will flag this here. (This has a dependency on ITM)
-- **Missing Results**: If there are missing results for any output for previous years, we will flag this here.
-- **Evaluation**: If there are overdue management actions, we will flag this here.
-- **SECU Case**: If there is an open SECU case, we will flag this here,  link to the registry page. 
-- **SRM Case**: If there is an open SRM case, we will flag this here, perhaps link to the registry page. 
-- **No Cost Extension**: If there is no cost extension, we will flag this here. Show original close date and extension date
-- **Approaching/Overdue Financial Closure**: If the project is approaching or overdue for financial closure, we will flag this here. Counting from the date of the operational closure.
-- **Missing LPAC**: If there is no LPAC in the project document library, we will flag this here.
-- **Audit & HACT**: This would show upcoming audits, but we need to discuss with OAI if we can get this data. 
-
+| Alert Name | Description | 🔴 Red | 🟡 Yellow | 🟢 Green | Display Notes |
+|------------|-------------|--------|-----------|----------|---------------|
+| **PQA** | Check if PQA is done based on PQA database in the last two calendar years | PQA is missing | - | PQA is complete | Always show |
+| **SESP** | Check if SESP is done based on SESP database | SESP is missing | - | SESP is complete | Always show |
+| **Delivery** | Delivery performance based on linear trendline analysis vs project timeline | Score <70% | Score 70-84% | Score 85%+ | Always show |
+| **Project Document** | Check if project document exists in the project document library | Cannot find project document | - | Project document found | Always show |
+| **Project Board Meeting Minutes** | Check if project board meeting minutes exist in project document library | Cannot find meeting minutes | - | Meeting minutes found | Always show (ITM dependency) |
+| **Missing Results** | Check if there are missing results for any output for previous years | Missing results detected | - | All results present | Always show |
+| **Overdue Management Actions** | Check if there are overdue management actions from evaluations | Overdue actions exist | - | No overdue actions | Always show |
+| **SEQ Case** | Check if there is an open SEQ case (link to registry page) | Open SEQ case exists | - | - | Only show if open case exists |
+| **SRM Case** | Check if there is an open SRM case (link to registry page) | Open SRM case exists | - | - | Only show if open case exists |
+| **No Cost Extension** | Check if there is a no cost extension (show original close date and extension date) | - | Extension exists | - | Only show if extension exists |
+| **Financial Closure** | Check if project is approaching or overdue for financial closure (counting from operational closure date) | Overdue for closure | Approaching closure | On track | Always show |
+| **LPAC** | Check if LPAC exists in the project document library | LPAC is missing | - | LPAC found | Always show |
+| **Audit & HACT** | Show upcoming audits | TBD | TBD | TBD | Pending OAI data discussion |
+| **Contributions** | Check if any payment tranches are overdue | TBD | TBD | TBD | Open question: how to handle multiple overdue tranches | 
 
 
 ## Programme & Project Management (PPM)

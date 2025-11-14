@@ -10,7 +10,11 @@ Table names in UNDP Data Warehouse:
 |  `[UNDP_IATI].[IATI_FINANCIALS]` | Funding Partners                                                      |
 | `[SF_UNITY].[Opportunity]` | Funded Amount |
 | `[PPM_Ext].[XXPROJ_GMS_PROJECT_DETAILS]` | GMS Rate |
-| `[UNDP_IATI].[UNDP_INDICATORS]` | Result Based Workplan Data |
+| `[UNDP_IATI].[UNDP_INDICATORS]` | Result Based Workplan Data  |
+| `[Fusion_FIN_Reports].[UNProjectBudgetBalance] ` | Result Based Workplan Data Activity Budget Details and Responsible Parties Data |
+|`[UNDP_IATI].[UNDP_PDC]`| Project Document Library Data|
+|`[FUSION_AR_FACTS_ALL].[UN_AR_Unbilled_Details_Report],[FUSION_AR_FACTS_ALL].[UN_Generate_AR_Invoices_Report]`| Payment Tranches|
+|`[PPM_Ext].[XXPROJ_UNDP_PROJECT_RISK]`| Project Risk Data|
 
 
 The same datasets from `[UNDP_IATI].[UNDP_PROJECTS]` and `[UNDP_IATI].[IATI_FINANCIALS]` that are used to calculate the Master Project List are also applied here.
@@ -87,6 +91,51 @@ The same datasets from `[UNDP_IATI].[UNDP_PROJECTS]` and `[UNDP_IATI].[IATI_FINA
 
 </details>
 
+<details>
+<summary>Columns in UNDP_PDC data</summary>
+
+* **ProjectNumber** - Unified Number assigned to the project.
+* **OutputNumber** - Project Number.
+* **DocumentCategory** - Category of the document.
+* **Title** - Title of the document.
+* **Name** - Name of the document.
+* **Path** - URL Path of the document.
+* **DocumentType** - Sub Category of the document.
+
+</details>
+
+<details>
+<summary>Columns in UNProjectBudgetBalance data</summary>
+
+* **project_id** - Number assigned to the project.
+* **output** - Output number ( Output 1, Output 2, ...)
+* **output_description** - Description of the output 
+* **activity** - Activity number or Name ( Activity 1.1, Activity 1.2, ...)
+* **activity_description** - Description of the activity
+* **tot_budget** - Total budget for the activity
+* **total_exp** - Total expenditure for the activity
+* **Budget_Period** - Budget year for the activity
+* **responsible_party** - Party responsible for the activity
+</details>
+<!-- <summary>Columns in UN_AR_Unbilled_Details_Report and UN_Generate_AR_Invoices_Report data</summary> -->
+<details>
+<summary>Columns in XXPROJ_UNDP_PROJECT_RISK data</summary>
+
+* **RISK_ID** - Risk identifier
+* **PROJECT_ID** - Project identifier
+* **PROJECT_NUMBER** - Project number
+* **PRIMARY_CATEGORY_ID** - Primary category identifier (Numeric)
+* **SECONDARY_CATEGORY_ID** - Secondary category identifier
+* **EVENTS** - Events related to the risk
+* **CAUSES** - Causes related to the risk
+* **IMPACTS** - Impacts related to the risk
+* **IMPACT_ID** - Impact score (1, 2,... 5)
+* **LIKELYHOOD_ID** - Likelihood score (1, 2,... 5)
+* **RISK_RATING** - Risk rating
+* **RISK_LEVEL** - Risk level
+
+</details>
+
 ### Other Data Sources 
 
 - **DataCube** - Delivery and Contribution data.
@@ -157,6 +206,47 @@ grouped_indicator = indicator_df.groupby(['PROJECT_NUMBER', 'TASK_NUMBER', 'INDI
 - To further reduce file size and simplify calculations, group the data by `PROJECT_NUMBER` and `TASK_NUMBER`. The task-level completion percentage should be calculated as the mean of the activity-level completion percentages.
 - Then, the financial data will be left-joined with this dataset.
 
+### Activity Budget Data
+- Load the data from `[Fusion_FIN_Reports].[UNProjectBudgetBalance]`.
+- Group the data by `project_id`, `output`, `activity` and `Budget_Period`, summing up the `tot_budget` and `total_exp` to get the total budget and expenditure for each activity.
+
+```
+# Group budget data by project_id, output, activity, and Budget_Period
+   grouped = budget_balance_df.groupby(['ProjectNumber','output','activity','Budget_Period']).agg({
+         'output_description': 'first',
+         'activity_description': 'first',
+         'responsible_party': 'first',
+         'tot_budget': 'sum',
+         'total_exp': 'sum'
+   }).reset_index()
+
+   # Calculate budget completion percentage
+   grouped['completion_percentage'] = np.where(
+         grouped['tot_budget'] > 0,
+         (grouped['total_exp'] / grouped['tot_budget']) * 100,
+         0
+   )
+```
+
+- Calculate the budget completion percentage for each activity as `total_exp / tot_budget`, ensuring the result is constrained between 0% and 100%.
+- Calculate output-level budget by grouping the data by `project_id` and `output`, summing up the `tot_budget` and `total_exp` for each output.
+```
+# Calculate total budget and expenditure per output and completion percentage
+   budget_summary = grouped.groupby(['ProjectNumber', 'output','Budget_Period']).agg({
+         'tot_budget': 'sum',
+         'total_exp': 'sum'
+   }).reset_index()
+
+   budget_summary['completion_percentage'] = np.where(
+         budget_summary['tot_budget'] > 0,
+         (budget_summary['total_exp'] / budget_summary['tot_budget']) * 100,
+         0
+   )
+```
+
+- Then to reduce file size, group the data by `project_id`, `output`and `Budget_Period`, aggregate activity data into comma separated strings.
+- Finally, left join this datasets on `ProjectNumber`, `output`, `Budget_Period`.
+
 
 ### Opportunity Data for Funded Amount
 - To calculate the funded amount per project, take the sum of `Total_Target_Funding__c` for records where StageName begins with _"Agreement Signed"_.
@@ -164,8 +254,6 @@ grouped_indicator = indicator_df.groupby(['PROJECT_NUMBER', 'TASK_NUMBER', 'INDI
 funded_amount = project_data.loc[project_data['StageName'].str.startswith('Agreement Signed'), 'Total_Target_Funding__c'].sum()
 
 ```
-
-
 
 
 ## Overview
@@ -202,8 +290,11 @@ funded_amount = project_data.loc[project_data['StageName'].str.startswith('Agree
 
 
 
-## Project Library
+## Project Document Library
 
+- **Document Categories** - Categories of documents available in the project document library (Project,Portfolio,Proposal,Other).
+- **Document Title** - Title of the document or Name of the document.
+- **URL Path** - URL Path of the document from Docs-Project site in share point.
 
 
 ## Project Alerts
@@ -242,6 +333,10 @@ Each alert card uses a traffic light color system to indicate status.
 - **Delivery** - Total expenditure of the task over budget 
 
 ## Funding Profile
+
+- **Total Budget** - The sum of expense up to current year and budget of current year
+- **Funded** – Funded amount by signed agreements
+- **Unfunded** - ( Total budget - Funded )
 
 ### Overview 
 

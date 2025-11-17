@@ -53,7 +53,11 @@ SH & SEA Plan:
 
 ### Regional Bureau Level
 
-All countries offices + counting Regional Bureau as a CO. One office = 1 vote. 
+We use the Regional Bureau score for the survey and the training.
+
+For PSEAH Survey, we use average score across all COs. 
+
+For Action plans, its % of COs that have completed. 
 
 
 ### Central Bureau Level

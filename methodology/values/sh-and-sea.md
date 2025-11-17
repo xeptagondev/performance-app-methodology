@@ -12,11 +12,15 @@ The SH (Sexual Harassment) & SEA (Sexual Exploitation and Abuse) indicator
 
 ## Calculation of Scoring
 
-| Component                                 | Weight  | Notes                                             |
-|--------------------------------------------|---------|---------------------------------------------------|
-| Inclusion survey                          | 60%     | Comfort speaking up: 40%, Confidence action: 20%   |
-| Mandatory training                        | 30%     |                                                   |
-| SH & SEA Plan                             | 10%     |                                                   |
+### Country Office
+
+| Component           | Weight | Notes                                                                                     |
+|---------------------|--------|-------------------------------------------------------------------------------------------|
+| Inclusion survey    | 30%    | Includes: Comfort speaking up (40%), Confidence in action taken (20%)                      |
+| PSEAH Survey        | 30%    | Measures: Access to resources, population informed on reporting, identified local providers |
+| Mandatory training  | 30%    | No additional notes                                                                        |
+| SH & SEA Plan       | 10%    | No additional notes                                                                        |
+
 
 Color coding for subindicators:
 
@@ -24,6 +28,11 @@ Inclusion survey:
 - Green: ≥80
 - Yellow: ≥70
 - Red: <70
+
+PSEAH survey:
+- Green: ≥80
+- Yellow: ≥60
+- Red: <60
 
 Mandatory training:
 - Green: ≥95
@@ -38,9 +47,23 @@ SH & SEA Plan:
 
 | Traffic Light | Score |
 | ------------- | ----- |
-| Green         | ≥80   |
+| Green         | ≥85   |
 | Yellow        | ≥70   |
 | Red           | <70   |
+
+### Regional Bureau Level
+
+All countries offices + counting Regional Bureau as a CO. One office = 1 vote. 
+
+
+### Central Bureau Level
+
+Only two elements:
+
+1. Inclusion Survey (60%)
+2. Mandatory Training (40%)
+
+Same methodology as CO for these two, just different weights as there are fewer sub-indicators. 
 
 
 

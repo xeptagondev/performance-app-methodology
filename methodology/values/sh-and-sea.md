@@ -16,14 +16,15 @@ The SH (Sexual Harassment) & SEA (Sexual Exploitation and Abuse) indicator
 
 | Component           | Weight | Notes                                                                                     |
 |---------------------|--------|-------------------------------------------------------------------------------------------|
-| Inclusion survey    | 30%    | Includes: Comfort speaking up (40%), Confidence in action taken (20%)                      |
-| PSEAH Survey        | 30%    | Questions noted below |
-| Mandatory training  | 30%    | No additional notes                                                                        |
+| Inclusion survey    | 25%    | Includes: Comfort speaking up (40%), Confidence in action taken (20%)                      |
+| PSEAH Survey        | 30%    | Questions noted below, equally weighted |
+| Mandatory training  | 35%    | No additional notes                                                                        |
 | SH & SEA Plan       | 10%    | No additional notes                                                                        |
 
 * Questions that we are using:
 
-- **Q21:** Have all UNDP personnel in your Country Office been informed about what actions to take to prevent SEAH? 
+- Have all UNDP personnel in your Country Office been informed about what actions to take to prevent SEAH? 
+- Is there a dedicated UNDP PSEAH Focal Point in your Country Office?
 - Has your Country Office informed local populations of how to report SEA… (eIRF, focal points)
 - Has your Country Office identified local victim/survivor support mechanisms (medical, psychosocial, legal, etc.)
 

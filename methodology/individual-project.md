@@ -300,22 +300,22 @@ funded_amount = project_data.loc[project_data['StageName'].str.startswith('Agree
 ## Project Alerts
 Each alert card uses a traffic light color system to indicate status.
 
-| Alert Name | Description | 🔴 Red | 🟡 Yellow | 🟢 Green | Display Notes |
-|------------|-------------|--------|-----------|----------|---------------|
-| **PQA** | Check if PQA is done based on PQA database in the last two calendar years | PQA is missing | - | PQA is complete | Always show |
-| **SESP** | Check if SESP is done based on SESP database | SESP is missing | - | SESP is complete | Always show |
-| **Delivery** | Delivery performance based on linear trendline analysis vs project timeline | Score <70% | Score 70-84% | Score 85%+ | Always show |
-| **Project Document** | Check if project document exists in the project document library | Cannot find project document | - | Project document found | Always show |
-| **Project Board Meeting Minutes** | Check if project board meeting minutes exist in project document library | Cannot find meeting minutes | - | Meeting minutes found | Always show (ITM dependency) |
-| **Missing Results** | Check if there are missing results for any output for previous years | Missing results detected | - | All results present | Always show |
-| **Overdue Management Actions** | Check if there are overdue management actions from evaluations | Overdue actions exist | - | No overdue actions | Always show |
-| **SEQ Case** | Check if there is an open SEQ case (link to registry page) | Open SEQ case exists | - | - | Only show if open case exists |
-| **SRM Case** | Check if there is an open SRM case (link to registry page) | Open SRM case exists | - | - | Only show if open case exists |
-| **No Cost Extension** | Check if there is a no cost extension (show original close date and extension date) | - | Extension exists | - | Only show if extension exists |
-| **Financial Closure** | Check if project is approaching or overdue for financial closure (counting from operational closure date) | Overdue for closure | Approaching closure | On track | Always show |
-| **LPAC** | Check if LPAC exists in the project document library | LPAC is missing | - | LPAC found | Always show |
-| **Audit & HACT** | Show upcoming audits | TBD | TBD | TBD | Pending OAI data discussion |
-| **Contributions** | Check if any payment tranches are overdue | TBD | TBD | TBD | Open question: how to handle multiple overdue tranches | 
+| Alert Name | Description | 🔴 Red | 🟡 Yellow | 🟢 Green | ⚪ Grey (No Data) |Display Notes |
+|------------|-------------|--------|-----------|----------|----------|---------------|
+| **PQA** | Check if PQA is done based on PQA database in the last two calendar years | PQA is missing | - | PQA is complete |Show if no data for the project number or isQA_Required false| Always show |
+| **SESP** | Check if SESP is done based on SESP database | SESP is missing | - | SESP is complete |Show if no data for project number or isSESP_Required false| Always show |
+| **Delivery** | Delivery performance based on linear trendline analysis vs project timeline | Score <70% | Score 70-84% | Score 85%+ |Show if no data found for the project number| Always show |
+| **Project Document** | Check if project document exists in the project document library | Cannot find project document | - | Project document found |-| Always show |
+| **Project Board Meeting Minutes** | Check if project board meeting minutes exist in project document library | Cannot find meeting minutes | - | Meeting minutes found | - |Always show (ITM dependency) |
+| **Missing Results** | Check if there are missing results for any output for previous years | Missing results detected | - | All results present |Show if no results data found for the project number| Always show |
+| **Overdue Management Actions** | Check if there are overdue management actions from evaluations | Overdue actions exist | - | No overdue actions |Show if no evaluation data found for the project number| Always show |
+| **SEQ Case** | Check if there is an open SEQ case (link to registry page) | Open SEQ case exists | - | - | - |Only show if open case exists |
+| **SRM Case** | Check if there is an open SRM case (link to registry page) | Open SRM case exists | - | - | -|Only show if open case exists |
+| **No Cost Extension** | Check if there is a no cost extension (show original close date and extension date) | - | Extension exists | - |-| Only show if extension exists |
+| **Financial Closure** | Check if project is approaching or overdue for financial closure (counting from operational closure date) | Overdue for closure | Approaching closure | On track |Show if no data found for the project number| Always show |
+| **LPAC** | Check if LPAC exists in the project document library | LPAC is missing | - | LPAC found |TBD| Always show |
+| **Audit & HACT** | Show upcoming audits | TBD | TBD | TBD |TBD| Pending OAI data discussion |
+| **Contributions** | Check if any payment tranches are overdue | TBD | TBD | TBD |TBD| Open question: how to handle multiple overdue tranches | 
 
 
 ## Programme & Project Management (PPM)

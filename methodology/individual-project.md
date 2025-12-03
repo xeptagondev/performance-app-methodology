@@ -95,12 +95,12 @@ The same datasets from `[UNDP_IATI].[UNDP_PROJECTS]` and `[UNDP_IATI].[IATI_FINA
 
 ## Data Aggregation 
 
-Using the above sources, two separate dta files will be created as `Project Data` and `Activity Data`.
+Using the above sources, two separate data files will be created as `Project Data` and `Activity Data`.
 
 ### Project Data File
 
 - Load the data from  `[UNDP_IATI].[IATI_FINANCIALS]` ,  `[UNDP_IATI].[UNDP_PROJECTS]`  , `[UNDP_IATI].[UNDP_MARKERS]` , `[PPM_Ext].[XXPROJ_GMS_PROJECT_DETAILS]` and `atlas_fin_donors_20250806.xlsx` .
--  From  `[UNDP_IATI].[IATI_FINANCIALS]` we consider only the recodes were `FUND_CATEGORY` is `PROGRAMME`.
+-  From  `[UNDP_IATI].[IATI_FINANCIALS]` we consider only the records where `FUND_CATEGORY` is `PROGRAMME`.
 
 ```
 # Filter financials for PROGRAMME category
@@ -122,7 +122,7 @@ grouped_markers = markers_df.groupby(['PROJECT_NUMBER']).agg(
    markers =('marker_type', lambda x: ', '.join(x.unique()))
 ).reset_index()
 ```
-- GMS rate is calculate as the average of ono-zero values for a `PROJECT_NUMBER`.
+- GMS rate is calculated as the average of ono-zero values for a `PROJECT_NUMBER`.
 ```
 # Group GMS details by PROJECT_NUMBER and calculate the mean GMS_RATE, ignoring zeros
 def mean_ignore_zeros(series):
@@ -134,7 +134,7 @@ grouped_gms_details = gms_details_df.groupby('PROJECT_NUMBER').agg(
 ).reset_index()
 ```
 
-- Then all the data will be `LEFT` join to the filtered `IATI_FINANCIALS` data on `PROJECT_NUMBER`.
+- Then all the data will be `LEFT` joined to the filtered `IATI_FINANCIALS` data on `PROJECT_NUMBER`.
 
 ### Activity Data
 
@@ -207,7 +207,6 @@ funded_amount = project_data.loc[project_data['StageName'].str.startswith('Agree
 
 
 ## Project Alerts
-
 Each alert card uses a traffic light color system to indicate status.
 
 | Alert Name | Description | 🔴 Red | 🟡 Yellow | 🟢 Green | Display Notes |
@@ -226,7 +225,6 @@ Each alert card uses a traffic light color system to indicate status.
 | **LPAC** | Check if LPAC exists in the project document library | LPAC is missing | - | LPAC found | Always show |
 | **Audit & HACT** | Show upcoming audits | TBD | TBD | TBD | Pending OAI data discussion |
 | **Contributions** | Check if any payment tranches are overdue | TBD | TBD | TBD | Open question: how to handle multiple overdue tranches | 
-
 
 
 ## Programme & Project Management (PPM)

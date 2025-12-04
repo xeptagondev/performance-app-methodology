@@ -16,7 +16,7 @@ The SH (Sexual Harassment) & SEA (Sexual Exploitation and Abuse) indicator
 
 | Component           | Weight | Notes                                                                                     |
 |---------------------|--------|-------------------------------------------------------------------------------------------|
-| Inclusion survey    | 25%    | Includes: Comfort speaking up (40%), Confidence in action taken (20%)                      |
+| Inclusion survey    | 25%    | Includes: Comfort speaking up (15%), Confidence in action taken (10%)                      |
 | PSEAH Survey        | 30%    | Questions noted below, equally weighted |
 | Mandatory training  | 35%    | No additional notes                                                                        |
 | SH & SEA Plan       | 10%    | No additional notes                                                                        |

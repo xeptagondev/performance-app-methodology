@@ -64,6 +64,10 @@ The calculation of this indicator is:
 
 So the score is 100 - (% of Overdue Evaluations), minimum at 0.
 
+The global score is not the average of the CO scores; it is calculated using all evaluations that meet the given conditions.
+
+The Bureau/Country Office score is calculated using all evaluations relevant to the specific bureau/country office.
+
 
 ### **Part 2: Evaluation Management Responses (40% weight)**
 

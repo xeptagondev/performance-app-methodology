@@ -18,9 +18,6 @@ The organisational objective can be broken down into three parts:
 
 * We exclude UNV, UNCDF, UNOSSC
 
-
-
-
 ## Calculation of Scoring
 
 The Evaluation Management Indicator is divided into three distinct components, each aligned with a specific organizational objective. These components are as follows:
@@ -41,23 +38,31 @@ These components provide a holistic view of an organization's evaluation managem
 
 This focuses on the punctuality and scheduling discipline of the evaluation process, specifically measuring the percentage of evaluations completed within their designated timeframes. This assesses the effectiveness of evaluation planning and execution at the Country Office level.
 
-The target for the year is typically set in ERC by 31st December of that year. So from January 1st to March 31st, we score based on the previous year's achievement of the target. From April 1st to March 31st of the following year, we score based on the current year's achievement of the target.
+The target for each year is typically set in ERC by December 31 of the previous year. However, it can be updated daily until March 31 of the same year; updates made after that date are not considered for reporting.
+
+Until January 31, the score is based on the previous year’s achievement of the target. From February 1 to January 31 of the following year, we score based on the current year’s achievement of the target.
+
+Completed evaluations, even if submitted late, are not condered overdue and do not penalise the score. 
+
+The evaluations considered for the current year are those whose planned end dates fall within that calendar year.
 
 #### Statuses
 
 * **Planned:** Not started yet
+* **In Progress:** Evaluation Team onboard
 * **Initiated ToR:** The ToR is now being written
-* **Team Onboard:** Consultants have been hired
 * **Completed:** Evaluation has been completed
+* **Overdue:** Passed planned evaluation end date.
 
 An evaluation can only have one status at a time.
 
 The calculation of this indicator is:
 
-Completed Evaluations / Evaluation Planned for the year = **% of Completed Evaluations**
+100 * Number of current‑year evaluations that have been completed and whose planned end date was before today /  Total number of current‑year evaluations with a planned end date before today = **% of Completed Evaluations**
 
-This is based on a linear % of the target from April 1st to March 31st of the following year and we count the % of completed evaluations against this linear trendline. Above the trendline, we give 100 points for this component, below the trendline, we deduct 1 point for every 1% below the trendline.
+100 * Number of current‑year evaluations that have been not completed and whose planned end date was before today /  Total number of current‑year evaluations with a planned end date before today = **% of Overdue Evaluations**
 
+So the score is 100 - (% of Overdue Evaluations), minimum at 0.
 
 
 ### **Part 2: Evaluation Management Responses (40% weight)**
@@ -66,17 +71,22 @@ This is based on a linear % of the target from April 1st to March 31st of the fo
 
 This component evaluates the proportion of evaluations lacking a management response more than six weeks after completion. It is a key indicator of the efficiency and timeliness with which management acts on evaluation findings.
 
-The formula used is:
-
-* 1 - (Number of Evaluations Overdue by More Than 6 Weeks / Total Completed Evaluations in the Programme Period) = **Percentage of Evaluations with a Management Response**
 
 {% hint style="info" %}
 **Clarification note:** This part of the scoring methodology is intended to highlight evaluations with overdue management response so that corrective action can be taken. Once a management response is submitted it is no longer counted as overdue.
 {% endhint %}
 
-For Global/Bureau: We take the % of evaluations without a management response more than six weeks after evaluation. For each 1% below 100%, we deduct 4% from the score.
+The formula used is:
 
-For Country: Country offices are scored based on the number of overdue management responses (6+ weeks after evaluation completion):
+**Global / Bureau**
+
+**Percentage of Overdue Evaluations Management Responses** = 100 * (Number of current-year evaluations with management responses overdue as of today but not yet completed / Total number of current-year evaluations with management responses overdue as of today)
+Sore = * 100 - Percentage of Overdue Evaluations Management Responses
+
+
+**Country Office**
+
+Country offices are scored based on the number of overdue management responses (6+ weeks after evaluation completion):
 
 | Overdue Management Responses | Points |
 | ---------------------------- | ------ |
@@ -88,9 +98,11 @@ For Country: Country offices are scored based on the number of overdue managemen
 
 #### B) Key actions timings (50% of Part 2)
 
-For part 2B, we count the % of key actions that are not completed within 18 months of the evaluation. 
+For part 2B, We consider all evaluations from the past five years, including the current year-end, and include all planned actions except those marked as ‘No longer applicable.’
 
-For Global/Bureau: We take the % of key actions that are not completed within 18 months of the evaluation. 
+**% Overdue key actions** = Number of key actions that were planned to be due by today but are still in `Overdue` or `Not Initiated` status / Total number of key actions that were planned to be due by today exlcuding `No longer applicable`.
+
+For Global/Bureau: For each 1% below 100% completed, we deduct 1% from the score.
 
 For Country:For each 1% below 100% completed, we deduct 5% from the score.
 
@@ -114,7 +126,9 @@ Six distinct scores are possible, each reflecting a specific level of evaluation
 
 The calculation of the scoring is that for the last calendar year (so 2024 when it is 2025): **confirm this with IEO**
 
- Total Highly Satisfactory and Satisfactory / Total Evaluation Reports
+Excluding evaluation without QA
+
+ Total Highly Satisfactory and Satisfactory / Total Evaluation Reports QA
 
 50% or above is 100 points, below 50% is 2 points per 1% below 50%.
 
@@ -122,28 +136,16 @@ The calculation of the scoring is that for the last calendar year (so 2024 when 
 ### **Overall Calculation**
 
 #### Part 1: Evaluation Planning (30% of final score)
-Evaluations are scored against a linear trendline based on the annual target from April 1st to March 31st:
-* Performance at or above the trendline = 100 points
-* Performance below the trendline = 100 minus 1 point for each 1% below the trendline
 
 #### Part 2: Evaluation Management Responses (40% of final score)
-This section comprises two equal components (Part 2A and Part 2B), each contributing 50% to Part 2:
 
 **Part 2A: Management Response Timeliness (20% of final score)**
-* **Global/Bureau:** For each 1% below 100% compliance, deduct 4 points from the score
-* **Country:** Scored based on number of overdue management responses using discrete bands (0 = 100 points, 1 = 75 points, 2 = 50 points, 3 = 25 points, 4+ = 0 points)
 
 **Part 2B: Key Actions Completion (20% of final score)**
-Measures the percentage of key actions completed within 18 months of the evaluation:
-* **Global/Bureau:** Score based on % of key actions completed within 18 months
-* **Country:** For each 1% below 100% completed, deduct 5 points from the score
 
 The Part 2 score is calculated as: **(Part 2A + Part 2B) / 2**
 
 #### Part 3: Evaluation Quality (30% of final score)
-Based on the proportion of evaluations rated as Highly Satisfactory or Satisfactory in the last calendar year:
-* 50% or above = 100 points
-* Below 50% = 100 minus 2 points for each 1% below 50%
 
 #### Final Score Calculation
 The final score combines these three parts with their respective weights:

@@ -154,10 +154,11 @@ This calculation method ensures that each aspect of the evaluation process—pla
 
 The traffic light indicator methodology for this indicator is:
 
-* Green = 90+
+* Green = 85+
 * Yellow = 70+
 * Red = <70
 
+Note: this applies for all subindicator color scoring.
 
 
 ## Useful Links

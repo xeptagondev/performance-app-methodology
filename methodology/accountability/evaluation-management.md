@@ -85,7 +85,8 @@ The formula used is:
 **Global / Bureau**
 
 **Percentage of Overdue Evaluations Management Responses** = 100 * (Number of current-year evaluations with management responses overdue as of today & no management response  / Total number of current-year evaluations with management responses overdue as of today)
-Sore = * 100 - Percentage of Overdue Evaluations Management Responses
+
+Score = 100 - Percentage of Overdue Evaluations Management Responses
 
 
 **Country Office**

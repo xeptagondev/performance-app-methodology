@@ -209,4 +209,18 @@ The items below were taken from previous SESP Methodology and must be included h
 
 **Identifying Unique Projects**: After applying these filters, we count the number of unique projects by their `ProjectNum_Unified` identifier. This final step provides the total count of distinct projects meeting all the specified criteria.
 
+**ProjectNum_Unified Methodology**
+
+In Atlas (for projects initiated before 2023), `PROJECT_NUMBER` represents the output ID, while `ATLAS_AWARD_NUMBER` is the true project ID. Multiple outputs can exist for each project.
+In Quantum (post-2023 migration), there is no `AWARD_NUMBER` for new projects. Each project has the same `PROJECT_NUMBER` for both the project and its output, with only one output per project.
+
+For this we follow the logic:
+```python
+# Create PROJECT_NUMBER_UNIFIED in the df_UNDP_PROJECTS dataframe
+
+df_UNDP_PROJECTS['PROJECT_NUMBER_UNIFIED'] = df_UNDP_PROJECTS.apply(
+    lambda row: row['ATLAS_AWARD_NUMBER'] if str(row['PROJECT_NUMBER']).startswith('00') else row['PROJECT_NUMBER'], axis=1)
+
+
+```
 

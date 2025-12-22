@@ -179,7 +179,29 @@ To get a list of projects with budgets for each project and by CPD outcome.
 8. **Count unique projects:** Count and display the number of unique combinations of 'PROJECT\_ID' and 'CPD\_OUTCOME' in the merged dataframe.
 9. **Aggregation of Budget Data:** A single project ID can have multiple CPD outcomes. Initially, the code defines an aggregation function to calculate the sum of the 'budget' column for each group defined by 'PROJECT\_ID' and 'CPD\_OUTCOME'. This step aggregates budget data across different outcomes for each project.  To ensure that all unique 'PROJECT\_ID' values are retained, a dataframe is created containing all unique 'PROJECT\_ID's from the original dataset. The aggregated budget data is merged with the dataframe containing all unique 'PROJECT\_ID' values. This step is important to ensure that even projects with no budgetary allocations or outcomes are included in the final analysis.
 
+## Unifed Project Number Methodology
 
+There is currently no unique, unified project-level ID without missing values across the datasets. The key linking indicator, PROJECT_NUMBER, is not consistently defined at the project level.
+
+In Atlas (for projects initiated before 2023), `PROJECT_NUMBER` represents the output ID, while `ATLAS_AWARD_NUMBER` is the true project ID. Multiple outputs can exist for each project.
+In Quantum (post 2023 migration), there is no `AWARD_NUMBER` for new projects. Each project has the same `PROJECT_NUMBER` for both the project and its output, with only one output per project.
+
+To resolve these inconsistencies between Atlas and Quantum, it is necessary to build a unified project ID system.
+
+Based on that, the Unified Project Number is created as follows:
+
+- If the `PROJECT_NUMBER` starts with `00`, the `ATLAS_AWARD_NUMBER` is used as the Unified Project Number.
+
+- Otherwise, the `PROJECT_NUMBER` itself is used as the Unified Project Number.
+ 
+Python code:
+```python
+# Create PROJECT_NUMBER_UNIFIED in the df_UNDP_PROJECTS dataframe
+
+df_UNDP_PROJECTS['PROJECT_NUMBER_UNIFIED'] = df_UNDP_PROJECTS.apply(
+    lambda row: row['ATLAS_AWARD_NUMBER'] if str(row['PROJECT_NUMBER']).startswith('00') else row['PROJECT_NUMBER'], axis=1)
+
+```
 
 ## Project status
 
@@ -209,18 +231,5 @@ The items below were taken from previous SESP Methodology and must be included h
 
 **Identifying Unique Projects**: After applying these filters, we count the number of unique projects by their `ProjectNum_Unified` identifier. This final step provides the total count of distinct projects meeting all the specified criteria.
 
-**ProjectNum_Unified Methodology**
 
-In Atlas (for projects initiated before 2023), `PROJECT_NUMBER` represents the output ID, while `ATLAS_AWARD_NUMBER` is the true project ID. Multiple outputs can exist for each project.
-In Quantum (post-2023 migration), there is no `AWARD_NUMBER` for new projects. Each project has the same `PROJECT_NUMBER` for both the project and its output, with only one output per project.
-
-For this we follow the logic:
-```python
-# Create PROJECT_NUMBER_UNIFIED in the df_UNDP_PROJECTS dataframe
-
-df_UNDP_PROJECTS['PROJECT_NUMBER_UNIFIED'] = df_UNDP_PROJECTS.apply(
-    lambda row: row['ATLAS_AWARD_NUMBER'] if str(row['PROJECT_NUMBER']).startswith('00') else row['PROJECT_NUMBER'], axis=1)
-
-
-```
 

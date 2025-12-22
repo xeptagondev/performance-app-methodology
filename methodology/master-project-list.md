@@ -203,6 +203,10 @@ df_UNDP_PROJECTS['PROJECT_NUMBER_UNIFIED'] = df_UNDP_PROJECTS.apply(
 
 ```
 
+**Limitation**
+
+When the Quantum project number is equal to the Atlas award number, the unified project number is not unique. Currently, we have the following unified project number: `122851`, which corresponds to the Atlas project number `118303` (award number `122851`) and the Quantum project number `122851`. This is the only identified project that matches this condition.
+
 ## Project status
 
 Print the counts of unique project IDs for each project status to show the distribution of projects across different statuses.

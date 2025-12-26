@@ -178,6 +178,8 @@ To get a list of projects with budgets for each project and by CPD outcome.
 7. **Checking all the rows with budget captured in merged data:** Count the number of unique 'TASK\_ID' values corresponding to rows with budget information. This is performed to provide insight into the completeness of budget data captured within the merged Dataframe. Also, we can verify previously displayed value regarding the number of task ids with a budget value in IATI\_FINANCIALS data is same.
 8. **Count unique projects:** Count and display the number of unique combinations of 'PROJECT\_ID' and 'CPD\_OUTCOME' in the merged dataframe.
 9. **Aggregation of Budget Data:** A single project ID can have multiple CPD outcomes. Initially, the code defines an aggregation function to calculate the sum of the 'budget' column for each group defined by 'PROJECT\_ID' and 'CPD\_OUTCOME'. This step aggregates budget data across different outcomes for each project.  To ensure that all unique 'PROJECT\_ID' values are retained, a dataframe is created containing all unique 'PROJECT\_ID's from the original dataset. The aggregated budget data is merged with the dataframe containing all unique 'PROJECT\_ID' values. This step is important to ensure that even projects with no budgetary allocations or outcomes are included in the final analysis.
+10. **Project Type:** Exclude all projects with the `MGMT` project type.
+11. **Fund Category:** Include only projects under the `PROGRAMME` funding category.
 
 ## Unifed Project Number Methodology
 

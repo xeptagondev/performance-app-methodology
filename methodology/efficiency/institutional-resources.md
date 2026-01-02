@@ -27,6 +27,6 @@ The organisational objective is not to run at a deficit and have a balanced budg
    2. Payroll
    3. GMS
    4. [UNDP-at-a-Glance](https://app.powerbi.com/groups/me/reports/bfae426e-1f64-46cf-893e-ffcb697221a1/ReportSectionc7c5b80b86ba42599069?experience=power-bi\&bookmarkGuid=Bookmark7f5b9235a6274cdc75b7)
-   5. Against average monthly cumulative surplus/deficit of the last five-year trendline.
-3. If the deficit is 1% below the five-year average, one point is deducted.
+3. Against average monthly cumulative surplus/deficit of the last five-year trendline.
+4. If the deficit is 1% below the five-year average, one point is deducted.
 \\

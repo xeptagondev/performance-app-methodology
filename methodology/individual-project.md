@@ -8,12 +8,13 @@ Table names in UNDP Data Warehouse:
 | `[UNDP_IATI].[UNDP_PROJECTS]`   | Closed status, Project ID, Modality, Project Title, Implementing Partner, Description, Project Manager Name, Project Manager Email |
 |  `[UNDP_IATI].[UNDP_MARKERS]`    | Project Markers                                                       |
 |  `[UNDP_IATI].[IATI_FINANCIALS]` | Funding Partners                                                      |
-| `[SF_UNITY].[Opportunity]` | Funded Amount |
+|`[UNDP_IATI].[UNDP_PDC]`| Project Document Library Data|
 | `[PPM_Ext].[XXPROJ_GMS_PROJECT_DETAILS]` | GMS Rate |
+| `[SF_UNITY].[Opportunity]` | Funded Amount |
 | `[UNDP_IATI].[UNDP_INDICATORS]` | Result Based Workplan Data  |
 | `[Fusion_FIN_Reports].[UNProjectBudgetBalance] ` | Result Based Workplan Data Activity Budget Details and Responsible Parties Data |
-|`[UNDP_IATI].[UNDP_PDC]`| Project Document Library Data|
 |`[FUSION_AR_FACTS_ALL].[UN_AR_Unbilled_Details_Report],[FUSION_AR_FACTS_ALL].[UN_Generate_AR_Invoices_Report]`| Payment Tranches|
+|`[SF_UNITY].[Opportunity],[FUSION_AR_FACTS_ALL].[UN_AR_Unbilled_Details_Report],[FUSION_GL_FACTS_ALL].[Resource_Overview_Tbl]`| Contribution Pending and Received |
 |`[PPM_Ext].[XXPROJ_UNDP_PROJECT_RISK]`| Project Risk Data|
 
 
@@ -86,8 +87,10 @@ The same datasets from `[UNDP_IATI].[UNDP_PROJECTS]` and `[UNDP_IATI].[IATI_FINA
 * **INDICATOR_CODE** - Numeric code of the activity ( 1.1 , 1.2, ..)
 * **INDICATOR_DESCRIPTION** - Description of the activity
 * **VALUE_TYPE** - Value type as Number, Percentage, Text, Rating, Boolean
+* **BASELINE_VALUE** - Baseline value
 * **TARGET_VALUE** - Target value of the activity
 * **ACTUAL_VALUE** - Result value of the activity
+* **RESULTS_YEAR** - The result year
 
 </details>
 
@@ -144,9 +147,14 @@ The same datasets from `[UNDP_IATI].[UNDP_PROJECTS]` and `[UNDP_IATI].[IATI_FINA
 
 ## Data Aggregation 
 
-Using the above sources, two separate data files will be created as `Project Data` and `Activity Data`.
+Using the above sources, separate data files will be created based on the sections in the Project Overview Page.
+- `Project Data` - Summary of the core project data; including project information, budgets, makers and gms details.
+- `Project Budget Balance` - The budget details for Result Based Workplan sections. This contains the output wise budget data.
+- `Project Result Data` - The result data for Result Based Workplan section.
+- `Payment Tranches` - Payment details
+- `Project Risk` - Project risk management details
 
-### Project Data File
+### 1. Project Data File
 
 - Load the data from  `[UNDP_IATI].[IATI_FINANCIALS]` ,  `[UNDP_IATI].[UNDP_PROJECTS]`  , `[UNDP_IATI].[UNDP_MARKERS]` , `[PPM_Ext].[XXPROJ_GMS_PROJECT_DETAILS]` and `atlas_fin_donors_20250806.xlsx` .
 -  From  `[UNDP_IATI].[IATI_FINANCIALS]` we consider only the records where `FUND_CATEGORY` is `PROGRAMME`.
@@ -163,6 +171,15 @@ def calculate_budget(row):
       return row['Budget']
    else:
       return row['Expenditure']
+```
+- The same logics have been applied for atlas_fin_donors_20250806.csv and since it contain only data from 2012-2022, budgets and expenditures are the same.
+```
+atlas_fin_donor.rename(columns={'output': 'PROJECT_NUMBER','donor': 'DONOR'}, inplace=True)
+atlas_fin_donor['PROJECT_NUMBER'] = pd.to_numeric(atlas_fin_donor['PROJECT_NUMBER'], errors='coerce').astype('Int64')
+grouped_atlas = atlas_fin_donor.groupby(['PROJECT_NUMBER', 'fiscal_year', 'DONOR']).agg(
+      total_budget=('project_expenditure_combined', 'sum'),
+      total_expenditure=('project_expenditure_combined', 'sum')
+).reset_index()
 ```
 - Project markers data will be taken as a list of unique values per `PROJECT_NUMBER`.
 ```
@@ -185,70 +202,141 @@ grouped_gms_details = gms_details_df.groupby('PROJECT_NUMBER').agg(
 
 - Then all the data will be `LEFT` joined to the filtered `IATI_FINANCIALS` data on `PROJECT_NUMBER`.
 
-### Activity Data
-
-- Load the data from  `[UNDP_IATI].[IATI_FINANCIALS]` and `[UNDP_IATI].[UNDP_INDICATORS]`.
-- Then do the same filtering for  `[UNDP_IATI].[IATI_FINANCIALS]` and apply the budget calculation .
-- Group the indicator data by `PROJECT_NUMBER, TASK_NUMBER, and INDICATOR_ID`, and calculate the average target and result values for each activity.
-```
-# Use groupby with aggregation dictionary for performance
-grouped_indicator = indicator_df.groupby(['PROJECT_NUMBER', 'TASK_NUMBER', 'INDICATOR_ID'], sort=False).agg({
-   'TASK_NAME': 'first',
-   'PROJECT_NUMBER': 'first',
-   'TASK_NUMBER': 'first',
-   'INDICATOR_DESCRIPTION': 'first',
-   'TARGET_VALUE': 'mean',
-   'ACTUAL_VALUE': 'mean',
-   'INDICATOR_CODE': 'first'
-}).reset_index()
-```
-- Calculate the completion percentage for each activity as `Actual / Target`, ensuring the result is constrained between 0% and 100%.
-- To further reduce file size and simplify calculations, group the data by `PROJECT_NUMBER` and `TASK_NUMBER`. The task-level completion percentage should be calculated as the mean of the activity-level completion percentages.
-- Then, the financial data will be left-joined with this dataset.
-
-### Activity Budget Data
+### 2. Project Activity Budget Data
 - Load the data from `[Fusion_FIN_Reports].[UNProjectBudgetBalance]`.
-- Group the data by `project_id`, `output`, `activity` and `Budget_Period`, summing up the `tot_budget` and `total_exp` to get the total budget and expenditure for each activity.
+- First group the dat by `ProjectNumber`,`output`,`activity`,`Budget_Period`,`Account` to get the expenditure item level data.
+- Then group the data by `ProjectNumber`, `output`,`Budget_Period` and calculate the output level budget and expenditure.
+- Then group the data by `ProjectNumber`, `output`, `activity` and `Budget_Period`, summing up the `tot_budget` and `total_exp` to get the total budget and expenditure for each activity.
+- Final join all to single dataframe.
+<details>
+<summary>Click to expand: Project Activity Budget Processing Code</summary>
+
 
 ```
+grouped = budget_balance_df.groupby(['ProjectNumber','output','activity','Budget_Period','Account']).agg({
+      'output_description': 'first',
+      'activity_description': 'first',
+      'responsible_party': 'first',
+      'tot_budget': 'sum',
+      'total_exp': 'sum'
+}).reset_index()
+
 # Group budget data by project_id, output, activity, and Budget_Period
-   grouped = budget_balance_df.groupby(['ProjectNumber','output','activity','Budget_Period']).agg({
-         'output_description': 'first',
-         'activity_description': 'first',
-         'responsible_party': 'first',
+    # Calculate budget completion percentage in activity level
+   grouped_activity = grouped.groupby(['ProjectNumber','output','activity','Budget_Period']).agg({
          'tot_budget': 'sum',
          'total_exp': 'sum'
    }).reset_index()
-
-   # Calculate budget completion percentage
-   grouped['completion_percentage'] = np.where(
-         grouped['tot_budget'] > 0,
-         (grouped['total_exp'] / grouped['tot_budget']) * 100,
+   grouped_activity['completion_percentage'] = np.where(
+         grouped_activity['tot_budget'] > 0,
+         (grouped_activity['total_exp'] / grouped_activity['tot_budget']) * 100,
          0
    )
+
+# Calculate total budget and expenditure per output and completion percentage
+budget_summary = grouped.groupby(['ProjectNumber', 'output','Budget_Period']).agg({
+      'tot_budget': 'sum',
+      'total_exp': 'sum'
+}).reset_index()
+
+budget_summary['completion_percentage'] = np.where(
+      budget_summary['tot_budget'] > 0,
+      (budget_summary['total_exp'] / budget_summary['tot_budget']) * 100,
+      0
+)
 ```
+</details>
+
+
 
 - Calculate the budget completion percentage for each activity as `total_exp / tot_budget`, ensuring the result is constrained between 0% and 100%.
-- Calculate output-level budget by grouping the data by `project_id` and `output`, summing up the `tot_budget` and `total_exp` for each output.
-```
-# Calculate total budget and expenditure per output and completion percentage
-   budget_summary = grouped.groupby(['ProjectNumber', 'output','Budget_Period']).agg({
-         'tot_budget': 'sum',
-         'total_exp': 'sum'
-   }).reset_index()
 
-   budget_summary['completion_percentage'] = np.where(
-         budget_summary['tot_budget'] > 0,
-         (budget_summary['total_exp'] / budget_summary['tot_budget']) * 100,
+### 3. Project Result Data
+
+- Load the data from `[UNDP_IATI].[UNDP_INDICATORS]`.
+- Group the indicator data by `PROJECT_NUMBER, TASK_NUMBER, INDICATOR_ID, and RESULTS_YEAR` as follows.
+
+```
+# Use groupby with aggregation dictionary for performance
+grouped_indicator = indicator_df.groupby(['PROJECT_NUMBER', 'TASK_NUMBER', 'INDICATOR_ID','RESULTS_YEAR'], sort=False).agg({
+      'TASK_NAME': 'first',
+      'PROJECT_NUMBER': 'first',
+      'TASK_NUMBER': 'first',
+      'INDICATOR_ID': 'first',
+      'RESULTS_YEAR': 'first',
+      'INDICATOR_DESCRIPTION': 'first',
+      'TARGET_VALUE': 'first',
+      'ACTUAL_VALUE': 'first',
+      'INDICATOR_CODE': 'first',
+      'VALUE_TYPE': 'first',
+      'BASELINE_VALUE': 'first'
+}).reset_index()
+```
+- Calculate the completion percentage for each activity based on `VALUE_TYPE`, ensuring the result is constrained between 0% and 100%
+   - Number, Percentage, and Rating - Actual / Target
+   - Boolean - 100 if actual equals to target else 0
+   - Text - Nan
+<details>
+<summary>Click to expand: Project Result Processing Code</summary>
+
+```
+# Convert to numeric only for calculation, keeping original non-numeric values intact
+target_numeric = pd.to_numeric(grouped_indicator['Target'], errors='coerce')
+actual_numeric = pd.to_numeric(grouped_indicator['Actual'], errors='coerce')
+
+# Calculate completion_percentage for 'Number', 'Percentage', and 'Rating' Value_Types
+value_types_numeric = ['Number', 'Percentage', 'Rating']
+grouped_indicator['completion_percentage'] = np.where(
+      grouped_indicator['Value_Type'].isin(value_types_numeric) & 
+      pd.notna(target_numeric) & 
+      pd.notna(actual_numeric),
+      np.where(
+         (target_numeric == 0) & (actual_numeric == 0),
+         0,
+         np.round(
+            np.where(
+                  target_numeric != 0,
+                  (actual_numeric * 100 / target_numeric).clip(lower=0, upper=100),
+                  0
+            ),
+            2
+         )
+      ),
+      np.nan
+)
+
+# Calculate completion_percentage for 'Boolean' Value_Type where 100 if actual equals to target else 0
+grouped_indicator['completion_percentage'] = np.where(
+      (grouped_indicator['Value_Type'] == 'Boolean') & 
+      pd.notna(grouped_indicator['Target']) & 
+      pd.notna(grouped_indicator['Actual']),
+      np.where(
+         grouped_indicator['Actual'].str.lower() == grouped_indicator['Target'].str.lower(),
+         100,
          0
-   )
+      ),
+      grouped_indicator['completion_percentage']
+)
 ```
+</details>
 
-- Then to reduce file size, group the data by `project_id`, `output`and `Budget_Period`, aggregate activity data into comma separated strings.
-- Finally, left join this datasets on `ProjectNumber`, `output`, `Budget_Period`.
+- Then, the financial data will be left-joined with this dataset.
 
+### 4. Payment Tranches 
+- Load the data from `[FUSION_AR_FACTS_ALL].[UN_AR_Unbilled_Details_Report]` which contain future tranches and `[FUSION_AR_FACTS_ALL].[UN_Generate_AR_Invoices_Report]` for collected tranches.
+- Collect the data as follows:
+1. `UN_AR_Unbilled_Details_Report` 
+   - USD_AMOUNT :- AMOUNT
+   - EVENT_DATE :- DATE
+2. `UN_Generate_AR_Invoices_Report`
+   - RECEIPT_AMOUNT_USD_EQUIVALENT :-AMOUNT
+   - ACCOUNTING_DATE :- DATE
 
-### Opportunity Data for Funded Amount
+### 5. Project Risk 
+- Load data from `[PPM_Ext].[XXPROJ_UNDP_PROJECT_RISK]`.
+- Get the required columns.
+
+### 6. Opportunity Data for Funded Amount
 - To calculate the funded amount per project, take the sum of `Total_Target_Funding__c` for records where StageName begins with _"Agreement Signed"_.
 ```
 funded_amount = project_data.loc[project_data['StageName'].str.startswith('Agreement Signed'), 'Total_Target_Funding__c'].sum()
@@ -270,7 +358,12 @@ funded_amount = project_data.loc[project_data['StageName'].str.startswith('Agree
 - **Project Manager Name:** The name of the project manager (is always UNDP, regardless of the implementing partner as we place a responsible UNDP person)
 - **Project Manager Email:** UNDP email of the project manger.
 
-**Funding Partners**  
+## Funding Partners 
+This section represent the donor wise budget from `IATI_FINANCIALS`. 
+
+**Budget** = The sum of expense up to current year and budget of current year
+
+
 |        | Name                                   | Amount   |
 |--------|----------------------------------------|----------|
 | ![DFAT](image) | Australian DFAT                        | $3.15M   |
@@ -281,13 +374,18 @@ funded_amount = project_data.loc[project_data['StageName'].str.startswith('Agree
 - **Total Budget** - The sum of expense up to current year and budget of current year
 - **Funded** – Funded amount by signed agreements
 - **Unfunded** - ( Total budget - Funded )
-- **Contribution Received** - Amount of Tranches received 
-- **Contribution Pending** - ( Sum of Signed Agreements for the project - Contributions )
+- **Contribution Received** - Sum of revenue from Resource_Overview_Tbl where ACCOUNT_NUMBER id 14015
+- **Contribution Pending** - From UN_AR_Unbilled_Details_Report table summation of UDS amount except EVENT_TYPE not includes revenue + Unit Government cost sharing from Pipeline data
 - **Total Delivery** – Sum of the monetary amount of delivery (2018- Current year)
 - **Total Current year Budget** - Current year budget amount
 - **Total Current Year Delivery** - Current year delivery monetary amount
 - **GMS Rate** - GMS rate 
 
+## Project Progress
+- **Timeline** - Timeline of the project taken from stat and end date of the project
+- **Results** - The mean percentage of Results Achievement over all years and all output
+- **Delivery percentage** =  Total Delivery / Total Budget
+- **Contribution percentage** = Total Contribution from data cube data / Total Budget
 
 
 ## Project Document Library
@@ -319,38 +417,51 @@ Each alert card uses a traffic light color system to indicate status.
 
 
 ## Programme & Project Management (PPM)
+TBD
 
 ## Results Based Workplan
+This section shows activity budget and result details by year for each output.
 
 - **Task Number** -  Output 1,2...
 - **Task Name** - Name of the task
-- **Total Budget**  -  Total budget allocated for the task
-- **Activities** - List of indicators and their completion details
+- **Total Budget**  -  Total budget allocated for the task as the sum of tot_budget according to the year filter
+- **Budget Delivery** - Total expenditure (the sum of tot_exp) / Total Budget 
+- **Result Achivement** - The mean of completion percentages
+
+**Activities**
+
+- **Activities** - List of indicators and their budget details.
+- **Activity Name** - ACTIVITY 1.1, ACTIVITY 1.2, ...
+- **Activity BUdget Delivery** - The activity expenditure (The sum of tot_exp) / The activiy budget(the sum of tot_budget)
+- **Expenditure Line Items** - The list of accounts and their amounts
+
+**Results**
+
+
 - **Indicator Code** - 1.1, 1.2 ,...
 - **Indicator description** - Small description about the activity
 - **Completion Details** - The actual result value over the target value
 - **Result** - The average of the completions of activities under the task
-- **Delivery** - Total expenditure of the task over budget 
+
 
 ## Funding Profile
 
 - **Total Budget** - The sum of expense up to current year and budget of current year
 - **Funded** – Funded amount by signed agreements
 - **Unfunded** - ( Total budget - Funded )
-
-### Overview 
+ 
 
 ### Funding Partners
 
-- **Allocated** - Total budget calculated same as previously
-- **Paid** -  Total expenditure
-- **Remaining** - ( Total budget - Total expenditure )
+- **Paid** - Summation of  Contribution Received per Donor
+- **Remaining** - Summation of  Contribution Pending per Donor
+- **Allocated** - Paid + Remaining per donor
 
 ### Payment Tranches
 
 - **FundingPartnerName**: The name of the funding partner.
-- **Amount**: The amount of the payment.
-- **Date**: The date of the payment.
+- **Amount**: The amount of the payment (`UN_Generate_AR_Invoices_Report` -> `RECEIPT_AMOUNT_USD_EQUIVALENT` and `UN_AR_Unbilled_Details_Report`->`USD_AMOUNT`).
+- **Date**: The date of the payment (`UN_Generate_AR_Invoices_Report` -> `ACCOUNTING_DATE` and  `UN_AR_Unbilled_Details_Report`->`EVENT_DATE`  ) .
 - **Status**: The status of the payment.
 
 ### Risk Register
